@@ -66,28 +66,82 @@
                     <div class="text">
                         I'm Md. Junayed Bin Karim,  <span id="typed" class="iAm"></span>
                     </div>
-         <section class="about-me">
-  <div class="language-switcher">
-    <button onclick="showLanguage('en')">English</button>
-        <button onclick="showLanguage('bn')">বাংলা</button>
+  
 
-  </div>
 
-  <div id="bn-text" class="language-text" style="display:none;">
-    <h2>আমার সম্পর্কে</h2>
-    <p>আমি মোঃ জুনায়েদ বিন করিম, <strong>Junayed Academy-এর প্রতিষ্ঠাতা</strong> – একটি ভার্চুয়াল লার্নিং প্ল্যাটফর্ম যা শিক্ষার্থীদের প্র্যাকটিক্যাল কম্পিউটার ও প্রযুক্তি দক্ষতা অর্জনে সাহায্য করে এবং বাস্তব চাকরির সুযোগের জন্য প্রস্তুত করে।</p>
-    <p>আমি ওয়েব ডেভেলপমেন্ট, মেশিন লার্নিং, এবং আর্টিফিশিয়াল ইন্টেলিজেন্স (AI) নিয়ে কাজ করি। আমার লক্ষ্য শিক্ষার্থীদের শুধুমাত্র প্রযুক্তি শেখানো নয়, বরং তাদের আত্মবিশ্বাস ও সমস্যা সমাধানের ক্ষমতা বৃদ্ধি করা।</p>
-    <p>ফাঁকে ফাঁকে আমি কমিউনিটি প্রকল্পে অংশ নিই এবং শিক্ষাদানে আগ্রহী। আমি বিশ্বাস করি সহযোগিতা ও ধারাবাহিক শেখাই সাফল্যের চাবিকাঠি।</p>
-    <p>আমার লক্ষ্য, Junayed Academy-এর মাধ্যমে বাংলাদেশসহ আন্তর্জাতিক পর্যায়ে শিক্ষার্থীদের কর্মদক্ষতা বৃদ্ধি করা এবং প্রযুক্তির মাধ্যমে সমাজে ইতিবাচক পরিবর্তন আনা।</p>
+
+<div id="about-me-container">
+
+    <!-- Language Toggle Buttons -->
+    <div style="margin-bottom:10px;">
+        <button id="show-bn">বাংলা</button>
+        <button id="show-en">English</button>
+    </div>
+
+    <!-- Short Version -->
+    <div id="short-about-bn" class="language-text" style="display:none;">
+        <h2>আমার সম্পর্কে</h2>
+        <p>আমি মোঃ জুনায়েদ বিন করিম, <strong>Junayed Academy-এর প্রতিষ্ঠাতা</strong> – একটি ভার্চুয়াল লার্নিং প্ল্যাটফর্ম যা শিক্ষার্থীদের প্র্যাকটিক্যাল কম্পিউটার ও প্রযুক্তি দক্ষতা অর্জনে সাহায্য করে।</p>
+        <p>আমি ওয়েব ডেভেলপমেন্ট, মেশিন লার্নিং, এবং আর্টিফিশিয়াল ইন্টেলিজেন্স (AI) নিয়ে কাজ করি।</p>
+        <button class="read-more" data-lang="bn">Read More</button>
+    </div>
+
+    <div id="short-about-en" class="language-text">
+        <h2>About Me</h2>
+        <p>I am Md. Junayed Bin Karim, the <strong>Founder of Junayed Academy</strong> – a virtual learning platform helping students gain practical computer and tech skills.</p>
+        <p>I work in web development, machine learning, and artificial intelligence (AI).</p>
+        <button class="read-more" data-lang="en">Read More</button>
+    </div>
+
+    <!-- Full Version -->
+    <div id="full-about-bn" class="language-text" style="display:none;">
+        <h2>আমার সম্পর্কে</h2>
+        <p>আমি মোঃ জুনায়েদ বিন করিম, একজন উদ্যোক্তা, AI গবেষক এবং <strong>Junayed Academy</strong>-এর প্রতিষ্ঠাতা — একটি আধুনিক ই-লার্নিং প্ল্যাটফর্ম যা প্রজেক্ট-বেসড, প্র্যাকটিক্যাল প্রশিক্ষণ প্রদান করে।</p>
+        <p>আমার একাডেমিক ব্যাকগ্রাউন্ড কম্পিউটার সায়েন্সে (B.Sc., Daffodil International University), যেখানে আমি computational thinking, data analysis এবং software development-এর শক্তিশালী ভিত্তি তৈরি করেছি। বর্তমানে আমি Artificial Intelligence (AI), Machine Learning (ML) এবং Green Computing-এ গবেষণা ও প্রকল্পে যুক্ত আছি।</p>
+        <p>আমার দক্ষতা (বাস্তব অভিজ্ঞতা সহ):<br>
+        → Artificial Intelligence & Machine Learning (problem-solving agents, search algorithms, image classification, 8-puzzle problem, ইত্যাদি)<br>
+        → Frontend Web Development (HTML, CSS, JavaScript, React, Bootstrap)<br>
+        → Teaching & Mentoring (বিশ্ববিদ্যালয় শিক্ষার্থী ও শিশুদের ICT, Programming শেখানো)<br>
+        → Project Development & Deployment (GitHub, Netlify, Vercel)<br>
+        → Personal Development & Mental Health Support (stress, anxiety, emotional guidance)</p>
+        <p>আমার ক্যারিয়ারে:<br>
+        → 20+ বিশ্ববিদ্যালয় শিক্ষার্থী ও শিশুদের Mentoring<br>
+        → AI, ML, ও Web Development-এ Workshop & Training পরিচালনা<br>
+        → Branch Office-সহ বিভিন্ন Project Development & Deployment<br>
+        → Junayed Academy প্রতিষ্ঠা করে বাংলাদেশে শিক্ষার্থীদের practical tech skills প্রদান<br>
+        → AI Hackathon 2025 ও Online Workshops আয়োজন</p>
+        <p>পুরস্কার ও স্বীকৃতি:<br>
+        → Dhaka University-তে Machine Learning Quiz-এ 2nd র‍্যাংক<br>
+        → বিভিন্ন AI & Tech Competition-এ অংশগ্রহণ ও আয়োজন<br>
+        → শিক্ষার্থী Mentoring ও Community Project-এ অবদান স্বীকৃতি</p>
+        <button class="read-less" data-lang="bn">Read Less</button>
+    </div>
+
+    <div id="full-about-en" class="language-text" style="display:none;">
+        <h2>About Me</h2>
+        <p>I am Md. Junayed Bin Karim, an entrepreneur, AI researcher, and Founder of Junayed Academy — a modern e-learning platform delivering practical, project-based training in emerging technologies.</p>
+        <p>My academic background is rooted in Computer Science (B.Sc., Daffodil International University), where I’ve developed strong foundations in computational thinking, data analysis, and software development. Currently, I work on AI, ML, and Green Computing projects exploring intelligent and sustainable digital solutions.</p>
+        <p>Expertise (with real-life experience):<br>
+        → Artificial Intelligence & Machine Learning (problem-solving agents, search algorithms, image classification, 8-puzzle problem, etc.)<br>
+        → Frontend Web Development (HTML, CSS, JavaScript, React, Bootstrap)<br>
+        → Teaching & Mentoring (guiding university students and children in programming, ICT)<br>
+        → Project Development & Deployment (GitHub, Netlify, Vercel)<br>
+        → Personal Development & Mental Health Support (stress, anxiety, emotional guidance)</p>
+        <p>Career Highlights:<br>
+        → Mentored 20+ university students and many children<br>
+        → Conducted hands-on workshops and training sessions in AI, ML, and web development<br>
+        → Developed & deployed multiple projects including Branch Office with HA & Load Balancing<br>
+        → Founded Junayed Academy<br>
+        → Organized AI Hackathon 2025 & online workshops</p>
+        <p>Awards & Recognition:<br>
+        → 2nd place in Machine Learning Quiz, Dhaka University<br>
+        → Participant & organizer in multiple AI & tech competitions<br>
+        → Recognized for mentoring and community contributions</p>
+        <button class="read-less" data-lang="en">Read Less</button>
+    </div>
+
 </div>
 
-<div id="en-text" class="language-text">
-    <h2>About Me</h2>
-    <p>I am Md. Junayed Bin Karim, the <strong>Founder of Junayed Academy</strong> – a virtual learning platform helping students gain practical computer and tech skills for real job opportunities.</p>
-    <p>I work in web development, machine learning, and artificial intelligence (AI). My goal is not only to teach technology but also to build confidence and problem-solving skills among students.</p>
-    <p>In my spare time, I participate in community projects and enjoy teaching. I believe that collaboration and continuous learning are the keys to success.</p>
-    <p>Through Junayed Academy, my aim is to empower students in Bangladesh and beyond, improving their employability and driving positive societal change through technology.</p>
-</div>
 
 
               
@@ -562,20 +616,20 @@
         <section class="recognition">
             <h2 class="section-title">Awards <span>&</span> Recognition</h2>        
                 <div class="recognition-content" id="recognitionContent">
+                    <div class="recognition-box">
+                    <img src="Assets/recognition/DIU.JPG" alt="Award 1" onclick="openModal(this)">
+                </div>
                 <div class="recognition-box">
                     <img src="Assets/recognition/saifurs.jpg" alt="Award 1" onclick="openModal(this)">
                 </div>
-                <div class="recognition-box">
-                    <img src="Assets/recognition/GO edu chatgpt.jpg" alt="Award 2" onclick="openModal(this)">
-                </div>
+                
                 <div class="recognition-box">
                     <img src="Assets/recognition/Dewan ICT Mirpur 1.jpg" alt="Award 3" onclick="openModal(this)">
                 </div>
         
                 <!-- Hidden initially -->
-                <div class="recognition-box hidden">
-                    <img src="Assets/recognition/goedu sobur khgan.jpg" alt="Award 4" onclick="openModal(this)">
-                </div>
+                 
+                
                 <div class="recognition-box hidden">
                     <img src="Assets/recognition/HSC 2021.jpg" alt="Award 5" onclick="openModal(this)">
                 </div>
@@ -589,6 +643,14 @@
                <div class="recognition-box hidden">
                <img src="Assets/recognition/JSC 2016.jpg" alt="JSC Certificate 7" onclick="openModal(this)">
               </div>
+
+              <div class="recognition-box hidden">
+                    <img src="Assets/recognition/GO edu chatgpt.jpg" alt="Award 2" onclick="openModal(this)">
+                </div>
+                <div class="recognition-box hidden">
+                    <img src="Assets/recognition/goedu sobur khgan.jpg" alt="Award 4" onclick="openModal(this)">
+                </div>
+
             </div>
             
         

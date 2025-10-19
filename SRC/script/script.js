@@ -637,3 +637,55 @@ function showLanguage(lang) {
 
 
    
+
+
+
+ // Language toggle
+    const showBnBtn = document.getElementById('show-bn');
+    const showEnBtn = document.getElementById('show-en');
+
+    const shortBn = document.getElementById('short-about-bn');
+    const shortEn = document.getElementById('short-about-en');
+    const fullBn = document.getElementById('full-about-bn');
+    const fullEn = document.getElementById('full-about-en');
+
+    showBnBtn.addEventListener('click', () => {
+        shortBn.style.display = 'block';
+        fullBn.style.display = 'none';
+        shortEn.style.display = 'none';
+        fullEn.style.display = 'none';
+    });
+
+    showEnBtn.addEventListener('click', () => {
+        shortEn.style.display = 'block';
+        fullEn.style.display = 'none';
+        shortBn.style.display = 'none';
+        fullBn.style.display = 'none';
+    });
+
+    // Read More / Read Less toggle
+    document.querySelectorAll('.read-more').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const lang = btn.dataset.lang;
+            if(lang === 'bn'){
+                shortBn.style.display = 'none';
+                fullBn.style.display = 'block';
+            } else {
+                shortEn.style.display = 'none';
+                fullEn.style.display = 'block';
+            }
+        });
+    });
+
+    document.querySelectorAll('.read-less').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const lang = btn.dataset.lang;
+            if(lang === 'bn'){
+                fullBn.style.display = 'none';
+                shortBn.style.display = 'block';
+            } else {
+                fullEn.style.display = 'none';
+                shortEn.style.display = 'block';
+            }
+        });
+    });
