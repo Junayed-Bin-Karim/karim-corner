@@ -640,52 +640,143 @@ function showLanguage(lang) {
 
 
 
- // Language toggle
-    const showBnBtn = document.getElementById('show-bn');
-    const showEnBtn = document.getElementById('show-en');
 
-    const shortBn = document.getElementById('short-about-bn');
-    const shortEn = document.getElementById('short-about-en');
-    const fullBn = document.getElementById('full-about-bn');
-    const fullEn = document.getElementById('full-about-en');
 
-    showBnBtn.addEventListener('click', () => {
-        shortBn.style.display = 'block';
-        fullBn.style.display = 'none';
-        shortEn.style.display = 'none';
-        fullEn.style.display = 'none';
+const readMoreBtn = document.getElementById("read-more-btn");
+    const moreContent = document.getElementById("more-content");
+
+    readMoreBtn.addEventListener("click", () => {
+        if (moreContent.classList.contains("hidden")) {
+            moreContent.classList.remove("hidden");
+            readMoreBtn.textContent = "Read Less";
+        } else {
+            moreContent.classList.add("hidden");
+            readMoreBtn.textContent = "Read More";
+            window.scrollTo({ top: document.getElementById("about-me-container").offsetTop, behavior: "smooth" });
+        }
     });
 
-    showEnBtn.addEventListener('click', () => {
-        shortEn.style.display = 'block';
-        fullEn.style.display = 'none';
-        shortBn.style.display = 'none';
-        fullBn.style.display = 'none';
-    });
 
-    // Read More / Read Less toggle
-    document.querySelectorAll('.read-more').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const lang = btn.dataset.lang;
-            if(lang === 'bn'){
-                shortBn.style.display = 'none';
-                fullBn.style.display = 'block';
-            } else {
-                shortEn.style.display = 'none';
-                fullEn.style.display = 'block';
+
+document.addEventListener("DOMContentLoaded", function() {
+    const seeMoreBtn = document.getElementById("seeMoreBtn");
+    const skillsGrid = document.getElementById("skillsGrid");
+    const hiddenItems = document.querySelectorAll(".skill-item.hidden");
+    let expanded = false;
+
+    seeMoreBtn.addEventListener("click", () => {
+        expanded = !expanded;
+        
+        if (expanded) {
+            skillsGrid.classList.add("expanded");
+            seeMoreBtn.textContent = "See Less";
+        } else {
+            skillsGrid.classList.remove("expanded");
+            seeMoreBtn.textContent = "See More";
+        }
+    });
+    
+    // Scroll animation for skills section
+    const skillsSection = document.querySelector('.featured-skills');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                // Also make the skills grid visible
+                skillsGrid.classList.add('visible');
             }
         });
+    }, { threshold: 0.1 });
+    
+    if (skillsSection) {
+        observer.observe(skillsSection);
+    }
+});
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const seeMoreBtn = document.getElementById("seeMoreExperienceBtn");
+    const hiddenExperiences = document.querySelectorAll(".experience-item.hidden");
+    let expanded = false;
+
+    if (seeMoreBtn) {
+      seeMoreBtn.addEventListener("click", () => {
+        expanded = !expanded;
+        hiddenExperiences.forEach(exp => {
+          exp.style.display = expanded ? "block" : "none";
+        });
+        seeMoreBtn.textContent = expanded ? "See Less" : "See More";
+      });
+    }
+  });
+
+
+
+
+  document.addEventListener("DOMContentLoaded", function() {
+    const seeMoreBtn = document.getElementById("seeMoreBtn");
+    const hiddenAwards = document.querySelectorAll(".recognition-box.hidden");
+    let expanded = false;
+
+    if (seeMoreBtn) {
+        seeMoreBtn.addEventListener("click", () => {
+            expanded = !expanded;
+            hiddenAwards.forEach(box => {
+                box.style.display = expanded ? "inline-block" : "none"; // use inline-block for grid/flex layouts
+            });
+            seeMoreBtn.textContent = expanded ? "See Less" : "See More";
+        });
+    }
+});
+
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+
+    // --- Skills See More ---
+    const skillsBtn = document.getElementById("seeMoreSkillsBtn");
+    const skillsGrid = document.getElementById("skillsGrid");
+    let skillsExpanded = false;
+
+    skillsBtn.addEventListener("click", () => {
+        skillsExpanded = !skillsExpanded;
+        skillsGrid.classList.toggle("expanded", skillsExpanded);
+        skillsBtn.textContent = skillsExpanded ? "See Less" : "See More";
     });
 
-    document.querySelectorAll('.read-less').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const lang = btn.dataset.lang;
-            if(lang === 'bn'){
-                fullBn.style.display = 'none';
-                shortBn.style.display = 'block';
-            } else {
-                fullEn.style.display = 'none';
-                shortEn.style.display = 'block';
-            }
-        });
+    // --- Awards See More ---
+    const awardsBtn = document.getElementById("seeMoreAwardsBtn");
+    const hiddenAwards = document.querySelectorAll(".recognition-box.hidden");
+    let awardsExpanded = false;
+
+    awardsBtn.addEventListener("click", () => {
+        awardsExpanded = !awardsExpanded;
+        hiddenAwards.forEach(box => box.style.display = awardsExpanded ? "inline-block" : "none");
+        awardsBtn.textContent = awardsExpanded ? "See Less" : "See More";
     });
+
+});
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const seeMoreBlogBtn = document.getElementById("seeMoreBlogBtn");
+    const hiddenArticles = document.querySelectorAll(".blog-preview .article-card.hidden");
+    let expanded = false;
+
+    seeMoreBlogBtn.addEventListener("click", () => {
+        expanded = !expanded;
+        hiddenArticles.forEach(card => {
+            card.style.display = expanded ? "block" : "none";
+        });
+        seeMoreBlogBtn.textContent = expanded ? "See Less" : "See More";
+    });
+});
