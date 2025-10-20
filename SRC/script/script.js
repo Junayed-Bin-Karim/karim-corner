@@ -780,3 +780,9 @@ document.addEventListener("DOMContentLoaded", function() {
         seeMoreBlogBtn.textContent = expanded ? "See Less" : "See More";
     });
 });
+
+
+
+ function toggleDescription(card) {
+        card.classList.toggle('active');
+    }
