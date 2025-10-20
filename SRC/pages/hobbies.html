@@ -4,12 +4,275 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hobbies</title>
+    <title>Books - Junayed Bin Karim</title>
     <link rel="stylesheet" type="text/css" href="../style/style.css">
     <link rel="icon" href="/Assets/favicons/favicon.png" type="image/png" sizes="32x32">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root{
+            --bg:#0f1724;
+            --card:#0b1220;
+            --muted:#94a3b8;
+            --accent:#7c3aed;
+            --glass:rgba(255,255,255,0.04);
+            --radius:16px;
+        }
+        
+        .books-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .books-header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding-top: 20px;
+        }
+        
+        .eyebrow {
+            font-size: 13px;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .headline {
+            font-family: Merriweather, serif;
+            font-size: 42px;
+            line-height: 1.02;
+            margin: 12px 0;
+            color: #e6eef8;
+        }
+        
+        .sub {
+            color: var(--muted);
+            font-size: 16px;
+            line-height: 1.5;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 28px;
+            margin-bottom: 80px;
+        }
+
+        .book-card {
+            background: var(--card);
+            padding: 20px;
+            border-radius: var(--radius);
+            box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+            border: 1px solid rgba(255,255,255,0.03);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .book-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(2,6,23,0.8);
+        }
+        
+        .cover {
+            width: 100%;
+            height: 0;
+            padding-bottom: 140%;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            background: linear-gradient(135deg, var(--accent), #06b6d4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .cover img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .cover .title-badge {
+            position: absolute;
+            left: 12px;
+            top: 12px;
+            background: var(--glass);
+            backdrop-filter: blur(6px);
+            padding: 6px 10px;
+            border-radius: 10px;
+            font-weight: 600;
+            color: var(--muted);
+            font-size: 12px;
+        }
+        
+        .meta {
+            margin-top: 14px;
+        }
+        
+        .meta h1 {
+            font-family: Merriweather, serif;
+            font-size: 18px;
+            margin: 0 0 6px;
+            color: #e6eef8;
+        }
+        
+        .meta p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 14px;
+        }
+        
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 10px;
+        }
+        
+        .tag {
+            background: rgba(255,255,255,0.05);
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 11px;
+            color: var(--muted);
+        }
+
+        .cta {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            margin-top: 14px;
+        }
+        
+        .btn {
+            background: linear-gradient(90deg, var(--accent), #06b6d4);
+            padding: 8px 12px;
+            border-radius: 10px;
+            color: #04102b;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 6px 18px rgba(124,58,237,0.18);
+            font-size: 12px;
+            flex: 1;
+        }
+        
+        .ghost {
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.06);
+            padding: 6px 10px;
+            border-radius: 10px;
+            color: var(--muted);
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .signup-section {
+            background: var(--card);
+            padding: 40px;
+            border-radius: var(--radius);
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+        
+        .signup {
+            background: rgba(255,255,255,0.02);
+            padding: 12px;
+            border-radius: 12px;
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            margin-top: 20px;
+        }
+        
+        .signup input {
+            flex: 1;
+            background: transparent;
+            border: 0;
+            outline: none;
+            color: inherit;
+            padding: 8px;
+            font-size: 14px;
+        }
+
+        .small {
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+        @media (max-width: 1200px) {
+            .books-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        @media (max-width: 880px) {
+            .books-container {
+                padding: 10px;
+            }
+            
+            .headline {
+                font-size: 32px;
+            }
+            
+            .books-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 640px) {
+            .books-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .headline {
+                font-size: 26px;
+            }
+            
+            .signup {
+                flex-direction: column;
+            }
+        }
+
+
+        /* Books Header Styles */
+.books-header {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.books-header .eyebrow {
+    color: black;           /* Eyebrow text black */
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.books-header .headline {
+    color: white;           /* Headline text white */
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.books-header .sub {
+    color: black;           /* Subtext black */
+    font-size: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+    </style>
 </head>
 
 <body>
@@ -23,7 +286,7 @@
             <a href="./education.html">Education</a>
             <a href="./gallery.html">Gallery</a>
             <a href="./career.html">Career</a>
-            <a href="./hobbies.html" class="active">Hobbies</a>
+            <a href="./hobbies.html" class="active">Books</a>
             <a href="./testimonials.html">Testimonials</a>
         </div>
 
@@ -37,124 +300,284 @@
 
     <div class="page">
         <main class="hobbies-main">
-            <div class="hobbies-section">
-                <div class="hobbies-header">
-                    <div class="header-text">My Hobbies</div>
-                    <div class="header-line"></div>
-                </div>
+            <div class="books-container">
+                <!-- Header -->
+                <section class="books-header">
+                    <div class="eyebrow">Upcoming Publications</div>
+                    <h1 class="headline">My Upcoming Books</h1>
+<p class="sub">
+A curated collection of upcoming books I'm working on, including topics like MicroSaaS, IoT, Green Computing, Quantum Cryptography, AI Product Management, and more.
+</p>
+                </section>
 
-                <!-- First Row -->
-                <div class="section">
-                    <div class="row first">
-                        <div class="hobbies 1">
-                            <div class="image">
-                                <img src="/Assets/hobbies/tra.jpg" alt="Travelling">
-                            </div>
-                            <div class="header">
-                                <div class="header-text">Travelling</div>
-                                <div class="header-line"></div>
-                            </div>
-                            <div class="text">
-                                Traveling is more than just a pastime for me; it's a way of life. Exploring new destinations, immersing myself in diverse cultures, and uncovering the beauty of our world bring me immense joy and endless opportunities for personal growth.
-                            </div>
+                <!-- Books Grid - 3 rows of 4 books each -->
+                <div class="books-grid">
+                    <!-- Row 1 -->
+                    <!-- Book 1 -->
+                    <div class="book-card">
+                        <div class="cover">
+                            <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=1200&auto=format&fit=crop&crop=entropy" alt="Book cover">
+                            <div class="title-badge">Upcoming — 2025 Release</div>
                         </div>
-
-                        <div class="hobbies 2">
-                            <div class="image">
-                                <img src="/Assets/hobbies/g.jpg" alt="Playing Guitar">
+                        <div class="meta">
+                            <h1>The MicroSaaS Playbook</h1>
+                            <p class="small">A tactical guide to building focused SaaS products that sell from day one.</p>
+                            <div class="tags">
+                                <div class="tag">MicroSaaS</div>
+                                <div class="tag">Strategy</div>
+                                <div class="tag">Growth</div>
                             </div>
-                            <div class="header">
-                                <div class="header-text">Playing Guitar</div>
-                                <div class="header-line"></div>
-                            </div>
-                            <div class="text">
-                                Playing the guitar is my ultimate escape. The feeling of strumming the strings, creating melodies and rhythms, is truly exhilarating. Whether it's the soft strum of an acoustic or the electric riffs that fill the room, playing guitar rejuvenates my mind and soul.
-                            </div>
-                        </div>
-
-                        <div class="hobbies 3">
-                            <div class="image">
-                                <img src="/Assets/hobbies/cat.jpg" alt="Pet Cat Lover">
-                            </div>
-                            <div class="header">
-                                <div class="header-text">Pet Cat Lover</div>
-                                <div class="header-line"></div>
-                            </div>
-                            <div class="text">
-                                Having a pet cat brings unmatched companionship and joy. Their purring sounds, curious nature, and loving gestures make life so much brighter. They offer emotional comfort and countless playful memories.
-                            </div>
-                        </div>
-
-                        <div class="hobbies 4">
-                            <div class="image">
-                                <img src="/Assets/hobbies/coding.jpg" alt="Programming">
-                            </div>
-                            <div class="header">
-                                <div class="header-text">Programming</div>
-                                <div class="header-line"></div>
-                            </div>
-                            <div class="text">
-                                Programming is more than just writing code—it's a powerful tool that allows me to bring my ideas to life, solve real-world problems, and continuously learn and grow. Every line of code is a step toward innovation and creativity.
+                            <div class="cta">
+                                <button class="btn" onclick="window.location.href='#preorder'">Pre-order</button>
+                                <button class="ghost" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})">Sample</button>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Second Row -->
-                    <div class="row second">
-                        <div class="hobbies 5">
-                            <div class="image">
-                                <img src="/Assets/hobbies/books_reading_tea_212048_1280x1024.jpg" alt="Reading Books">
-                            </div>
-                            <div class="header">
-                                <div class="header-text">Reading Books</div>
-                                <div class="header-line"></div>
-                            </div>
-                            <div class="text">
-                                Reading books opens up a universe of knowledge, emotions, and imagination. From fiction to self-development, every book enriches my thinking, improves my communication, and expands my perspectives.
-                            </div>
+                    <!-- Book 2 -->
+                    <div class="book-card">
+                        <div class="cover">
+                            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1200&auto=format&fit=crop&crop=entropy" alt="Book cover">
+                            <div class="title-badge">Upcoming — 2025 Release</div>
                         </div>
-
-                        <div class="hobbies 6">
-                            <div class="image">
-                                <img src="/Assets/hobbies/gymdesign.webp" alt="Fitness and Gym">
+                        <div class="meta">
+                            <h1>Future of IoT in Bangladesh</h1>
+                            <p class="small">Exploring the potential and challenges of IoT technology in Bangladesh's unique context.</p>
+                            <div class="tags">
+                                <div class="tag">IoT</div>
+                                <div class="tag">Bangladesh</div>
+                                <div class="tag">Technology</div>
                             </div>
-                            <div class="header">
-                                <div class="header-text">Fitness & Gym</div>
-                                <div class="header-line"></div>
-                            </div>
-                            <div class="text">
-                                Staying fit is crucial for a healthy mind and body. Gym workouts keep me energetic, build discipline, and boost mental resilience. It’s not just about physical appearance but about feeling confident and strong every day.
-                            </div>
-                        </div>
-
-                        <div class="hobbies 7">
-                            <div class="image">
-                                <img src="/Assets/hobbies/photography-logo-png-logo-png-2.png" alt="Photography">
-                            </div>
-                            <div class="header">
-                                <div class="header-text">Photography</div>
-                                <div class="header-line"></div>
-                            </div>
-                            <div class="text">
-                                Photography allows me to capture the beauty of the world through my lens. It's a creative outlet where I can immortalize moments, whether they are landscapes, people, or unique scenes, forever preserving them.
-                            </div>
-                        </div>
-
-                        <div class="hobbies 8">
-                            <div class="image">
-                                <img src="/Assets/hobbies/images.jpeg" alt="Watch Movie">
-                            </div>
-                            <div class="header">
-                                <div class="header-text">Watch Movie</div>
-                                <div class="header-line"></div>
-                            </div>
-                            <div class="text">
-                                Watching movies is an immersive experience that lets me explore different worlds, cultures, and perspectives. It’s a great way to relax and get lost in compelling stories, characters, and emotions.
+                            <div class="cta">
+                                <button class="btn" onclick="window.location.href='#preorder'">Pre-order</button>
+                                <button class="ghost" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})">Sample</button>
                             </div>
                         </div>
                     </div>
 
+                    <!-- Book 3 -->
+                    <div class="book-card">
+                        <div class="cover">
+                            <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=1200&auto=format&fit=crop&crop=entropy" alt="Book cover">
+                            <div class="title-badge">Upcoming — 2026 Release</div>
+                        </div>
+                        <div class="meta">
+                            <h1>Green Computing: Building a Sustainable Future</h1>
+                            <p class="small">Strategies for environmentally responsible computing and sustainable technology practices.</p>
+                            <div class="tags">
+                                <div class="tag">Sustainability</div>
+                                <div class="tag">Technology</div>
+                                <div class="tag">Environment</div>
+                            </div>
+                            <div class="cta">
+                                <button class="btn" onclick="window.location.href='#preorder'">Pre-order</button>
+                                <button class="ghost" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})">Sample</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Book 4 -->
+                    <div class="book-card">
+                        <div class="cover">
+                            <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=1200&auto=format&fit=crop&crop=entropy" alt="Book cover">
+                            <div class="title-badge">Upcoming — 2026 Release</div>
+                        </div>
+                        <div class="meta">
+                            <h1>Quantum Cryptography: The Future of Secure Communication</h1>
+                            <p class="small">Understanding quantum cryptography and its implications for future secure communications.</p>
+                            <div class="tags">
+                                <div class="tag">Cryptography</div>
+                                <div class="tag">Quantum</div>
+                                <div class="tag">Security</div>
+                            </div>
+                            <div class="cta">
+                                <button class="btn" onclick="window.location.href='#preorder'">Pre-order</button>
+                                <button class="ghost" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})">Sample</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row 2 -->
+                    <!-- Book 5 -->
+                    <div class="book-card">
+                        <div class="cover">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop&crop=entropy" alt="Book cover">
+                            <div class="title-badge">Upcoming — 2025 Release</div>
+                        </div>
+                        <div class="meta">
+                            <h1>Data-Driven Decision Making</h1>
+                            <p class="small">Practical approaches to leveraging data for strategic business decisions.</p>
+                            <div class="tags">
+                                <div class="tag">Data Science</div>
+                                <div class="tag">Business</div>
+                                <div class="tag">Analytics</div>
+                            </div>
+                            <div class="cta">
+                                <button class="btn" onclick="window.location.href='#preorder'">Pre-order</button>
+                                <button class="ghost" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})">Sample</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Book 6 -->
+                    <div class="book-card">
+                        <div class="cover">
+                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop&crop=entropy" alt="Book cover">
+                            <div class="title-badge">Upcoming — 2026 Release</div>
+                        </div>
+                        <div class="meta">
+                            <h1>The AI Product Manager</h1>
+                            <p class="small">Essential skills for managing AI-powered products and teams.</p>
+                            <div class="tags">
+                                <div class="tag">AI</div>
+                                <div class="tag">Product Management</div>
+                                <div class="tag">Leadership</div>
+                            </div>
+                            <div class="cta">
+                                <button class="btn" onclick="window.location.href='#preorder'">Pre-order</button>
+                                <button class="ghost" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})">Sample</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Book 7 -->
+                    <div class="book-card">
+                        <div class="cover">
+                            <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=1200&auto=format&fit=crop&crop=entropy" alt="Book cover">
+                            <div class="title-badge">Upcoming — 2025 Release</div>
+                        </div>
+                        <div class="meta">
+                            <h1>Startup Funding in Emerging Markets</h1>
+                            <p class="small">Navigating the unique challenges of raising capital in developing economies.</p>
+                            <div class="tags">
+                                <div class="tag">Startups</div>
+                                <div class="tag">Funding</div>
+                                <div class="tag">Emerging Markets</div>
+                            </div>
+                            <div class="cta">
+                                <button class="btn" onclick="window.location.href='#preorder'">Pre-order</button>
+                                <button class="ghost" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})">Sample</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Book 8 -->
+                    <div class="book-card">
+                        <div class="cover">
+                            <img src="https://images.unsplash.com/photo-1552664688-cf412ec27db2?q=80&w=1200&auto=format&fit=crop&crop=entropy" alt="Book cover">
+                            <div class="title-badge">Upcoming — 2026 Release</div>
+                        </div>
+                        <div class="meta">
+                            <h1>Blockchain Beyond Cryptocurrency</h1>
+                            <p class="small">Practical applications of blockchain technology across industries.</p>
+                            <div class="tags">
+                                <div class="tag">Blockchain</div>
+                                <div class="tag">Technology</div>
+                                <div class="tag">Innovation</div>
+                            </div>
+                            <div class="cta">
+                                <button class="btn" onclick="window.location.href='#preorder'">Pre-order</button>
+                                <button class="ghost" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})">Sample</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row 3 -->
+                    <!-- Book 9 -->
+                    <div class="book-card">
+                        <div class="cover">
+                            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=1200&auto=format&fit=crop&crop=entropy" alt="Book cover">
+                            <div class="title-badge">Upcoming — 2025 Release</div>
+                        </div>
+                        <div class="meta">
+                            <h1>Remote Team Excellence</h1>
+                            <p class="small">Building and managing high-performing distributed teams.</p>
+                            <div class="tags">
+                                <div class="tag">Remote Work</div>
+                                <div class="tag">Management</div>
+                                <div class="tag">Productivity</div>
+                            </div>
+                            <div class="cta">
+                                <button class="btn" onclick="window.location.href='#preorder'">Pre-order</button>
+                                <button class="ghost" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})">Sample</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Book 10 -->
+                    <div class="book-card">
+                        <div class="cover">
+                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop&crop=entropy" alt="Book cover">
+                            <div class="title-badge">Upcoming — 2026 Release</div>
+                        </div>
+                        <div class="meta">
+                            <h1>Ethical Tech Leadership</h1>
+                            <p class="small">Navigating the moral complexities of technology leadership in the digital age.</p>
+                            <div class="tags">
+                                <div class="tag">Ethics</div>
+                                <div class="tag">Leadership</div>
+                                <div class="tag">Technology</div>
+                            </div>
+                            <div class="cta">
+                                <button class="btn" onclick="window.location.href='#preorder'">Pre-order</button>
+                                <button class="ghost" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})">Sample</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Book 11 -->
+                    <div class="book-card">
+                        <div class="cover">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop&crop=entropy" alt="Book cover">
+                            <div class="title-badge">Upcoming — 2025 Release</div>
+                        </div>
+                        <div class="meta">
+                            <h1>Digital Transformation Roadmap</h1>
+                            <p class="small">A step-by-step guide to successfully implementing digital transformation in organizations.</p>
+                            <div class="tags">
+                                <div class="tag">Digital Transformation</div>
+                                <div class="tag">Strategy</div>
+                                <div class="tag">Innovation</div>
+                            </div>
+                            <div class="cta">
+                                <button class="btn" onclick="window.location.href='#preorder'">Pre-order</button>
+                                <button class="ghost" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})">Sample</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Book 12 -->
+                    <div class="book-card">
+                        <div class="cover">
+                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop&crop=entropy" alt="Book cover">
+                            <div class="title-badge">Upcoming — 2026 Release</div>
+                        </div>
+                        <div class="meta">
+                            <h1>Future of Work in AI Era</h1>
+                            <p class="small">How artificial intelligence is reshaping careers, skills, and workplace dynamics.</p>
+                            <div class="tags">
+                                <div class="tag">Future of Work</div>
+                                <div class="tag">AI</div>
+                                <div class="tag">Career Development</div>
+                            </div>
+                            <div class="cta">
+                                <button class="btn" onclick="window.location.href='#preorder'">Pre-order</button>
+                                <button class="ghost" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})">Sample</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- Signup Section -->
+                <section class="signup-section">
+                    <h2 style="font-family:Merriweather,serif;margin-bottom:12px;color:#e6eef8;">Stay Updated</h2>
+                    <p class="sub">Get notified when these books are available for pre-order or release.</p>
+                    <div class="signup" id="preorder">
+                        <input type="email" placeholder="Your email for updates" aria-label="email">
+                        <button class="btn" style="padding:10px 12px">Notify me</button>
+                    </div>
+                    <div class="small" style="margin-top:12px">No spam. Unsubscribe anytime.</div>
+                </section>
             </div>
         </main>
 
@@ -169,10 +592,9 @@
                 <div class="social"><a href="https://www.youtube.com/@junayedbinkarim" target="_blank"><i class="fa-brands fa-youtube"></i></a></div>
             </div>
         </footer>
-
     </div>
 
-     <div class="nav-touch-close" id="nav-tc-js"></div>
+    <div class="nav-touch-close" id="nav-tc-js"></div>
 
     <script type="text/javascript" src="../script/script.js"></script>
 
