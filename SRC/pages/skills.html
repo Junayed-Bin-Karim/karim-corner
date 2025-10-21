@@ -1,28 +1,456 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Career</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills - Junayed Bin Karim</title>
     <link rel="stylesheet" type="text/css" href="../style/style.css">
-    <link rel="stylesheet" type="text/css" href="../style/career.css">
     <link rel="icon" href="/Assets/favicons/favicon.png" type="image/png" sizes="32x32">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root{
+            --bg:#0f1724;
+            --card:#0b1220;
+            --muted:#94a3b8;
+            --accent:#7c3aed;
+            --glass:rgba(255,255,255,0.04);
+            --radius:16px;
+        }
+        
+        .skills-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .skills-header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding-top: 20px;
+        }
+        
+        .eyebrow {
+            font-size: 13px;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .headline {
+            font-family: Merriweather, serif;
+            font-size: 42px;
+            line-height: 1.02;
+            margin: 12px 0;
+            color: #e6eef8;
+        }
+        
+        .sub {
+            color: var(--muted);
+            font-size: 16px;
+            line-height: 1.5;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 28px;
+            margin-bottom: 80px;
+        }
+
+        .skill-card {
+            background: var(--card);
+            padding: 20px;
+            border-radius: var(--radius);
+            box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+            border: 1px solid rgba(255,255,255,0.03);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(2,6,23,0.8);
+        }
+        
+        .skill-icon {
+            width: 100%;
+            height: 120px;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            background: linear-gradient(135deg, var(--accent), #06b6d4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+        
+        .skill-icon i {
+            font-size: 2.5rem;
+            color: white;
+        }
+        
+        .skill-icon .level-badge {
+            position: absolute;
+            left: 12px;
+            top: 12px;
+            background: var(--glass);
+            backdrop-filter: blur(6px);
+            padding: 6px 10px;
+            border-radius: 10px;
+            font-weight: 600;
+            color: var(--muted);
+            font-size: 12px;
+        }
+        
+        .meta {
+            margin-top: 14px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .meta h1 {
+            font-family: Merriweather, serif;
+            font-size: 18px;
+            margin: 0 0 6px;
+            color: #e6eef8;
+        }
+        
+        .meta p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 14px;
+        }
+        
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 10px;
+        }
+        
+        .tag {
+            background: rgba(255,255,255,0.05);
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 11px;
+            color: var(--muted);
+        }
+
+        .progress-bar {
+            height: 6px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 3px;
+            margin-top: 12px;
+            overflow: hidden;
+        }
+        
+        .progress {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent), #06b6d4);
+            border-radius: 3px;
+            transition: width 0.8s ease;
+        }
+
+        .cta {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            margin-top: 14px;
+        }
+        
+        .btn {
+            background: linear-gradient(90deg, var(--accent), #06b6d4);
+            padding: 8px 12px;
+            border-radius: 10px;
+            color: #04102b;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 6px 18px rgba(124,58,237,0.18);
+            font-size: 12px;
+            flex: 1;
+        }
+        
+        .ghost {
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.06);
+            padding: 6px 10px;
+            border-radius: 10px;
+            color: var(--muted);
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .signup-section {
+            background: var(--card);
+            padding: 40px;
+            border-radius: var(--radius);
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+        
+        .signup {
+            background: rgba(255,255,255,0.02);
+            padding: 12px;
+            border-radius: 12px;
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            margin-top: 20px;
+        }
+        
+        .signup input {
+            flex: 1;
+            background: transparent;
+            border: 0;
+            outline: none;
+            color: inherit;
+            padding: 8px;
+            font-size: 14px;
+        }
+
+        .small {
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+        @media (max-width: 1200px) {
+            .skills-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        @media (max-width: 880px) {
+            .skills-container {
+                padding: 10px;
+            }
+            
+            .headline {
+                font-size: 32px;
+            }
+            
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 640px) {
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .headline {
+                font-size: 26px;
+            }
+            
+            .signup {
+                flex-direction: column;
+            }
+        }
+
+        /* Skills Header Styles */
+        .skills-header {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .skills-header .eyebrow {
+            color: var(--muted);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .skills-header .headline {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .skills-header .sub {
+            color: var(--muted);
+            font-size: 1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+
+
+/* =========================
+   Skill Card Containers
+========================= */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* exactly 4 columns */
+    justify-content: center;               /* center the grid */
+    justify-items: center;                 /* center each card */
+    align-items: center;
+    gap: 1.5rem;                           /* spacing between cards */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* =========================
+   Individual Skill Cards
+========================= */
+.skill-card {
+    background: #1c1c1c;
+    border-radius: 15px;
+    padding: 25px;
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: all 0.3s ease-in-out;
+}
+
+.skill-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+/* =========================
+   Icons and Text
+========================= */
+.skill-card i {
+    font-size: 40px;
+    color: #fff;       /* white icons */
+    margin-bottom: 15px;
+}
+
+.skill-card h3 {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+.skill-card p {
+    color: #ccc;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* =========================
+   Responsive Layout
+========================= */
+@media (max-width: 1024px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 per row on tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: 1fr; /* 1 per row on phones */
+        gap: 1rem;
+    }
+}
+
+        
+      
+
+
+
+
+.skills-container {
+    margin-bottom: 60px; /* ensures footer doesn't overlap */
+}
+
+@media (max-width: 480px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+    .skill-card {
+        max-width: 100%;
+    }
+}
+
+
+.skills-main {
+    padding-bottom: 80px; /* ensure enough space for footer */
+}
+
+.skills-container {
+    margin-bottom: 0; /* remove double spacing if footer is included elsewhere */
+}
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 28px;
+    justify-content: center; /* center the grid in container */
+}
+@media (max-width: 480px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .skill-card {
+        max-width: 100%;
+        padding: 20px; /* reduce padding for smaller screen */
+    }
+
+    .skill-icon {
+        height: 90px; /* smaller icon height */
+    }
+
+    .skill-icon i {
+        font-size: 2rem; /* smaller icon size */
+    }
+
+    .meta h1 {
+        font-size: 1rem; /* reduce heading size */
+    }
+
+    .meta p.small {
+        font-size: 0.85rem; /* easier reading */
+    }
+
+    .cta button {
+        width: 100%; /* stack buttons fully */
+        font-size: 0.9rem;
+    }
+
+    .signup input,
+    .signup .btn {
+        width: 100%; /* full width form inputs/buttons */
+    }
+}
+
+
+        
+    </style>
 </head>
 
 <body>
+
     <header class="header" id="header">
         <a href="../../index.html" class="logo"><span class="main-icon"></span><span>Junayed</span></a>
+
         <div class="navbar">
             <a href="/index.html">Home</a>
-            <a href="./skills.html">Skills</a>
+            <a href="./skills.html" class="active">Skills</a>
             <a href="./education.html">Education</a>
             <a href="./gallery.html">Gallery</a>
-            <a href="./career.html" class="active">Career</a>
+            <a href="./career.html">Career</a>
             <a href="./hobbies.html">Books</a>
             <a href="./testimonials.html">Testimonials</a>
         </div>
+
         <div class="main">
             <a href="contact.html" class="user main-items"><i class="fas fa-envelope cm-icon"></i>Contact Me</a>
             <div class="main-items menu-icon-container" id="menu-icon-js">
@@ -32,97 +460,808 @@
     </header>
 
     <div class="page">
-        <main class="career-main">
-            <div class="career-section">
-                <!-- New Skills Section -->
-               
-                        
-                        <!-- Soft Skills -->
-                        <div class="skills-category soft-skills">
-                            <h3 class="category-title">Soft Skills</h3>
-                            <div class="soft-skills-container">
-                                <div class="soft-skill-item">
-                                    <div class="soft-skill-icon">
-                                        <i class="fas fa-comments"></i>
-                                    </div>
-                                    <div class="soft-skill-content">
-                                        <h4>Communication</h4>
-                                        <p>Effective verbal and written communication with technical and non-technical stakeholders</p>
-                                    </div>
-                                </div>
-                                <div class="soft-skill-item">
-                                    <div class="soft-skill-icon">
-                                        <i class="fas fa-users"></i>
-                                    </div>
-                                    <div class="soft-skill-content">
-                                        <h4>Team Collaboration</h4>
-                                        <p>Working effectively in diverse teams to achieve common goals</p>
-                                    </div>
-                                </div>
-                                <div class="soft-skill-item">
-                                    <div class="soft-skill-icon">
-                                        <i class="fas fa-lightbulb"></i>
-                                    </div>
-                                    <div class="soft-skill-content">
-                                        <h4>Problem Solving</h4>
-                                        <p>Analytical thinking and creative solutions for complex challenges</p>
-                                    </div>
-                                </div>
-                                <div class="soft-skill-item">
-                                    <div class="soft-skill-icon">
-                                        <i class="fas fa-tasks"></i>
-                                    </div>
-                                    <div class="soft-skill-content">
-                                        <h4>Project Management</h4>
-                                        <p>Planning, organizing, and managing resources to complete projects successfully</p>
-                                    </div>
-                                </div>
-                                <div class="soft-skill-item">
-                                    <div class="soft-skill-icon">
-                                        <i class="fas fa-brain"></i>
-                                    </div>
-                                    <div class="soft-skill-content">
-                                        <h4>Critical Thinking</h4>
-                                        <p>Objective analysis and evaluation of issues to form judgments</p>
-                                    </div>
-                                </div>
-                                <div class="soft-skill-item">
-                                    <div class="soft-skill-icon">
-                                        <i class="fas fa-clock"></i>
-                                    </div>
-                                    <div class="soft-skill-content">
-                                        <h4>Time Management</h4>
-                                        <p>Efficiently organizing and prioritizing tasks to maximize productivity</p>
-                                    </div>
-                                </div>
-                                <div class="soft-skill-item">
-                                    <div class="soft-skill-icon">
-                                        <i class="fas fa-handshake"></i>
-                                    </div>
-                                    <div class="soft-skill-content">
-                                        <h4>Leadership</h4>
-                                        <p>Guiding and motivating team members to achieve objectives</p>
-                                    </div>
-                                </div>
-                                <div class="soft-skill-item">
-                                    <div class="soft-skill-icon">
-                                        <i class="fas fa-sync-alt"></i>
-                                    </div>
-                                    <div class="soft-skill-content">
-                                        <h4>Adaptability</h4>
-                                        <p>Adjusting to new conditions and technologies quickly and effectively</p>
-                                    </div>
-                                </div>
+        <main class="skills-main">
+            <div class="skills-container">
+                <!-- Header -->
+                <section class="skills-header">
+
+                    <div class="eyebrow" style="color: black;">Technical & Professional</div>
+                    <h1 class="headline">My Skills & Expertise</h1>
+<p class="sub" style="color: black;">
+    A comprehensive collection of technical and professional skills acquired through continuous learning and practical experience.
+</p>
+                </section>
+
+                <!-- Skills Grid - 3 rows of 4 skills each -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+                <div class="skills-grid">
+                    <!-- Row 1 -->
+                    <!-- Skill 1 -->
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fab fa-python"></i>
+                            <div class="level-badge">Expert</div>
+                        </div>
+                        <div class="meta">
+                            <h1>Python Development</h1>
+                            <p class="small">Advanced Python programming for web development, data analysis, and automation.</p>
+                            <div class="tags">
+                                <div class="tag">Django</div>
+                                <div class="tag">Flask</div>
+                                <div class="tag">Pandas</div>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 95%"></div>
+                            </div>
+                            <div class="cta">
+                                <button class="btn" onclick="window.location.href='#projects'">View Projects</button>
+                                <button class="ghost" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})">Certificates</button>
                             </div>
                         </div>
                     </div>
+
+                    <!-- Skill 2 -->
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fab fa-js"></i>
+                            <div class="level-badge">Expert</div>
+                        </div>
+                        <div class="meta">
+                            <h1>JavaScript & TypeScript</h1>
+                            <p class="small">Modern JavaScript development with React, Node.js, and full-stack applications.</p>
+                            <div class="tags">
+                                <div class="tag">React</div>
+                                <div class="tag">Node.js</div>
+                                <div class="tag">TypeScript</div>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 90%"></div>
+                            </div>
+                            <div class="cta">
+                                <button class="btn" onclick="window.location.href='#projects'">View Projects</button>
+                                <button class="ghost" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})">Certificates</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skill 3 -->
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-database"></i>
+                            <div class="level-badge">Advanced</div>
+                        </div>
+                        <div class="meta">
+                            <h1>Database Management</h1>
+                            <p class="small">Designing, implementing, and optimizing relational and NoSQL databases.</p>
+                            <div class="tags">
+                                <div class="tag">MySQL</div>
+                                <div class="tag">MongoDB</div>
+                                <div class="tag">PostgreSQL</div>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 85%"></div>
+                            </div>
+                            <div class="cta">
+                                <button class="btn" onclick="window.location.href='#projects'">View Projects</button>
+                                <button class="ghost" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})">Certificates</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skill 4 -->
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-cloud"></i>
+                            <div class="level-badge">Advanced</div>
+                        </div>
+                        <div class="meta">
+                            <h1>Cloud Computing</h1>
+                            <p class="small">Deploying and managing applications on AWS, Azure, and Google Cloud platforms.</p>
+                            <div class="tags">
+                                <div class="tag">AWS</div>
+                                <div class="tag">Azure</div>
+                                <div class="tag">Docker</div>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 80%"></div>
+                            </div>
+                            <div class="cta">
+                                <button class="btn" onclick="window.location.href='#projects'">View Projects</button>
+                                <button class="ghost" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})">Certificates</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row 2 -->
+                    <!-- Skill 5 -->
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-robot"></i>
+                            <div class="level-badge">Intermediate</div>
+                        </div>
+                        <div class="meta">
+                            <h1>Machine Learning</h1>
+                            <p class="small">Building and deploying ML models for predictive analytics and AI applications.</p>
+                            <div class="tags">
+                                <div class="tag">TensorFlow</div>
+                                <div class="tag">Scikit-learn</div>
+                                <div class="tag">PyTorch</div>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 75%"></div>
+                            </div>
+                            <div class="cta">
+                                <button class="btn" onclick="window.location.href='#projects'">View Projects</button>
+                                <button class="ghost" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})">Certificates</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skill 6 -->
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                            <div class="level-badge">Intermediate</div>
+                        </div>
+                        <div class="meta">
+                            <h1>Mobile Development</h1>
+                            <p class="small">Creating cross-platform mobile applications with React Native and Flutter.</p>
+                            <div class="tags">
+                                <div class="tag">React Native</div>
+                                <div class="tag">Flutter</div>
+                                <div class="tag">iOS/Android</div>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 70%"></div>
+                            </div>
+                            <div class="cta">
+                                <button class="btn" onclick="window.location.href='#projects'">View Projects</button>
+                                <button class="ghost" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})">Certificates</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skill 7 -->
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-shield-alt"></i>
+                            <div class="level-badge">Intermediate</div>
+                        </div>
+                        <div class="meta">
+                            <h1>Cybersecurity</h1>
+                            <p class="small">Implementing security best practices and protecting applications from threats.</p>
+                            <div class="tags">
+                                <div class="tag">OWASP</div>
+                                <div class="tag">Encryption</div>
+                                <div class="tag">Pen Testing</div>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 65%"></div>
+                            </div>
+                            <div class="cta">
+                                <button class="btn" onclick="window.location.href='#projects'">View Projects</button>
+                                <button class="ghost" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})">Certificates</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skill 8 -->
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-project-diagram"></i>
+                            <div class="level-badge">Advanced</div>
+                        </div>
+                        <div class="meta">
+                            <h1>DevOps & CI/CD</h1>
+                            <p class="small">Automating deployment pipelines and infrastructure management.</p>
+                            <div class="tags">
+                                <div class="tag">Jenkins</div>
+                                <div class="tag">GitHub Actions</div>
+                                <div class="tag">Kubernetes</div>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 80%"></div>
+                            </div>
+                            <div class="cta">
+                                <button class="btn" onclick="window.location.href='#projects'">View Projects</button>
+                                <button class="ghost" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})">Certificates</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row 3 -->
+                    <!-- Skill 9 -->
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-paint-brush"></i>
+                            <div class="level-badge">Intermediate</div>
+                        </div>
+                        <div class="meta">
+                            <h1>UI/UX Design</h1>
+                            <p class="small">Creating intuitive and visually appealing user interfaces and experiences.</p>
+                            <div class="tags">
+                                <div class="tag">Figma</div>
+                                <div class="tag">Adobe XD</div>
+                                <div class="tag">Wireframing</div>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 70%"></div>
+                            </div>
+                            <div class="cta">
+                                <button class="btn" onclick="window.location.href='#projects'">View Projects</button>
+                                <button class="ghost" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})">Certificates</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skill 10 -->
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-chart-line"></i>
+                            <div class="level-badge">Advanced</div>
+                        </div>
+                        <div class="meta">
+                            <h1>Data Analysis</h1>
+                            <p class="small">Extracting insights from data using statistical analysis and visualization tools.</p>
+                            <div class="tags">
+                                <div class="tag">Tableau</div>
+                                <div class="tag">Power BI</div>
+                                <div class="tag">SQL</div>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 85%"></div>
+                            </div>
+                            <div class="cta">
+                                <button class="btn" onclick="window.location.href='#projects'">View Projects</button>
+                                <button class="ghost" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})">Certificates</button>
+                            </div>
+                        </div>
+                    </div>
+
+                  
+
+    <!-- Skill 11 -->
+    <div class="skill-card">
+        <div class="skill-icon">
+            <i class="fas fa-code"></i>
+            <div class="level-badge">Expert</div>
+        </div>
+        <div class="meta">
+            <h1>Data Structures & Algorithms</h1>
+            <p class="small">Advanced problem-solving with complex algorithms and efficient data structures.</p>
+            <div class="tags">
+                <div class="tag">Arrays</div>
+                <div class="tag">Trees</div>
+                <div class="tag">Graphs</div>
+            </div>
+            <div class="progress-bar">
+                <div class="progress" style="width: 90%"></div>
+            </div>
+            <div class="cta">
+                <button class="btn" onclick="window.location.href='#projects'">View Projects</button>
+                <button class="ghost" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})">Certificates</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Skill 12 -->
+    <div class="skill-card">
+        <div class="skill-icon">
+            <i class="fas fa-network-wired"></i>
+            <div class="level-badge">Advanced</div>
+        </div>
+        <div class="meta">
+            <h1>Computer Networks</h1>
+            <p class="small">TCP/IP protocols, network security, and distributed systems architecture.</p>
+            <div class="tags">
+                <div class="tag">TCP/IP</div>
+                <div class="tag">HTTP/HTTPS</div>
+                <div class="tag">DNS</div>
+            </div>
+            <div class="progress-bar">
+                <div class="progress" style="width: 85%"></div>
+            </div>
+            <div class="cta">
+                <button class="btn" onclick="window.location.href='#projects'">View Projects</button>
+                <button class="ghost" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})">Certificates</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Row 4 - Technical Skills -->
+    <!-- Skill 13 -->
+    <div class="skill-card">
+        <div class="skill-icon">
+            <i class="fas fa-desktop"></i>
+            <div class="level-badge">Advanced</div>
+        </div>
+        <div class="meta">
+            <h1>Operating Systems</h1>
+            <p class="small">Process management, memory allocation, and system architecture fundamentals.</p>
+            <div class="tags">
+                <div class="tag">Linux</div>
+                <div class="tag">Windows</div>
+                <div class="tag">Kernel</div>
+            </div>
+            <div class="progress-bar">
+                <div class="progress" style="width: 82%"></div>
+            </div>
+            <div class="cta">
+                <button class="btn" onclick="window.location.href='#projects'">View Projects</button>
+                <button class="ghost" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})">Certificates</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Skill 14 -->
+    <div class="skill-card">
+        <div class="skill-icon">
+            <i class="fas fa-robot"></i>
+            <div class="level-badge">Intermediate</div>
+        </div>
+        <div class="meta">
+            <h1>Artificial Intelligence</h1>
+            <p class="small">Machine learning algorithms, neural networks, and AI model development.</p>
+            <div class="tags">
+                <div class="tag">ML</div>
+                <div class="tag">Neural Networks</div>
+                <div class="tag">NLP</div>
+            </div>
+            <div class="progress-bar">
+                <div class="progress" style="width: 75%"></div>
+            </div>
+            <div class="cta">
+                <button class="btn" onclick="window.location.href='#projects'">View Projects</button>
+                <button class="ghost" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})">Certificates</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Skill 15 -->
+    <div class="skill-card">
+        <div class="skill-icon">
+            <i class="fas fa-microchip"></i>
+            <div class="level-badge">Intermediate</div>
+        </div>
+        <div class="meta">
+            <h1>Computer Architecture</h1>
+            <p class="small">CPU design, memory hierarchy, and hardware-software interaction.</p>
+            <div class="tags">
+                <div class="tag">CPU</div>
+                <div class="tag">Memory</div>
+                <div class="tag">Assembly</div>
+            </div>
+            <div class="progress-bar">
+                <div class="progress" style="width: 70%"></div>
+            </div>
+            <div class="cta">
+                <button class="btn" onclick="window.location.href='#projects'">View Projects</button>
+                <button class="ghost" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})">Certificates</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Skill 16 -->
+    <div class="skill-card">
+        <div class="skill-icon">
+            <i class="fas fa-cube"></i>
+            <div class="level-badge">Advanced</div>
+        </div>
+        <div class="meta">
+            <h1>Software Engineering</h1>
+            <p class="small">SDLC methodologies, design patterns, and software architecture principles.</p>
+            <div class="tags">
+                <div class="tag">OOP</div>
+                <div class="tag">Design Patterns</div>
+                <div class="tag">Agile</div>
+            </div>
+            <div class="progress-bar">
+                <div class="progress" style="width: 85%"></div>
+            </div>
+            <div class="cta">
+                <button class="btn" onclick="window.location.href='#projects'">View Projects</button>
+                <button class="ghost" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})">Certificates</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Row 5 - Technical Skills -->
+    <!-- Skill 17 -->
+    <div class="skill-card">
+        <div class="skill-icon">
+            <i class="fas fa-server"></i>
+            <div class="level-badge">Intermediate</div>
+        </div>
+        <div class="meta">
+            <h1>Distributed Systems</h1>
+            <p class="small">Scalable system design, distributed computing, and consensus algorithms.</p>
+            <div class="tags">
+                <div class="tag">Scalability</div>
+                <div class="tag">Consensus</div>
+                <div class="tag">Microservices</div>
+            </div>
+            <div class="progress-bar">
+                <div class="progress" style="width: 72%"></div>
+            </div>
+            <div class="cta">
+                <button class="btn" onclick="window.location.href='#projects'">View Projects</button>
+                <button class="ghost" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})">Certificates</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Skill 18 -->
+    <div class="skill-card">
+        <div class="skill-icon">
+            <i class="fas fa-cogs"></i>
+            <div class="level-badge">Intermediate</div>
+        </div>
+        <div class="meta">
+            <h1>Compiler Design</h1>
+            <p class="small">Lexical analysis, parsing, code optimization, and language processing.</p>
+            <div class="tags">
+                <div class="tag">Parsing</div>
+                <div class="tag">Optimization</div>
+                <div class="tag">Lexical</div>
+            </div>
+            <div class="progress-bar">
+                <div class="progress" style="width: 68%"></div>
+            </div>
+            <div class="cta">
+                <button class="btn" onclick="window.location.href='#projects'">View Projects</button>
+                <button class="ghost" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})">Certificates</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Skill 19 -->
+    <div class="skill-card">
+        <div class="skill-icon">
+            <i class="fas fa-paint-brush"></i>
+            <div class="level-badge">Intermediate</div>
+        </div>
+        <div class="meta">
+            <h1>Computer Graphics</h1>
+            <p class="small">2D/3D rendering, visualization techniques, and graphic algorithms.</p>
+            <div class="tags">
+                <div class="tag">Rendering</div>
+                <div class="tag">3D</div>
+                <div class="tag">Visualization</div>
+            </div>
+            <div class="progress-bar">
+                <div class="progress" style="width: 65%"></div>
+            </div>
+            <div class="cta">
+                <button class="btn" onclick="window.location.href='#projects'">View Projects</button>
+                <button class="ghost" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})">Certificates</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Skill 20 -->
+    <div class="skill-card">
+        <div class="skill-icon">
+            <i class="fas fa-microchip"></i>
+            <div class="level-badge">Beginner</div>
+        </div>
+        <div class="meta">
+            <h1>Embedded Systems</h1>
+            <p class="small">Microcontroller programming, real-time systems, and hardware interfacing.</p>
+            <div class="tags">
+                <div class="tag">Microcontrollers</div>
+                <div class="tag">Real-time</div>
+                <div class="tag">Hardware</div>
+            </div>
+            <div class="progress-bar">
+                <div class="progress" style="width: 60%"></div>
+            </div>
+            <div class="cta">
+                <button class="btn" onclick="window.location.href='#projects'">View Projects</button>
+                <button class="ghost" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})">Certificates</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Row 6 - Technical Skills -->
+    <!-- Skill 21 -->
+    <div class="skill-card">
+        <div class="skill-icon">
+            <i class="fas fa-atom"></i>
+            <div class="level-badge">Beginner</div>
+        </div>
+        <div class="meta">
+            <h1>Quantum Computing</h1>
+            <p class="small">Quantum algorithms, qubit manipulation, and quantum information theory.</p>
+            <div class="tags">
+                <div class="tag">Qubits</div>
+                <div class="tag">Algorithms</div>
+                <div class="tag">Quantum</div>
+            </div>
+            <div class="progress-bar">
+                <div class="progress" style="width: 55%"></div>
+            </div>
+            <div class="cta">
+                <button class="btn" onclick="window.location.href='#projects'">View Projects</button>
+                <button class="ghost" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})">Certificates</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+<!-- Skill 11 -->
+<div class="skill-card">
+    <div class="skill-icon">
+        <i class="fas fa-brain"></i>
+        <div class="level-badge">Expert</div>
+    </div>
+    <div class="meta">
+        <h1>Critical Thinking</h1>
+        <p class="small">Analytical reasoning, logical analysis, and systematic problem-solving approaches.</p>
+        <div class="tags">
+            <div class="tag">Analysis</div>
+            <div class="tag">Logic</div>
+            <div class="tag">Evaluation</div>
+        </div>
+        <div class="progress-bar">
+            <div class="progress" style="width: 90%"></div>
+        </div>
+        <div class="cta">
+            <button class="btn" onclick="window.location.href='#projects'">View Projects</button>
+            <button class="ghost" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})">Certificates</button>
+        </div>
+    </div>
+</div>
+
+<!-- Skill 12 -->
+<div class="skill-card">
+    <div class="skill-icon">
+        <i class="fas fa-clock"></i>
+        <div class="level-badge">Advanced</div>
+    </div>
+    <div class="meta">
+        <h1>Time Management</h1>
+        <p class="small">Efficient task prioritization, deadline management, and productivity optimization.</p>
+        <div class="tags">
+            <div class="tag">Planning</div>
+            <div class="tag">Prioritization</div>
+            <div class="tag">Efficiency</div>
+        </div>
+        <div class="progress-bar">
+            <div class="progress" style="width: 85%"></div>
+        </div>
+        <div class="cta">
+            <button class="btn" onclick="window.location.href='#projects'">View Projects</button>
+            <button class="ghost" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})">Certificates</button>
+        </div>
+    </div>
+</div>
+
+<!-- Skill 13 -->
+<div class="skill-card">
+    <div class="skill-icon">
+        <i class="fas fa-sync-alt"></i>
+        <div class="level-badge">Expert</div>
+    </div>
+    <div class="meta">
+        <h1>Adaptability</h1>
+        <p class="small">Quick learning, flexibility in changing environments, and embracing new technologies.</p>
+        <div class="tags">
+            <div class="tag">Flexibility</div>
+            <div class="tag">Learning</div>
+            <div class="tag">Resilience</div>
+        </div>
+        <div class="progress-bar">
+            <div class="progress" style="width: 88%"></div>
+        </div>
+        <div class="cta">
+            <button class="btn" onclick="window.location.href='#projects'">View Projects</button>
+            <button class="ghost" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})">Certificates</button>
+        </div>
+    </div>
+</div>
+
+<!-- Skill 14 -->
+<div class="skill-card">
+    <div class="skill-icon">
+        <i class="fas fa-users"></i>
+        <div class="level-badge">Advanced</div>
+    </div>
+    <div class="meta">
+        <h1>Team Collaboration</h1>
+        <p class="small">Effective teamwork, cross-functional coordination, and group project management.</p>
+        <div class="tags">
+            <div class="tag">Teamwork</div>
+            <div class="tag">Coordination</div>
+            <div class="tag">Communication</div>
+        </div>
+        <div class="progress-bar">
+            <div class="progress" style="width: 87%"></div>
+        </div>
+        <div class="cta">
+            <button class="btn" onclick="window.location.href='#projects'">View Projects</button>
+            <button class="ghost" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})">Certificates</button>
+        </div>
+    </div>
+</div>
+
+<!-- Skill 15 -->
+<div class="skill-card">
+    <div class="skill-icon">
+        <i class="fas fa-heart"></i>
+        <div class="level-badge">Intermediate</div>
+    </div>
+    <div class="meta">
+        <h1>Emotional Intelligence</h1>
+        <p class="small">Self-awareness, empathy, and effective interpersonal relationship management.</p>
+        <div class="tags">
+            <div class="tag">Empathy</div>
+            <div class="tag">Self-awareness</div>
+            <div class="tag">Relationships</div>
+        </div>
+        <div class="progress-bar">
+            <div class="progress" style="width: 78%"></div>
+        </div>
+        <div class="cta">
+            <button class="btn" onclick="window.location.href='#projects'">View Projects</button>
+            <button class="ghost" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})">Certificates</button>
+        </div>
+    </div>
+</div>
+
+<!-- Skill 16 -->
+<div class="skill-card">
+    <div class="skill-icon">
+        <i class="fas fa-handshake"></i>
+        <div class="level-badge">Advanced</div>
+    </div>
+    <div class="meta">
+        <h1>Conflict Resolution</h1>
+        <p class="small">Mediation, problem-solving, and maintaining positive team dynamics.</p>
+        <div class="tags">
+            <div class="tag">Mediation</div>
+            <div class="tag">Problem-solving</div>
+            <div class="tag">Diplomacy</div>
+        </div>
+        <div class="progress-bar">
+            <div class="progress" style="width: 82%"></div>
+        </div>
+        <div class="cta">
+            <button class="btn" onclick="window.location.href='#projects'">View Projects</button>
+            <button class="ghost" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})">Certificates</button>
+        </div>
+    </div>
+</div>
+
+<!-- Skill 17 -->
+<div class="skill-card">
+    <div class="skill-icon">
+        <i class="fas fa-lightbulb"></i>
+        <div class="level-badge">Expert</div>
+    </div>
+    <div class="meta">
+        <h1>Creativity & Innovation</h1>
+        <p class="small">Original thinking, innovative solutions, and out-of-the-box problem solving.</p>
+        <div class="tags">
+            <div class="tag">Innovation</div>
+            <div class="tag">Ideation</div>
+            <div class="tag">Design Thinking</div>
+        </div>
+        <div class="progress-bar">
+            <div class="progress" style="width: 85%"></div>
+        </div>
+        <div class="cta">
+            <button class="btn" onclick="window.location.href='#projects'">View Projects</button>
+            <button class="ghost" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})">Certificates</button>
+        </div>
+    </div>
+</div>
+
+<!-- Skill 18 -->
+<div class="skill-card">
+    <div class="skill-icon">
+        <i class="fas fa-bullhorn"></i>
+        <div class="level-badge">Intermediate</div>
+    </div>
+    <div class="meta">
+        <h1>Public Speaking</h1>
+        <p class="small">Confident presentation delivery, audience engagement, and effective communication.</p>
+        <div class="tags">
+            <div class="tag">Presentation</div>
+            <div class="tag">Confidence</div>
+            <div class="tag">Engagement</div>
+        </div>
+        <div class="progress-bar">
+            <div class="progress" style="width: 75%"></div>
+        </div>
+        <div class="cta">
+            <button class="btn" onclick="window.location.href='#projects'">View Projects</button>
+            <button class="ghost" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})">Certificates</button>
+        </div>
+    </div>
+</div>
+
+<!-- Skill 19 -->
+<div class="skill-card">
+    <div class="skill-icon">
+        <i class="fas fa-handshake-alt"></i>
+        <div class="level-badge">Advanced</div>
+    </div>
+    <div class="meta">
+        <h1>Negotiation Skills</h1>
+        <p class="small">Win-win solutions, persuasive communication, and conflict resolution through dialogue.</p>
+        <div class="tags">
+            <div class="tag">Persuasion</div>
+            <div class="tag">Compromise</div>
+            <div class="tag">Strategy</div>
+        </div>
+        <div class="progress-bar">
+            <div class="progress" style="width: 80%"></div>
+        </div>
+        <div class="cta">
+            <button class="btn" onclick="window.location.href='#projects'">View Projects</button>
+            <button class="ghost" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})">Certificates</button>
+        </div>
+    </div>
+</div>
+
+<!-- Skill 20 -->
+<div class="skill-card">
+    <div class="skill-icon">
+        <i class="fas fa-graduation-cap"></i>
+        <div class="level-badge">Expert</div>
+    </div>
+    <div class="meta">
+        <h1>Leadership & Mentoring</h1>
+        <p class="small">Team guidance, mentorship, and inspiring others to achieve common goals.</p>
+        <div class="tags">
+            <div class="tag">Mentorship</div>
+            <div class="tag">Guidance</div>
+            <div class="tag">Inspiration</div>
+        </div>
+        <div class="progress-bar">
+            <div class="progress" style="width: 88%"></div>
+        </div>
+        <div class="cta">
+            <button class="btn" onclick="window.location.href='#projects'">View Projects</button>
+            <button class="ghost" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})">Certificates</button>
+        </div>
+    </div>
+</div>
+</div>
                 </div>
-                
-              
+            </section>
+
+             
         </main>
-        
+
         <footer class="footer">
-            <div class="left">&copy; 2025 • Junayed_Bin_Karim All Rights Reserved</div>
+            <div class="left">
+                &copy; 2025 • Junayed_Bin_Karim • All Rights Reserved
+            </div>
             <div class="right">
                 <div class="social"><a href="https://wa.me/8801893255503" target="_blank"><i class="fa-brands fa-whatsapp"></i></a></div>
                 <div class="social"><a href="https://t.me/@Junayed_Bin_Karim" target="_blank"><i class="fa-brands fa-telegram"></i></a></div>
@@ -131,8 +1270,10 @@
             </div>
         </footer>
     </div>
-    
+
     <div class="nav-touch-close" id="nav-tc-js"></div>
+
     <script type="text/javascript" src="../script/script.js"></script>
+
 </body>
 </html>
