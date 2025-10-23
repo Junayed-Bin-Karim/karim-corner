@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home Page</title>
+    <link rel="stylesheet" type="text/css" href="SRC/style/style.css">
+    <link rel="icon" href="Assets/favicons/favicon.png" type="image/png" sizes="32x32">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+   
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    
+    
+        <!-- 🟨 EmailJS -->
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+        <script type="text/javascript">
+            (function () {
+                emailjs.init("GbMzrOTXH4XXan9dR"); // Your Public API Key
+            })();
+        </script>
+    
+    <!-- AOS CSS -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+</head>
+
+
+
+<body>
+
+    <header class="header" id="header">
+        <a href="index.html" class="logo"><span class="main-icon"></span><span>Junayed</span></a>
+
+        <div class="navbar">
+            <a href="index.html" class="active">Home</a>
+            <a href="SRC/pages/skills.html">Skills</a>
+            <a href="SRC/pages/education.html">Education</a>
+            <a href="SRC/pages/gallery.html">Gallery</a>
+            <a href="SRC/pages/career.html">Career</a>
+            <a href="SRC/pages/hobbies.html">Books</a>
+            <a href="SRC/pages/testimonials.html">Testimonials</a>
+        </div>
+
+        <div class="main">
+            <a href="SRC/pages/contact.html" class="user main-items">
+                <i class="fas fa-envelope cm-icon"></i>Contact Me
+            </a>
+            <div class="main-items menu-icon-container" id="menu-icon-js">
+                <div class="bx bx-menu" id="menu-icon"></div>
+            </div>
+        </div>
+    </header>
+
+
+                <div class="page">
+                    <section class="about" id="about">
+                        <div class="about-content">
+                            <div class="column right">
+                                <img src="me.JPG" alt="Junayed Image">
+                            </div>
+                            
+            
+                <div class="column left">
+                    <div class="text">
+                        Who Is  <span id="typed" class="iAm"></span>
+                    </div>
+  
+
+
+<section id="who-is-junayed">
+
+  <p>
+    <strong>Md. Junayed Bin Karim</strong> is an entrepreneur, AI researcher, and the Founder of 
+    <strong>Junayed Academy</strong> — a modern E-Learning platform designed to make technology education 
+    practical, accessible, and transformative. His vision centers on empowering learners to solve real-world challenges 
+    through innovation, collaboration, and ethical technology.
+  </p>
+
+  <div id="more-content" class="hidden">
+    <p>
+      Junayed holds a Bachelor’s degree in <strong>Computer Science and Engineering</strong> from 
+      <strong>Daffodil International University</strong>, where his passion for 
+      <strong>Artificial Intelligence (AI)</strong>, <strong>Machine Learning (ML)</strong>, and 
+      <strong>Green Computing</strong> became the foundation of his academic and professional journey. 
+      His work explores the intersection of intelligence and sustainability — developing technologies that create both 
+      social and environmental value.
+    </p>
+
+    <p>
+      His expertise spans <strong>AI system design</strong>, <strong>web application development</strong>, and 
+      <strong>applied research</strong>. Junayed has built AI-driven solutions including problem-solving agents, 
+      search algorithms, and image classification models. In software development, his focus lies in 
+      <strong>Frontend Web Development</strong> using HTML, CSS, JavaScript, React, and Bootstrap — 
+      combining design thinking with technical precision to craft functional and inspiring digital experiences.
+    </p>
+
+    <p>
+      As a mentor and community leader, Junayed has guided over 20 university students and numerous young learners 
+      in fields such as programming, data science, and entrepreneurship. His mentoring philosophy emphasizes both 
+      skill development and mindset — fostering curiosity, confidence, and purpose in every learner.
+    </p>
+
+    <p>
+      Through <strong>Junayed Academy</strong>, he leads initiatives that merge project-based learning with emerging 
+      technologies. The academy’s programs transform complex concepts into real-world applications, emphasizing teamwork, 
+      critical thinking, and responsible innovation. Notable initiatives include the 
+      <strong>AI Hackathon 2025</strong> and nationwide online workshops connecting hundreds of learners across Bangladesh.
+    </p>
+
+    <p>
+      Junayed’s professional experience extends to scalable system architecture, deployment, and 
+      <strong>Green Computing</strong> integration. His projects emphasize efficiency, reliability, and environmental 
+      responsibility across platforms such as GitHub, Netlify, and Vercel.
+    </p>
+
+    <p>
+      Beyond technology, he advocates for <strong>mental health awareness</strong> and 
+      <strong>personal growth</strong>, believing that emotional intelligence is essential for success in both 
+      technology and life. He regularly supports students in areas like focus, motivation, and resilience — helping 
+      them grow not just as developers, but as balanced individuals.
+    </p>
+
+    <p>
+      Junayed’s achievements include securing <strong>2nd place</strong> in the Machine Learning Quiz at 
+      <strong>Dhaka University</strong>, recognition for mentorship excellence, and active participation in 
+      national-level AI and technology competitions. Each milestone reflects his mission to integrate 
+      <strong>innovation, empathy, and sustainability</strong> into every project he leads.
+    </p>
+
+    <p>
+      In essence, <strong>Md. Junayed Bin Karim</strong> represents the spirit of a lifelong learner, visionary builder, 
+      and responsible innovator — dedicated to shaping a smarter, greener, and more inclusive digital future.
+    </p>
+  </div>
+
+  <button id="read-more-btn" class="read-more-btn">Read More</button>
+</section>
+
+
+
+
+              
+                    <div class="buttons">
+                        <a href="Assets/cv/CV - JUNAYED BIN KARIM.pdf" download>Download CV</a>
+                        <a href="SRC/pages/contact.html" class="cm-button">Contact Me</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+<!-- Featured Skills -->
+<section class="featured-skills">
+    <h3>Core Competencies</h3>
+    <div class="skills-grid" id="skillsGrid">
+        <div class="skill-item"><i class="fas fa-laptop-code"></i><span>Web Development</span></div>
+        <div class="skill-item"><i class="fas fa-robot"></i><span>Machine Learning</span></div>
+        <div class="skill-item"><i class="fas fa-leaf"></i><span>Green Computing</span></div>
+        <div class="skill-item"><i class="fas fa-cloud"></i><span>Cloud Computing</span></div>
+        <div class="skill-item hidden"><i class="fas fa-database"></i><span>Database Management</span></div>
+        <div class="skill-item hidden"><i class="fas fa-network-wired"></i><span>IoT & Embedded Systems</span></div>
+        <div class="skill-item hidden"><i class="fas fa-code-branch"></i><span>Version Control (Git)</span></div>
+        <div class="skill-item hidden"><i class="fas fa-shield-alt"></i><span>Cybersecurity Basics</span></div>
+        <div class="skill-item hidden"><i class="fas fa-mobile-alt"></i><span>Mobile App Development</span></div>
+        <div class="skill-item hidden"><i class="fas fa-project-diagram"></i><span>Project Management</span></div>
+        <div class="skill-item hidden"><i class="fas fa-brain"></i><span>Artificial Intelligence</span></div>
+        <div class="skill-item hidden"><i class="fas fa-code"></i><span>Programming Fundamentals</span></div>
+    </div>
+    <button id="seeMoreSkillsBtn" class="see-more">See More</button>
+</section>
+
+
+
+
+
+
+
+
+
+
+<!-- ===== Experience Section ===== -->
+<section id="experience" class="experience-section">
+  <div class="container">
+    <h2 class="section-title scroll-animate">Work Experience</h2>
+    <div class="experience-timeline" id="experienceTimeline">
+
+      <!-- Experience 1 -->
+      <div class="experience-item scroll-animate">
+        <div class="experience-header">
+          <h3 class="job-title">UI/UX Designer & Web Developer</h3>
+          <p class="company">Freelance | <span class="location">Remote</span></p>
+          <p class="duration">Jan 2023 – Present</p>
+        </div>
+        <ul class="responsibilities">
+          <li>Designed and developed 10+ responsive websites using <strong>HTML, CSS, JavaScript, and Python</strong>.</li>
+          <li>Improved user engagement by 30% through intuitive UI/UX redesigns.</li>
+          <li>Collaborated with clients to translate business needs into functional web solutions.</li>
+        </ul>
+      </div>
+
+      <!-- Experience 2 -->
+      <div class="experience-item scroll-animate">
+        <div class="experience-header">
+          <h3 class="job-title">Machine Learning Intern</h3>
+          <p class="company">Tech Solutions Ltd. | <span class="location">Dhaka, Bangladesh</span></p>
+          <p class="duration">Jun 2023 – Dec 2023</p>
+        </div>
+        <ul class="responsibilities">
+          <li>Built and optimized <strong>CNN models</strong> for image classification with 92% accuracy.</li>
+          <li>Automated data preprocessing pipelines, reducing manual effort by 40%.</li>
+          <li>Researched energy-efficient algorithms for <strong>Green Computing</strong> applications.</li>
+        </ul>
+      </div>
+
+      <!-- Experience 3 -->
+      <div class="experience-item scroll-animate">
+        <div class="experience-header">
+          <h3 class="job-title">Founder & Volunteer</h3>
+          <p class="company">Your 1 Taka = A Child’s Smile | <span class="location">Dinajpur, Bangladesh</span></p>
+          <p class="duration">Mar 2021 – Present</p>
+        </div>
+        <ul class="responsibilities">
+          <li>Founded a donation initiative supporting <strong>500+ underprivileged children</strong>.</li>
+          <li>Organized 15+ community campaigns and fundraising events.</li>
+          <li>Managed social media outreach, growing donor base by 200%.</li>
+        </ul>
+      </div>
+
+      <!-- Hidden Experience 4 -->
+      <div class="experience-item hidden scroll-animate">
+        <div class="experience-header">
+          <h3 class="job-title">Research Assistant (AI Lab)</h3>
+          <p class="company">Daffodil International University | <span class="location">Dhaka, Bangladesh</span></p>
+          <p class="duration">Feb 2024 – Aug 2024</p>
+        </div>
+        <ul class="responsibilities">
+          <li>Assisted in developing a <strong>machine learning model</strong> for sustainable energy prediction.</li>
+          <li>Performed <strong>data collection and preprocessing</strong> from IoT sensors.</li>
+          <li>Co-authored a paper submitted to a <strong>Springer conference</strong>.</li>
+        </ul>
+      </div>
+
+      <!-- Hidden Experience 5 -->
+      <div class="experience-item hidden scroll-animate">
+        <div class="experience-header">
+          <h3 class="job-title">Event Organizer & Mentor</h3>
+          <p class="company">AI Hackathon 2025 | <span class="location">Daffodil International University</span></p>
+          <p class="duration">Jan 2025 – May 2025</p>
+        </div>
+        <ul class="responsibilities">
+          <li>Organized an inter-university AI competition with 300+ participants.</li>
+          <li>Mentored 10+ teams on <strong>machine learning and project pitching</strong>.</li>
+          <li>Secured <strong>3 corporate sponsors</strong> to fund the event.</li>
+        </ul>
+      </div>
+
+    </div>
+    <button id="seeMoreExperienceBtn" class="see-more">See More</button>
+  </div>
+</section>
+  
+ 
+
+<!-- Updated Projects Section -->
+<section class="projects-section">
+    <h2 class="section-title">My Projects</h2>
+    <div class="projects-container">
+
+        <!-- Project 5 moved to position 1 -->
+        <div class="project-card default-visible">
+            <div class="project-image">
+                <img src="Assets/projects/IoT project.png" alt="IoT Smart Garden System">
+            </div>
+            <div class="project-details">
+                <h3>Smart Garden Irrigation System</h3>
+                <p>IoT-based system that automatically waters plants based on real-time soil moisture data with Blynk app monitoring.</p>
+                <div class="project-tech">
+                    <span>IoT</span>
+                    <span>ESP8266</span>
+                    <span>C++</span>
+                    <span>Blynk</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://youtu.be/FceyhRI7mdI?si=VV6Fu4c58KPmX4Rh" target="_blank" class="live-demo">Demo Video</a>
+                    <a href="https://github.com/Junayed-Bin-Karim/IoT-Based-Smart-Garden-Irrigation-System-with-Real-Time-Monitoring-Using-Blynk-App" target="_blank" class="view-code">GitHub Code</a>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <!-- Project 4 (Junayed Academy - Visible) -->
+<div class="project-card">
+
+    <div class="project-image">
+        <img src="Assets/projects/junayed-academy.jpg" alt="Junayed Academy">
+    </div>
+
+    <div class="project-details">
+        <h3>Junayed Academy</h3>
+        <p>An online learning platform offering interactive courses, hands-on projects, and professional certificates to empower learners with industry-relevant skills. Focused on Python, Web Development, AWS, Microsoft Excel, and more.</p>
+
+        <div class="project-tech">
+            <span>Python</span>
+            <span>Web Development</span>
+            <span>AWS</span>
+            <span>Microsoft Excel</span>
+            <span>Online Learning</span>
+        </div>
+
+        <div class="project-links">
+            <a href="https://junayedacademy.netlify.app/" target="_blank" class="live-demo">Visit Site</a>
+        </div>
+    </div>
+</div>
+
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+        <!-- New Project 3 (One-two-girls-shop) -->
+        <div class="project-card default-visible">
+            <div class="project-image">
+                <img src="Assets/projects/one-two-girls-shop.png" alt="One Two Girls Shop">
+            </div>
+            <div class="project-details">
+                <h3>One Two Girls Shop</h3>
+                <p>A complete online shop built with HTML, CSS, JavaScript, and backend integration for seamless shopping experience.</p>
+                <div class="project-tech">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                    <span>Backend</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://one-two-girls-shop.netlify.app/" target="_blank" class="live-demo">Live Demo</a>
+                    <a href="https://github.com/Junayed-Bin-Karim/One-two-girls_shop" target="_blank" class="view-code">View Code</a>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+             <div class="project-card hidden-project">
+
+    <div class="project-image">
+        <img src="Assets/projects/khudhas-preview.png" alt="Khudhas Restaurant Preview">
+    </div>
+    <div class="project-details">
+        <h3>Khudhas Restaurant</h3>
+        <p>Online street food ordering system with mobile-friendly UI and easy order management.</p>
+        <div class="project-tech">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+        </div>
+        <div class="project-links">
+            <a href="https://khudhas-restaurant.vercel.app" target="_blank" class="live-demo">Live Demo</a>
+            <a href="https://github.com/Junayed-Bin-Karim/Khudhas-Restaurant" target="_blank" class="view-code">View Code</a>
+        </div>
+    </div>
+</div>
+
+
+
+
+             <div class="project-card hidden-project">
+
+    <div class="project-image">
+        <img src="Assets/projects/quickeats-preview.jpg" alt="QuickEats App Preview">
+    </div>
+    <div class="project-details">
+        <h3>QuickEats Splash Screen</h3>
+        <p>A food delivery app splash screen designed with React and TailwindCSS. Responsive and inspired by Figma UI.</p>
+        <div class="project-tech">
+            <span>React</span>
+            <span>TailwindCSS</span>
+            <span>Figma</span>
+        </div>
+        <div class="project-links">
+            <a href="https://quickeats-splash.netlify.app/" target="_blank" class="live-demo">Live Demo</a>
+            <a href="https://github.com/Junayed-Bin-Karim/quickeats-splash-screen" target="_blank" class="view-code">View Code</a>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+    <!-- Project 2 (Emotion-Aware AI Chatbot replacing ML Dashboard) -->
+             <div class="project-card hidden-project">
+
+            <div class="project-image">
+                <img src="Assets/projects/emotion-chatbot.jpg" alt="Emotion-Aware AI Chatbot">
+            </div>
+            <div class="project-details">
+                <h3>Emotion-Aware AI Chatbot</h3>
+                <p>An intelligent chatbot that understands your emotions and responds based on your mental state. Built with Streamlit and AI models.</p>
+                <div class="project-tech">
+                    <span>Python</span>
+                    <span>Streamlit</span>
+                    <span>Machine Learning</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://junayed-emotion-aware-chatbot.streamlit.app/" target="_blank" class="live-demo">Live Demo</a>
+                    <a href="https://github.com/Junayed-Bin-Karim/Emotion-Aware-Chatbot" target="_blank" class="view-code">View Code</a>
+                </div>
+            </div>
+        </div>
+
+<!-- Project 3 (Smart Resume Matcher AI replacing ML Dashboard) -->
+<div class="project-card hidden-project">
+
+    <div class="project-image">
+        <img src="Assets/projects/smart-resume-matcher.jpg" alt="Smart Resume Matcher AI">
+    </div>
+
+    <div class="project-details">
+        <h3>Smart Resume Matcher AI</h3>
+        <p>An AI-powered app that compares resumes with job descriptions and provides match scores using NLP and Machine Learning models. Built with Streamlit.</p>
+
+        <div class="project-tech">
+            <span>Python</span>
+            <span>Streamlit</span>
+            <span>NLP</span>
+            <span>Machine Learning</span>
+        </div>
+
+        <div class="project-links">
+            <a href="https://smart-resume-matcher-ai.streamlit.app/" target="_blank" class="live-demo">Live Demo</a>
+            <a href="https://github.com/Junayed-Bin-Karim/Smart-Resume-Matcher-AI" target="_blank" class="view-code">View Code</a>
+        </div>
+    </div>
+</div>
+
+
+        <!-- Project 4 stays unchanged -->
+        <div class="project-card hidden-project">
+            <div class="project-image">
+                <img src="Assets/projects/e-commerce web.png" alt="E-commerce Website">
+            </div>
+            <div class="project-details">
+                <h3>E-commerce Website</h3>
+                <p>Complete e-commerce platform with user authentication, product management, and payment integration.</p>
+                <div class="project-tech">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>Python</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://junayed-ecommerce-website.netlify.app/" target="_blank" class="live-demo">Live Demo</a>
+                    <a href="https://github.com/Junayed-Bin-Karim/eCommerce-website" target="_blank" class="view-code">View Code</a>
+                </div>
+            </div>
+        </div>
+
+        
+<!-- Project: Junayed Academy - Hidden by Default -->
+<div class="project-card hidden-project">
+
+    <div class="project-image">
+        <img src="Assets/projects/junayed academy course.png" alt="Junayed Academy Preview">
+    </div>
+
+    <div class="project-details">
+        <h3>Junayed Academy</h3>
+        <p>
+            This is a virtual learning platform. Learn practical computer and technology skills to get job opportunities.<br>
+            Get guidance and support from Junayed Bin Karim.
+        </p>
+
+        <div class="project-tech">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+        </div>
+
+        <div class="project-links">
+            <a href="https://junayed-academy.vercel.app/" target="_blank" class="live-demo">Live Demo</a>
+            <a href="https://github.com/Junayed-Bin-Karim/Junayed-Academy" target="_blank" class="view-code">View Code</a>
+        </div>
+    </div>
+</div>
+
+
+
+
+        <!-- Project 3 moved to position 7 -->
+        <div class="project-card hidden-project">
+            <div class="project-image">
+                <img src="Assets/projects/e-commerce shop.png" alt="E-commerce Shop">
+            </div>
+            <div class="project-details">
+                <h3>E-commerce Shop</h3>
+                <p>A fully responsive online store with product listings, cart functionality, and checkout process.</p>
+                <div class="project-tech">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://junayed-ecommerce-shop.netlify.app/" target="_blank" class="live-demo">Live Demo</a>
+                    <a href="https://github.com/Junayed-Bin-Karim/eCommerce-website-project" target="_blank" class="view-code">View Code</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 2 moved to position 6 -->
+        <div class="project-card hidden-project">
+            <div class="project-image">
+                <img src="Assets/projects/travel-tour.jpg" alt="Travel Tour Website">
+            </div>
+            <div class="project-details">
+                <h3>Travel Tour Website</h3>
+                <p>Interactive travel website with destinations, booking form, and modern UI/UX design.</p>
+                <div class="project-tech">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://cholojai.netlify.app/" target="_blank" class="live-demo">Live Demo</a>
+                    <a href="https://github.com/Junayed-Bin-Karim/Travel-Tour-Website" target="_blank" class="view-code">View Code</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="view-all-projects">
+        <button class="view-all-btn" id="viewAllBtn">See All Projects</button>
+    </div>
+</section>
+
+<!--Achievements-->
+
+<section class="achievements">
+    <h3 class="section-title">Recent Milestones</h3>
+    <ul class="milestones-list">
+        <li>
+            <i class="fas fa-trophy"></i>
+            <span>Won 2nd prize in ML Seminar at DIU</span>
+        </li>
+        <li>
+            <i class="fas fa-users"></i>
+            <span>Reached 1,000+ students through online courses</span>
+        </li>
+        <li>
+            <i class="fas fa-heart"></i>
+            <span>Your 1 Taka initiative helped 500+ children</span>
+        </li>
+        <!-- Added five more milestones -->
+        <li>
+            <i class="fas fa-code"></i>
+            <span>Developed and launched 6 full-stack web projects</span>
+        </li>
+        <li>
+            <i class="fas fa-robot"></i>
+            <span>Completed multiple AI and ML certification courses</span>
+        </li>
+        <li>
+            <i class="fas fa-chalkboard-teacher"></i>
+            <span>Conducted 20+ workshops on programming and AI</span>
+        </li>
+        <li>
+            <i class="fas fa-globe"></i>
+            <span>Collaborated with international tech communities</span>
+        </li>
+        <li>
+            <i class="fas fa-award"></i>
+            <span>Received recognition for contributions to social impact projects</span>
+        </li>
+    </ul>
+</section>
+
+
+
+<!--recognition-->
+
+        <section class="recognition">
+            <h2 class="section-title">Awards <span>&</span> Recognition</h2>        
+                <div class="recognition-content" id="recognitionContent">
+                    <div class="recognition-box">
+                    <img src="Assets/recognition/DIU.JPG" alt="Award 1" onclick="openModal(this)">
+                </div>
+                <div class="recognition-box">
+                    <img src="Assets/recognition/saifurs.jpg" alt="Award 1" onclick="openModal(this)">
+                </div>
+                
+                <div class="recognition-box">
+                    <img src="Assets/recognition/Dewan ICT Mirpur 1.jpg" alt="Award 3" onclick="openModal(this)">
+                </div>
+        
+                <!-- Hidden initially -->
+                 
+                
+                <div class="recognition-box hidden">
+                    <img src="Assets/recognition/HSC 2021.jpg" alt="Award 5" onclick="openModal(this)">
+                </div>
+
+                <div class="recognition-box hidden">
+                    <img src="Assets/recognition/SSC 2019.jpg" alt="Award 6" onclick="openModal(this)">
+                </div>
+
+
+                <!-- New file added (JSC) -->
+               <div class="recognition-box hidden">
+               <img src="Assets/recognition/JSC 2016.jpg" alt="JSC Certificate 7" onclick="openModal(this)">
+              </div>
+
+              <div class="recognition-box hidden">
+                    <img src="Assets/recognition/GO edu chatgpt.jpg" alt="Award 2" onclick="openModal(this)">
+                </div>
+                <div class="recognition-box hidden">
+                    <img src="Assets/recognition/goedu sobur khgan.jpg" alt="Award 4" onclick="openModal(this)">
+                </div>
+
+            </div>
+            
+        
+            <button class="see-more-btn" id="seeMoreBtn">See More</button>
+        </section>
+
+       <section class="blog-preview">
+    <h3>Recent Thoughts</h3>
+
+    <!-- Blog -->
+
+    <!-- Visible Articles -->
+    <div class="article-card">
+        <h4>Future of IoT in Bangladesh</h4>
+        <p>Exploring how smart technology can transform agriculture...</p>
+        <a href="future-of-iot-in-bangladesh.html">Read More</a>
+    </div>
+
+    <div class="article-card">
+        <h4>Green Computing: Building a Sustainable Future</h4>
+        <p>Discover how eco-friendly technology practices can reduce carbon footprints and e-waste...</p>
+        <a href="green-computing-sustainable-future.html">Read More</a>
+    </div>
+
+    <div class="article-card">
+        <h4>Quantum Cryptography: The Future of Secure Communication</h4>
+        <p>Understand how quantum mechanics can revolutionize digital security and encryption...</p>
+        <a href="quantum-cryptography-secure-communication.html">Read More</a>
+    </div>
+
+    <!-- Hidden Articles -->
+    <div class="article-card hidden">
+        <h4>AI in Education: Transforming Learning</h4>
+        <p>Explore the impact of AI tools on personalized education and learning analytics...</p>
+        <a href="ai-in-education.html">Read More</a>
+    </div>
+
+    <div class="article-card hidden">
+        <h4>Blockchain Beyond Crypto</h4>
+        <p>How blockchain technology is reshaping supply chains, healthcare, and finance...</p>
+        <a href="blockchain-beyond-crypto.html">Read More</a>
+    </div>
+
+    <!-- See More Button -->
+    <button id="seeMoreBlogBtn" class="see-more">See More</button>
+</section>
+ 
+
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const cards = document.querySelectorAll(".stat-card");
+                const observer = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.animation = "reveal 0.6s forwards";
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.1 });
+        
+                cards.forEach(card => observer.observe(card));
+            });
+        </script>
+        
+
+
+
+
+
+
+       <section id="services" class="services">
+  <h2 class="section-title">What I Offer</h2>
+
+  <div class="services-container">
+      <div class="service-card" onclick="toggleDescription(this)">
+          <div class="service-title"> Mental Health Consulting</div>
+          <div class="service-description">
+              Providing practical guidance on stress management, emotional well-being, and work-life balance.
+              Confidential, compassionate, and tailored for students and professionals.
+          </div>
+      </div>
+      
+      <div class="service-card" onclick="toggleDescription(this)">
+          <div class="service-title"> Mentorship & Coaching</div>
+          <div class="service-description">
+              Helping individuals set goals, grow confidence, and achieve career or academic success through
+              structured mentoring sessions.
+          </div>
+      </div>
+
+      <div class="service-card" onclick="toggleDescription(this)">
+          <div class="service-title"> Workshops & Webinars</div>
+          <div class="service-description">
+              Conducting awareness sessions on mental health, mindfulness, and stress resilience for 
+              student groups and organizations.
+          </div>
+      </div>
+  </div>
+</section>
+
+
+               
+        <!--footer-->
+
+
+        <footer class="footer">
+            <div class="left">
+                &copy; 2025 • Junayed_Bin_Karim • All Rights Reserved
+            </div>
+            <div class="right">
+
+                <div class="social"><a href="https://wa.me/8801893255503" target="_blank"><i class="fa-brands fa-whatsapp"></i></a></div>
+                <div class="social"><a href="https://t.me/@Junayed_Bin_Karim" target="_blank"><i class="fa-brands fa-telegram"></i></a></div>
+                <div class="social"><a href="https://www.linkedin.com/in/junayed-bin-karim/" target="_blank"><i class="fa-brands fa-linkedin"></i></a></div>
+                <div class="social"><a href="https://www.youtube.com/@junayedbinkarim" target="_blank"><i class="fa-brands fa-youtube"></i></a></div>
+
+      </div>
+        </footer>
+    </div>
+
+    <div class="nav-touch-close" id="nav-tc-js"></div>
+
+    <script type="text/javascript" src="SRC/script/script.js"></script>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#typed', {
+            strings: ["Junayed Bin Karim ?"
+            ],
+            typeSpeed: 55,
+
+        });
+    </script>
+    
+
+<!-- AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+
+
+</script>
+
+
+</body>
+
+</html>
