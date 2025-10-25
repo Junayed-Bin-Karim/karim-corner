@@ -9,334 +9,238 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <style>
-        /* Modern Career Section Styles */
-        .career-hero {
-            padding: 150px 20px 80px;
-            text-align: center;
-            background: linear-gradient(135deg, rgba(165, 42, 42, 0.1) 0%, rgba(78, 84, 200, 0.1) 100%);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .career-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none"><path d="M0,50 Q250,0 500,50 T1000,50 L1000,100 L0,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
-            background-size: cover;
-            background-position: bottom;
-            z-index: 0;
-        }
-        
-        .career-hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .career-hero h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, var(--text-color) 0%, var(--main-color) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .career-hero p {
-            font-size: 1.3rem;
-            color: var(--text-color);
-            opacity: 0.9;
-            max-width: 600px;
-            margin: 0 auto 30px;
-            line-height: 1.6;
-        }
-        
-        .career-timeline {
-            padding: 80px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .timeline-container {
-            position: relative;
-            padding: 40px 0;
-        }
-        
-        .timeline-container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 4px;
-            background: linear-gradient(to bottom, var(--main-color), #4e54c8);
-            border-radius: 10px;
-        }
-        
-        .timeline-item {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 80px;
-            position: relative;
-        }
-        
-        .timeline-item:nth-child(odd) {
-            flex-direction: row;
-        }
-        
-        .timeline-item:nth-child(even) {
-            flex-direction: row-reverse;
-        }
-        
-        .timeline-content {
-            width: 45%;
-            padding: 30px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s ease;
-            position: relative;
-        }
-        
-        .timeline-content:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-            border-color: var(--main-color);
-        }
-        
-        .timeline-item:nth-child(odd) .timeline-content::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            right: -10px;
-            transform: translateY(-50%);
-            width: 0;
-            height: 0;
-            border-top: 10px solid transparent;
-            border-bottom: 10px solid transparent;
-            border-left: 10px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .timeline-item:nth-child(even) .timeline-content::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: -10px;
-            transform: translateY(-50%);
-            width: 0;
-            height: 0;
-            border-top: 10px solid transparent;
-            border-bottom: 10px solid transparent;
-            border-right: 10px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .timeline-icon {
-            width: 70px;
-            height: 70px;
-            background: var(--main-color);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.8rem;
-            box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.1);
-            margin: 0 30px;
-            position: relative;
-            z-index: 2;
-            border: 3px solid white;
-        }
-        
-        .timeline-content h3 {
-            font-size: 1.5rem;
-            color: var(--text-color);
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
-        
-        .timeline-content .date {
-            display: inline-block;
-            padding: 5px 15px;
-            background: var(--main-color);
-            color: white;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-        
-        .timeline-content p {
-            color: var(--text-color);
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-        
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 15px;
-        }
-        
-        .skill {
-            padding: 5px 12px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 20px;
-            font-size: 0.85rem;
-            color: var(--text-color);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-        
-        .career-goals-section {
-            padding: 80px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .goals-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-            justify-content: center;
-        }
-        
-        .goal-card {
-            flex: 1;
-            min-width: 300px;
-            max-width: 500px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s ease;
-        }
-        
-        .goal-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-            border-color: var(--main-color);
-        }
-        
-        .goal-card h3 {
-            font-size: 1.8rem;
-            color: var(--text-color);
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-        
-        .goal-card h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background: var(--main-color);
-            border-radius: 3px;
-        }
-        
-        .goal-list {
-            list-style: none;
-        }
-        
-        .goal-list li {
-            position: relative;
-            padding-left: 30px;
-            margin-bottom: 15px;
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-        
-        .goal-list li::before {
-            content: '▹';
-            position: absolute;
-            left: 0;
-            color: var(--main-color);
-            font-size: 1.2rem;
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .timeline-container::before {
-                left: 30px;
-            }
-            
-            .timeline-item {
-                flex-direction: row !important;
-                justify-content: flex-start;
-                margin-bottom: 60px;
-            }
-            
-            .timeline-icon {
-                margin: 0 20px 0 0;
-                width: 60px;
-                height: 60px;
-                font-size: 1.5rem;
-            }
-            
-            .timeline-content {
-                width: calc(100% - 100px);
-            }
-            
-            .timeline-item:nth-child(odd) .timeline-content::before,
-            .timeline-item:nth-child(even) .timeline-content::before {
-                left: -10px;
-                right: auto;
-                border-right: 10px solid rgba(255, 255, 255, 0.1);
-                border-left: none;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .career-hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .career-hero p {
-                font-size: 1.1rem;
-            }
-            
-            .timeline-content {
-                padding: 20px;
-            }
-            
-            .goal-card {
-                min-width: 100%;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .career-hero {
-                padding: 120px 15px 60px;
-            }
-            
-            .career-hero h1 {
-                font-size: 2rem;
-            }
-            
-            .timeline-icon {
-                width: 50px;
-                height: 50px;
-                font-size: 1.2rem;
-            }
-            
-            .timeline-content {
-                width: calc(100% - 70px);
-            }
-        }
+       /* Modern Career Section Styles */
+.career-hero {
+    padding: 150px 20px 80px;
+    text-align: center;
+    background: linear-gradient(135deg, rgba(165, 42, 42, 0.1) 0%, rgba(78, 84, 200, 0.1) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.career-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none"><path d="M0,50 Q250,0 500,50 T1000,50 L1000,100 L0,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+    background-size: cover;
+    background-position: bottom;
+    z-index: 0;
+}
+
+.career-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.career-hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, var(--text-color) 0%, var(--main-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.career-hero p {
+    font-size: 1.3rem;
+    color: var(--text-color);
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto 30px;
+    line-height: 1.6;
+}
+
+.career-timeline {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 40px;
+}
+
+.career-timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 15px;
+    width: 2px;
+    background: var(--main-color);
+    border-radius: 2px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border: 1px solid var(--card-border);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 25px;
+    left: -30px;
+    width: 12px;
+    height: 12px;
+    background: var(--main-color);
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+.timeline-date {
+    display: inline-block;
+    padding: 5px 12px;
+    background: var(--main-color);
+    color: white;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.timeline-title {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    color: var(--text-color);
+}
+
+.timeline-company {
+    font-size: 1rem;
+    color: var(--main-color);
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.timeline-description {
+    margin-bottom: 15px;
+}
+
+.timeline-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.skill-tag {
+    padding: 4px 10px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    font-size: 0.8rem;
+    border: 1px solid var(--card-border);
+}
+
+.career-goals-section {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.goals-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+}
+
+.goal-card {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.goal-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    border-color: var(--main-color);
+}
+
+.goal-card h3 {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.goal-card h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: var(--main-color);
+    border-radius: 3px;
+}
+
+.goal-list {
+    list-style: none;
+}
+
+.goal-list li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 15px;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.goal-list li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: var(--main-color);
+    font-size: 1.2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .timeline-content {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .career-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .career-hero p {
+        font-size: 1.1rem;
+    }
+    
+    .goal-card {
+        min-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .career-hero {
+        padding: 120px 15px 60px;
+    }
+    
+    .career-hero h1 {
+        font-size: 2rem;
+    }
+}
+
     </style>
 </head>
 
@@ -413,7 +317,7 @@
                         <i class="fas fa-laptop-code"></i>
                     </div>
                     <div class="timeline-content">
-                        <span class="date">2023 - 2024</span>
+                        <span class="date">2023 - Present</span>
                         <h3>UI/UX Designer & Web Developer</h3>
                         <p>Freelance work designing and developing responsive websites using HTML, CSS, JavaScript, and Python. Improved user engagement by 30% through intuitive UI/UX redesigns.</p>
                         <div class="skills">
@@ -447,7 +351,7 @@
                         <i class="fas fa-hands-helping"></i>
                     </div>
                     <div class="timeline-content">
-                        <span class="date">Mar 2021 - 2025</span>
+                        <span class="date">Mar 2021 - Present</span>
                         <h3>Founder & Volunteer</h3>
                         <p>Your 1 Taka = A Child's Smile initiative supporting 500+ underprivileged children. Organized 15+ community campaigns and fundraising events.</p>
                         <div class="skills">
