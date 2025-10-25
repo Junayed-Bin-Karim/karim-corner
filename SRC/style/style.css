@@ -4256,6 +4256,13 @@ body, .text-row, #professional-summary p {
 
 
 
+.message-box {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
 
 
 

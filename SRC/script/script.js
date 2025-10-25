@@ -786,3 +786,9 @@ document.addEventListener("DOMContentLoaded", function() {
  function toggleDescription(card) {
         card.classList.toggle('active');
     }
+
+
+
+
+
+    
