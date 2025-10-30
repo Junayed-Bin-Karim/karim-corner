@@ -868,86 +868,81 @@ function viewDetails(awardId) {
             issuer: 'Digital Marketing Institute',
             date: 'Octoder 2025',
             description: 'Certified for outstanding performance in digital marketing strategies, SEO optimization, and social media marketing campaigns.',
-            skills: ['SEO', 'Social Media Marketing', 'Content Strategy', 'Analytics']
+            skills: ['SEO | Social Media Marketing | Content Strategy | Analytics | Email Marketing | PPC Advertising | Influencer Marketing | Affiliate Marketing | Conversion Rate Optimization (CRO) | Marketing Automation | Brand Management | Video Marketing | Mobile Marketing | Web Analytics']
         },
-        'saifurs': {
-            title: 'Saifur\'s  Excellence Award',
-            issuer: 'Saifur\'s Coaching Center',
-            date: 'Jan - May 2019',
-            description: 'Recognized for exceptional performance in Information and Communication Technology studies and practical applications.',
-            skills: ['Computer Fundamentals', 'Programming', 'Networking', 'ICT Applications']
-        },
-        'dewan-ict': {
-            title: 'Dewan ICT Excellence Award',
-            issuer: 'Dewan ICT Center, Mirpur',
-            date: 'Jan - Jun 2019',
-            description: 'Awarded 1st position for outstanding achievement in ICT training program at Mirpur branch.',
-            skills: ['Microsoft Office', 'Graphics Design', 'Web Development', 'Project Management']
-        },
+      'saifurs': {
+    title: 'Saifur\'s Excellence Award',
+    issuer: 'Saifur\'s Coaching Center',
+    date: 'Jan - May 2019',
+    description: 'Recognized for exceptional performance in English language proficiency and practical ICT applications.',
+    skills: ['English Grammar | English Writing | English Reading | English Speaking | English Listening | Vocabulary Building | Business English | Academic English | Communication Skills | Presentation Skills | ICT Applications']
+},
+
+
+       'dewan-ict': {
+    title: 'Dewan ICT Excellence Award',
+    issuer: 'Dewan ICT Center, Mirpur',
+    date: 'Jan - Jun 2019',
+    description: 'Awarded 1st position for outstanding achievement in ICT training program at Mirpur branch.',
+    skills: ['Microsoft Office | Microsoft Word | Microsoft Excel | Microsoft PowerPoint | Typing Skills | Data Entry | Internet Browsing | Email Communication | File Management | Basic Hardware Troubleshooting | Graphics Design | Web Development | Project Management']
+},
+
         'diu': {
             title: 'DU Academic Achievement',
-            issuer: 'Daffodil International University',
+            issuer: 'Dhaka University',
             date: '2025',
             description: 'Recognized for academic excellence and contribution to university projects and activities.',
-            skills: ['Academic Excellence', 'Project Work', 'Team Leadership', 'Research']
+    skills: ['Academic Excellence | Project Work | Team Leadership | Research | Artificial Intelligence (AI) | Machine Learning (ML) | Deep Learning (DL) | Natural Language Processing (NLP) | Large Language Models (LLM) | Data Analysis | Python Programming | TensorFlow | PyTorch | Computer Vision']
         },
         'hsc': {
             title: 'Higher Secondary Certificate',
             issuer: 'Bangladesh Education Board',
             date: '2021',
             description: 'Successfully completed Higher Secondary Education with excellent academic performance.',
-            skills: ['Academic Excellence', 'Science', 'Mathematics', 'Critical Thinking']
+    skills: ['Academic Excellence | Physics | Chemistry | Biology | Mathematics | English | Bangla | ICT | Economics | Accounting | Business Studies | Critical Thinking']
         },
         'ssc': {
             title: 'Secondary School Certificate',
             issuer: 'Bangladesh Education Board',
             date: '2019',
             description: 'Completed Secondary School Education with outstanding results and academic achievements.',
-            skills: ['Academic Foundation', 'Science', 'Mathematics', 'Languages']
+    skills: ['Academic Foundation | Physics | Chemistry | Biology | Mathematics | English | Bangla | ICT | Critical Thinking | Problem Solving | Analytical Skills']
         },
         'jsc': {
             title: 'Junior School Certificate',
             issuer: 'Bangladesh Education Board',
             date: '2016',
             description: 'Achieved excellent results in Junior School Certificate examination.',
-            skills: ['Basic Education', 'Foundation Studies', 'General Knowledge']
+    skills: ['Basic Education | Bangla | English | Mathematics | Science | Bangladesh & Global Studies | ICT | Religious Studies | Arts & Culture | General Knowledge | Critical Thinking']
         },
         'go-edu-chatgpt': {
             title: 'GO Edu ChatGPT Training',
             issuer: 'GO Edu Institute',
             date: '2024',
             description: 'Completed comprehensive training in ChatGPT and AI applications for educational purposes.',
-            skills: ['AI Technology', 'ChatGPT', 'Educational Tools', 'Digital Learning']
+    skills: ['AI Technology | ChatGPT | Educational Tools | Digital Learning | Prompt Engineering | Natural Language Processing (NLP) | Generative AI | Conversational AI | AI Content Creation | AI-Assisted Teaching | Machine Learning Basics | Text Summarization | Language Modeling | AI Ethics | Automation with AI']
         },
         'go-edu-sobur': {
             title: 'GO Edu Sobur Khgan Excellence',
             issuer: 'GO Edu Institute',
             date: '2024',
             description: 'Awarded for outstanding performance and dedication in educational programs.',
-            skills: ['Educational Excellence', 'Dedication', 'Leadership', 'Teaching']
+    skills: ['Educational Excellence | Dedication | Leadership | Teaching | Team Management | Strategic Planning | Mentorship | Communication Skills | Decision Making | Problem Solving']
         },
         'go-edu-teacher': {
             title: 'GO Edu Teaching Certificate',
             issuer: 'GO Edu Institute',
             date: '2025',
             description: 'Certified for teaching excellence and educational leadership in institutional programs.',
-            skills: ['Teaching Methodology', 'Educational Leadership', 'Student Mentoring', 'Curriculum Development']
+    skills: ['Teaching Methodology | Educational Leadership | Student Mentoring | Curriculum Development | Lesson Planning | Classroom Management | Assessment & Evaluation | Instructional Design | Educational Technology | Communication Skills | Critical Thinking | Collaborative Learning | Problem Solving | Motivation Techniques']
         },
         'go-edu-leadership': {
             title: 'GO Edu Leadership Excellence Certificate',
             issuer: 'GO Edu Institute',
             date: '2025',
             description: 'Certified for demonstrating exceptional teaching skills, educational leadership, and dedication to student development. This certificate recognizes outstanding performance in teaching methodology, curriculum development, and educational innovation. Awarded for excellence in pedagogical approaches and commitment to fostering learning environments.',
-            skills: [
-                'Teaching Methodology',
-                'Educational Leadership', 
-                'Student Mentoring',
-                'Curriculum Development',
-                'Classroom Management',
-                'Educational Technology',
-                'Pedagogical Skills',
-                'Student Assessment'
-            ]
+        skills: ['Leadership Mindset | Team Management | Strategic Planning | Decision Making | Problem Solving | Mentorship | Communication Skills | Motivation & Inspiration | Empowering Team Members | Taking Responsibility | Giving Credit to Team | Encouraging Innovation | Conflict Resolution | Adaptability | Emotional Intelligence']
+
         },
     };
 
