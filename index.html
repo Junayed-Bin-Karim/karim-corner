@@ -152,57 +152,246 @@
 
 
 
-        <!--recognition-->
-
-        <section class="recognition">
-            <h2 class="section-title">Awards <span>&</span> Recognition</h2>        
-                <div class="recognition-content" id="recognitionContent">
-                    <div class="recognition-box">
-                    <img src="Assets/recognition/DIU.JPG" alt="Award 1" onclick="openModal(this)">
-                </div>
-                <div class="recognition-box">
-                    <img src="Assets/recognition/saifurs.jpg" alt="Award 1" onclick="openModal(this)">
-                </div>
-                
-                <div class="recognition-box">
-                    <img src="Assets/recognition/Dewan ICT Mirpur 1.jpg" alt="Award 3" onclick="openModal(this)">
-                </div>
         
-                <!-- Hidden initially -->
-                 
-                
-                <div class="recognition-box hidden">
-                    <img src="Assets/recognition/HSC 2021.jpg" alt="Award 5" onclick="openModal(this)">
-                </div>
-
-                <div class="recognition-box hidden">
-                    <img src="Assets/recognition/SSC 2019.jpg" alt="Award 6" onclick="openModal(this)">
-                </div>
 
 
-                <!-- New file added (JSC) -->
-               <div class="recognition-box hidden">
-               <img src="Assets/recognition/JSC 2016.jpg" alt="JSC Certificate 7" onclick="openModal(this)">
-              </div>
 
-              <div class="recognition-box hidden">
-                    <img src="Assets/recognition/GO edu chatgpt.jpg" alt="Award 2" onclick="openModal(this)">
-                </div>
-                <div class="recognition-box hidden">
-                    <img src="Assets/recognition/goedu sobur khgan.jpg" alt="Award 4" onclick="openModal(this)">
-                </div>
-                <div class="recognition-box hidden">
-                    <img src="Assets/recognition/goedu-teacher.pdf" alt="Award 9" onclick="openModal(this)">
-                </div>
- <div class="recognition-box hidden">
-                    <img src="Assets/recognition/goedu sobur khgan.jpg" alt="Award 10" onclick="openModal(this)">
-                </div>
 
+<section class="recognition">
+    <h2 class="section-title">Awards <span>&</span> Recognition</h2>        
+    <div class="recognition-content" id="recognitionContent">
+        
+        <div class="recognition-box">
+            <img src="Assets/recognition/degital Market.png" alt="Digital Marketing Award" onclick="openModal(this)">
+            <div class="recognition-actions">
+                <button class="download-btn" onclick="downloadAward('digital-marketing')">
+                    <i class="fas fa-download"></i> Download
+                </button>
+                <button class="details-btn" onclick="viewDetails('digital-marketing')">
+                    <i class="fas fa-info-circle"></i> Details
+                </button>
             </div>
-            
-        
-            <button class="see-more-btn" id="seeMoreBtn">See More</button>
-        </section>
+            <div class="recognition-info">
+                <h3>Digital Marketing Excellence</h3>
+                <p>Certified Digital Marketing Specialist</p>
+            </div>
+        </div>
+
+        <div class="recognition-box">
+            <img src="Assets/recognition/saifurs.jpg" alt="Saifur's Award" onclick="openModal(this)">
+            <div class="recognition-actions">
+                <button class="download-btn" onclick="downloadAward('saifurs')">
+                    <i class="fas fa-download"></i> Download
+                </button>
+                <button class="details-btn" onclick="viewDetails('saifurs')">
+                    <i class="fas fa-info-circle"></i> Details
+                </button>
+            </div>
+            <div class="recognition-info">
+                <h3>Saifur's  Award</h3>
+                <p>Outstanding Performance in English</p>
+            </div>
+        </div>
+
+        <div class="recognition-box">
+            <img src="Assets/recognition/Dewan ICT Mirpur 1.jpg" alt="Dewan ICT Award" onclick="openModal(this)">
+            <div class="recognition-actions">
+                <button class="download-btn" onclick="downloadAward('dewan-ict')">
+                    <i class="fas fa-download"></i> Download
+                </button>
+                <button class="details-btn" onclick="viewDetails('dewan-ict')">
+                    <i class="fas fa-info-circle"></i> Details
+                </button>
+            </div>
+            <div class="recognition-info">
+                <h3>Dewan ICT Excellence</h3>
+                <p>Mirpur Branch - 1st Position</p>
+            </div>
+        </div>
+
+        <!-- Hidden boxes -->
+        <div class="recognition-box hidden">
+            <img src="Assets/recognition/DIU.JPG" alt="DIU Award" onclick="openModal(this)">
+            <div class="recognition-actions">
+                <button class="download-btn" onclick="downloadAward('diu')">
+                    <i class="fas fa-download"></i> Download
+                </button>
+                <button class="details-btn" onclick="viewDetails('diu')">
+                    <i class="fas fa-info-circle"></i> Details
+                </button>
+            </div>
+            <div class="recognition-info">
+                <h3>DU Achievement</h3>
+                <p>Dhaka University</p>
+            </div>
+        </div>
+
+        <div class="recognition-box hidden">
+            <img src="Assets/recognition/HSC 2021.jpg" alt="HSC Certificate" onclick="openModal(this)">
+            <div class="recognition-actions">
+                <button class="download-btn" onclick="downloadAward('hsc')">
+                    <i class="fas fa-download"></i> Download
+                </button>
+                <button class="details-btn" onclick="viewDetails('hsc')">
+                    <i class="fas fa-info-circle"></i> Details
+                </button>
+            </div>
+            <div class="recognition-info">
+                <h3>HSC Examination</h3>
+                <p>Higher Secondary Certificate - 2021</p>
+            </div>
+        </div>
+
+        <div class="recognition-box hidden">
+            <img src="Assets/recognition/SSC 2019.jpg" alt="SSC Certificate" onclick="openModal(this)">
+            <div class="recognition-actions">
+                <button class="download-btn" onclick="downloadAward('ssc')">
+                    <i class="fas fa-download"></i> Download
+                </button>
+                <button class="details-btn" onclick="viewDetails('ssc')">
+                    <i class="fas fa-info-circle"></i> Details
+                </button>
+            </div>
+            <div class="recognition-info">
+                <h3>SSC Examination</h3>
+                <p>Secondary School Certificate - 2019</p>
+            </div>
+        </div>
+
+        <div class="recognition-box hidden">
+            <img src="Assets/recognition/JSC 2016.jpg" alt="JSC Certificate" onclick="openModal(this)">
+            <div class="recognition-actions">
+                <button class="download-btn" onclick="downloadAward('jsc')">
+                    <i class="fas fa-download"></i> Download
+                </button>
+                <button class="details-btn" onclick="viewDetails('jsc')">
+                    <i class="fas fa-info-circle"></i> Details
+                </button>
+            </div>
+            <div class="recognition-info">
+                <h3>JSC Examination</h3>
+                <p>Junior School Certificate - 2016</p>
+            </div>
+        </div>
+
+        <div class="recognition-box hidden">
+            <img src="Assets/recognition/GO edu chatgpt.jpg" alt="GO Edu ChatGPT Award" onclick="openModal(this)">
+            <div class="recognition-actions">
+                <button class="download-btn" onclick="downloadAward('go-edu-chatgpt')">
+                    <i class="fas fa-download"></i> Download
+                </button>
+                <button class="details-btn" onclick="viewDetails('go-edu-chatgpt')">
+                    <i class="fas fa-info-circle"></i> Details
+                </button>
+            </div>
+            <div class="recognition-info">
+                <h3>GO Edu ChatGPT</h3>
+                <p>AI & ChatGPT Training Completion</p>
+            </div>
+        </div>
+
+        <div class="recognition-box hidden">
+            <img src="Assets/recognition/goedu sobur khgan.jpg" alt="GO Edu Sobur Khgan Award" onclick="openModal(this)">
+            <div class="recognition-actions">
+                <button class="download-btn" onclick="downloadAward('go-edu-sobur')">
+                    <i class="fas fa-download"></i> Download
+                </button>
+                <button class="details-btn" onclick="viewDetails('go-edu-sobur')">
+                    <i class="fas fa-info-circle"></i> Details
+                </button>
+            </div>
+            <div class="recognition-info">
+                <h3>GO Edu Become & Make A Leader</h3>
+                <p>Educational Excellence Award</p>
+            </div>
+        </div>
+
+        <div class="recognition-box hidden">
+            <img src="Assets/recognition/goedu-teacher.pdf" alt="GO Edu Teacher Award" onclick="openModal(this)">
+            <div class="recognition-actions">
+                <button class="download-btn" onclick="downloadAward('go-edu-leadership')">
+                    <i class="fas fa-download"></i> Download
+                </button>
+                <button class="details-btn" onclick="viewDetails('go-edu-leadership')">
+                    <i class="fas fa-info-circle"></i> Details
+                </button>
+            </div>
+            <div class="recognition-info">
+                <h3>GO Edu Teacher</h3>
+                <p>Teaching Excellence Certificate</p>
+            </div>
+        </div>
+
+
+
+
+ <div class="recognition-box hidden">
+    <img src="Assets/recognition/goedu-leadership.pdf" alt="GO Edu Leadership Award" onclick="openModal(this)">
+    <div class="recognition-actions">
+        <button class="download-btn" onclick="downloadAward('go-edu-leadership')">
+            <i class="fas fa-download"></i> Download
+        </button>
+        <button class="details-btn" onclick="viewDetails('go-edu-leadership')">
+            <i class="fas fa-info-circle"></i> Details
+        </button>
+    </div>
+    <div class="recognition-info">
+        <h3>GO Edu Leadership</h3>
+        <p>Leadership Excellence Certificate</p>
+    </div>
+</div>
+
+
+<!-- =========================
+
+<div class="recognition-box hidden">
+    <img src="Assets/recognition/DEMO-AWARD.jpg" alt="Demo Award Name" onclick="openModal(this)">
+    <div class="recognition-actions">
+        <button class="download-btn" onclick="downloadAward('demo-award')">
+            <i class="fas fa-download"></i> Download
+        </button>
+        <button class="details-btn" onclick="viewDetails('demo-award')">
+            <i class="fas fa-info-circle"></i> Details
+        </button>
+    </div>
+    <div class="recognition-info">
+        <h3>Demo Award Name</h3>
+        <p>Short description here</p>
+    </div>
+</div>
+
+
+js file changes needed:==========================
+
+// STEP 1: Add to awardFiles object
+'demo-award': 'Assets/recognition/DEMO-AWARD.jpg',
+
+// STEP 2: Add to awardDetails object
+'demo-award': {
+    title: 'Full Demo Award Title',
+    issuer: 'Issuing Organization',
+    date: 'Month Year',
+    description: 'Detailed description of the award, achievements, and recognition criteria.',
+    skills: ['Skill 1', 'Skill 2', 'Skill 3', 'Skill 4']
+},
+
+// STEP 3: No additional code needed - functions will work automatically
+
+========================= -->
+
+
+
+
+
+    </div>
+    
+    <button class="see-more-btn" id="seeMoreBtn">See More</button>
+</section>
+
+
+
+
+
 
 
 
@@ -756,26 +945,6 @@
 
 
 
-
-<!-- Featured Skills -->
-<section class="featured-skills">
-    <h3>Core Competencies</h3>
-    <div class="skills-grid" id="skillsGrid">
-        <div class="skill-item"><i class="fas fa-laptop-code"></i><span>Web Development</span></div>
-        <div class="skill-item"><i class="fas fa-robot"></i><span>Machine Learning</span></div>
-        <div class="skill-item"><i class="fas fa-leaf"></i><span>Green Computing</span></div>
-        <div class="skill-item"><i class="fas fa-cloud"></i><span>Cloud Computing</span></div>
-        <div class="skill-item hidden"><i class="fas fa-database"></i><span>Database Management</span></div>
-        <div class="skill-item hidden"><i class="fas fa-network-wired"></i><span>IoT & Embedded Systems</span></div>
-        <div class="skill-item hidden"><i class="fas fa-code-branch"></i><span>Version Control (Git)</span></div>
-        <div class="skill-item hidden"><i class="fas fa-shield-alt"></i><span>Cybersecurity Basics</span></div>
-        <div class="skill-item hidden"><i class="fas fa-mobile-alt"></i><span>Mobile App Development</span></div>
-        <div class="skill-item hidden"><i class="fas fa-project-diagram"></i><span>Project Management</span></div>
-        <div class="skill-item hidden"><i class="fas fa-brain"></i><span>Artificial Intelligence</span></div>
-        <div class="skill-item hidden"><i class="fas fa-code"></i><span>Programming Fundamentals</span></div>
-    </div>
-    <button id="seeMoreSkillsBtn" class="see-more">See More</button>
-</section>
 
 
 

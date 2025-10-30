@@ -791,4 +791,225 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Awards & Recognition// Recognition Section Functionality
+
+
+
+
+
+
+
+
+
+
+// Download function
+function downloadAward(awardId) {
+    const awardFiles = {
+        'digital-marketing': 'Assets/recognition/degital Market.png',
+        'saifurs': 'Assets/recognition/saifurs.jpg',
+        'dewan-ict': 'Assets/recognition/Dewan ICT Mirpur 1.jpg',
+        'diu': 'Assets/recognition/DIU.JPG',
+        'hsc': 'Assets/recognition/HSC 2021.jpg',
+        'ssc': 'Assets/recognition/SSC 2019.jpg',
+        'jsc': 'Assets/recognition/JSC 2016.jpg',
+        'go-edu-chatgpt': 'Assets/recognition/GO edu chatgpt.jpg',
+        'go-edu-sobur': 'Assets/recognition/goedu sobur khgan.jpg',
+        'go-edu-teacher': 'Assets/recognition/goedu-teacher.pdf', // PDF file
+        'go-edu-leadership': 'Assets/recognition/goedu-leadership.pdf' // PDF file
+    };
+
+
+    const filePath = awardFiles[awardId];
+    if (filePath) {
+        const link = document.createElement('a');
+        link.href = filePath;
+        link.download = `award-${awardId}.${filePath.split('.').pop()}`;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+}
+
+// View details function
+function viewDetails(awardId) {
+    const awardDetails = {
+        'digital-marketing': {
+            title: 'Digital Marketing Excellence Award',
+            issuer: 'Digital Marketing Institute',
+            date: 'Octoder 2025',
+            description: 'Certified for outstanding performance in digital marketing strategies, SEO optimization, and social media marketing campaigns.',
+            skills: ['SEO', 'Social Media Marketing', 'Content Strategy', 'Analytics']
+        },
+        'saifurs': {
+            title: 'Saifur\'s  Excellence Award',
+            issuer: 'Saifur\'s Coaching Center',
+            date: 'Jan - May 2019',
+            description: 'Recognized for exceptional performance in Information and Communication Technology studies and practical applications.',
+            skills: ['Computer Fundamentals', 'Programming', 'Networking', 'ICT Applications']
+        },
+        'dewan-ict': {
+            title: 'Dewan ICT Excellence Award',
+            issuer: 'Dewan ICT Center, Mirpur',
+            date: 'Jan - Jun 2019',
+            description: 'Awarded 1st position for outstanding achievement in ICT training program at Mirpur branch.',
+            skills: ['Microsoft Office', 'Graphics Design', 'Web Development', 'Project Management']
+        },
+        'diu': {
+            title: 'DU Academic Achievement',
+            issuer: 'Daffodil International University',
+            date: '2025',
+            description: 'Recognized for academic excellence and contribution to university projects and activities.',
+            skills: ['Academic Excellence', 'Project Work', 'Team Leadership', 'Research']
+        },
+        'hsc': {
+            title: 'Higher Secondary Certificate',
+            issuer: 'Bangladesh Education Board',
+            date: '2021',
+            description: 'Successfully completed Higher Secondary Education with excellent academic performance.',
+            skills: ['Academic Excellence', 'Science', 'Mathematics', 'Critical Thinking']
+        },
+        'ssc': {
+            title: 'Secondary School Certificate',
+            issuer: 'Bangladesh Education Board',
+            date: '2019',
+            description: 'Completed Secondary School Education with outstanding results and academic achievements.',
+            skills: ['Academic Foundation', 'Science', 'Mathematics', 'Languages']
+        },
+        'jsc': {
+            title: 'Junior School Certificate',
+            issuer: 'Bangladesh Education Board',
+            date: '2016',
+            description: 'Achieved excellent results in Junior School Certificate examination.',
+            skills: ['Basic Education', 'Foundation Studies', 'General Knowledge']
+        },
+        'go-edu-chatgpt': {
+            title: 'GO Edu ChatGPT Training',
+            issuer: 'GO Edu Institute',
+            date: '2024',
+            description: 'Completed comprehensive training in ChatGPT and AI applications for educational purposes.',
+            skills: ['AI Technology', 'ChatGPT', 'Educational Tools', 'Digital Learning']
+        },
+        'go-edu-sobur': {
+            title: 'GO Edu Sobur Khgan Excellence',
+            issuer: 'GO Edu Institute',
+            date: '2024',
+            description: 'Awarded for outstanding performance and dedication in educational programs.',
+            skills: ['Educational Excellence', 'Dedication', 'Leadership', 'Teaching']
+        },
+        'go-edu-teacher': {
+            title: 'GO Edu Teaching Certificate',
+            issuer: 'GO Edu Institute',
+            date: '2025',
+            description: 'Certified for teaching excellence and educational leadership in institutional programs.',
+            skills: ['Teaching Methodology', 'Educational Leadership', 'Student Mentoring', 'Curriculum Development']
+        },
+        'go-edu-leadership': {
+            title: 'GO Edu Leadership Excellence Certificate',
+            issuer: 'GO Edu Institute',
+            date: '2025',
+            description: 'Certified for demonstrating exceptional teaching skills, educational leadership, and dedication to student development. This certificate recognizes outstanding performance in teaching methodology, curriculum development, and educational innovation. Awarded for excellence in pedagogical approaches and commitment to fostering learning environments.',
+            skills: [
+                'Teaching Methodology',
+                'Educational Leadership', 
+                'Student Mentoring',
+                'Curriculum Development',
+                'Classroom Management',
+                'Educational Technology',
+                'Pedagogical Skills',
+                'Student Assessment'
+            ]
+        },
+    };
+
+    const detail = awardDetails[awardId];
+    if (detail) {
+        showModal(detail);
+    }
+}
+
+// Show modal with details
+function showModal(detail) {
+    const modal = document.createElement('div');
+    modal.className = 'details-modal';
+    modal.style.display = 'flex';
+    modal.innerHTML = `
+        <div class="modal-content">
+            <span class="close-modal" onclick="this.parentElement.parentElement.remove()">&times;</span>
+            <div class="modal-details">
+                <h3>${detail.title}</h3>
+                <p><strong>Issued by:</strong> ${detail.issuer}</p>
+                <p><strong>Date:</strong> ${detail.date}</p>
+                <p><strong>Description:</strong> ${detail.description}</p>
+                <div class="skills">
+                    <strong>Related Skills:</strong>
+                    <div class="skills-list">
+                        ${detail.skills.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
     
+    document.body.appendChild(modal);
+
+    // Close modal when clicking outside
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            modal.remove();
+        }
+    });
+}
+
+// See More functionality
+document.getElementById('seeMoreBtn').addEventListener('click', function() {
+    const recognitionContent = document.getElementById('recognitionContent');
+    const hiddenItems = recognitionContent.querySelectorAll('.hidden');
+    
+    if (this.textContent === 'See More') {
+        hiddenItems.forEach(item => {
+            item.classList.remove('hidden');
+        });
+        this.textContent = 'See Less';
+    } else {
+        const allItems = recognitionContent.querySelectorAll('.recognition-box');
+        allItems.forEach((item, index) => {
+            if (index >= 3) {
+                item.classList.add('hidden');
+            }
+        });
+        this.textContent = 'See More';
+    }
+});
+
+
+// Awards & Recognition End

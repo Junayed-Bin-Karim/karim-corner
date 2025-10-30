@@ -4271,3 +4271,213 @@ body, .text-row, #professional-summary p {
 
 
 
+.recognition-content {
+    width: 90%;
+    max-width: 1200px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Always 3 columns */
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.recognition-box {
+    background: white;
+    border: 2px solid black;
+    border-radius: 15px;
+    padding: 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.recognition-box img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.hidden {
+    display: none;
+}
+
+/* When hidden items are shown, they will automatically fit in the 3-column grid */
+.recognition-content.show-all .hidden {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+/* Mobile responsive */
+@media (max-width: 900px) {
+    .recognition-content {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet */
+    }
+}
+
+@media (max-width: 600px) {
+    .recognition-content {
+        grid-template-columns: 1fr; /* 1 column on mobile */
+    }
+}
+
+
+
+
+
+.see-less-btn {
+    margin-top: 30px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: white;
+    background-color: #4e54c8; /* Different color for See Less */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.see-less-btn:hover {
+    background-color: var(--main-color);
+}
+
+.see-less-btn.hidden {
+    display: none;
+}
+
+
+
+
+
+
+
+.recognition-box {
+    background: white;
+    border: 2px solid black;
+    border-radius: 15px;
+    padding: 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.recognition-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.recognition-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    gap: 5px;
+}
+
+.download-btn, .details-btn {
+    flex: 1;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.download-btn {
+    background: var(--main-color);
+    color: white;
+}
+
+.download-btn:hover {
+    background: #8b0000; /* Darker brown */
+    transform: translateY(-2px);
+}
+
+.details-btn {
+    background: #4e54c8;
+    color: white;
+}
+
+.details-btn:hover {
+    background: #3f43a8;
+    transform: translateY(-2px);
+}
+
+.recognition-info {
+    margin-top: 10px;
+    padding: 10px 0;
+    border-top: 1px solid #eee;
+}
+
+.recognition-info h3 {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.recognition-info p {
+    font-size: 0.8rem;
+    color: #666;
+    margin: 0;
+}
+
+/* Modal for details */
+.details-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.close-modal {
+    float: right;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #333;
+}
+
+.modal-details h3 {
+    color: var(--main-color);
+    margin-bottom: 15px;
+}
+
+.modal-details p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+    .recognition-actions {
+        flex-direction: column;
+    }
+    
+    .download-btn, .details-btn {
+        width: 100%;
+    }
+}
