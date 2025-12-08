@@ -1008,3 +1008,81 @@ document.getElementById('seeMoreBtn').addEventListener('click', function() {
 
 
 // Awards & Recognition End
+
+
+
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const toggleButton = document.getElementById('toggleExperienceRows');
+    const hiddenRows = document.getElementById('hiddenExperienceRows');
+    
+    if (toggleButton && hiddenRows) {
+        toggleButton.addEventListener('click', function() {
+            if (hiddenRows.classList.contains('show')) {
+                // Hide the rows
+                hiddenRows.classList.remove('show');
+                toggleButton.innerHTML = `
+                    <span class="button-text">Show More Experiences</span>
+                    <svg class="button-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M10 15L5 10L10 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                `;
+            } else {
+                // Show the rows
+                hiddenRows.classList.add('show');
+                toggleButton.innerHTML = `
+                    <span class="button-text">Show Less</span>
+                    <svg class="button-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M5 10L10 5L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                `;
+            }
+        });
+    }
+});
+
+
+
+
+
+
+
+// Simple toggle function
+function toggleProjects() {
+    const hiddenSection = document.getElementById('hiddenProjects');
+    const button = document.getElementById('viewAllBtn');
+    
+    if (!hiddenSection || !button) return;
+    
+    if (hiddenSection.style.display === 'none' || hiddenSection.style.display === '') {
+        // Show projects
+        hiddenSection.style.display = 'grid';
+        button.textContent = 'Show Less';
+        button.classList.add('active');
+    } else {
+        // Hide projects
+        hiddenSection.style.display = 'none';
+        button.textContent = 'See All Projects';
+        button.classList.remove('active');
+    }
+}
+
+// Add event listener
+document.addEventListener('DOMContentLoaded', function() {
+    const button = document.getElementById('viewAllBtn');
+    if (button) {
+        button.addEventListener('click', toggleProjects);
+    }
+    
+    // Force hide on page load
+    const hiddenSection = document.getElementById('hiddenProjects');
+    if (hiddenSection) {
+        hiddenSection.style.display = 'none';
+    }
+});
