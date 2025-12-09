@@ -1086,3 +1086,52 @@ document.addEventListener('DOMContentLoaded', function() {
         hiddenSection.style.display = 'none';
     }
 });
+
+
+
+
+
+
+
+
+function toggleService(card) {
+  // Toggle active class
+  card.classList.toggle('active');
+  
+  // Update button text
+  const button = card.querySelector('.service-toggle-btn');
+  if (card.classList.contains('active')) {
+    button.textContent = 'Show Less';
+  } else {
+    button.textContent = 'Learn More';
+  }
+  
+  // Close other cards if needed
+  const allCards = document.querySelectorAll('.service-card');
+  allCards.forEach(otherCard => {
+    if (otherCard !== card && otherCard.classList.contains('active')) {
+      otherCard.classList.remove('active');
+      otherCard.querySelector('.service-toggle-btn').textContent = 'Learn More';
+    }
+  });
+}
+
+// Optional: Add click event to buttons as well
+document.querySelectorAll('.service-toggle-btn').forEach(button => {
+  button.addEventListener('click', function(e) {
+    e.stopPropagation();
+    const card = this.closest('.service-card');
+    toggleService(card);
+  });
+});
+
+
+
+
+
+
+
+
+
+
+

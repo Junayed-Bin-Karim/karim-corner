@@ -68,83 +68,60 @@
                     </div>
   
 
-
-<section id="who-is-junayed">
-
-  <p>
-    <strong>Md. Junayed Bin Karim</strong> is an entrepreneur, AI researcher, and the Founder of 
-    <strong>Junayed Academy</strong> — a modern E-Learning platform designed to make technology education 
-    practical, accessible, and transformative. His vision centers on empowering learners to solve real-world challenges 
-    through innovation, collaboration, and ethical technology.
-  </p>
- <p>
-      Junayed holds a Bachelor’s degree in <strong>Computer Science and Engineering</strong> from 
-      <strong>Daffodil International University</strong>, where his passion for 
-      <strong>Artificial Intelligence (AI)</strong>, <strong>Machine Learning (ML)</strong>, and 
-      <strong>Green Computing</strong> became the foundation of his academic and professional journey. 
-      His work explores the intersection of intelligence and sustainability — developing technologies that create both 
-      social and environmental value.His expertise spans <strong>AI system design</strong>, <strong>web application development</strong>, and 
-      <strong>applied research</strong>.
-    </p>
-  <div id="more-content" class="hidden">
+<section id="who-is-junayed" class="profile-section" aria-labelledby="junayed-heading">
+  
+  <div class="profile-grid">
     
 
-    <p>
-       Junayed has built AI-driven solutions including problem-solving agents, 
-      search algorithms, and image classification models. In software development, his focus lies in 
-      <strong>Frontend Web Development</strong> using HTML, CSS, JavaScript, React, and Bootstrap — 
-      combining design thinking with technical precision to craft functional and inspiring digital experiences.
-    </p>
+    <div>
+      <div class="profile-header">
+        <div>
+          <p class="profile-role">Founder Junayed Academy · AI Researcher · Entrepreneur</p>
+        </div>
+      </div>
 
-    <p>
-      As a mentor and community leader, Junayed has guided over 20 university students and numerous young learners 
-      in fields such as programming, data science, and entrepreneurship. His mentoring philosophy emphasizes both 
-      skill development and mindset — fostering curiosity, confidence, and purpose in every learner.
-    </p>
+    <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 19px; color: #333; line-height: 1.7;">
+  <strong>Md. Junayed Bin Karim</strong> is an entrepreneur and AI researcher focused on practical tech learning and creating useful projects. He is the founder of 
+  <a href="https://junayedacademy.netlify.app/" target="_blank"
+     style="color: #0d6efd; text-decoration: underline; font-weight: 600; font-size: 19px; line-height: 1.7; background: none; padding: 0; border: none; transition: color 0.3s;">
+    Junayed Academy
+  </a>, an e-learning platform that helps students learn AI and web development through hands-on projects.
+</p>
 
-    <p>
-      Through <strong>Junayed Academy</strong>, he leads initiatives that merge project-based learning with emerging 
-      technologies. The academy’s programs transform complex concepts into real-world applications, emphasizing teamwork, 
-      critical thinking, and responsible innovation. Notable initiatives include the 
-      <strong>AI Hackathon 2025</strong> and nationwide online workshops connecting hundreds of learners across Bangladesh.
-    </p>
+<p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 19px; color: #333; line-height: 1.7;">
+  He holds a Bachelor’s degree in Computer Science & Engineering (CSE) from 
+  <a href="https://www.daffodilvarsity.edu.bd/" target="_blank" 
+     style="color: #0d6efd; text-decoration: underline; font-weight: 600; font-size: 19px; line-height: 1.7; background: none; padding: 0; border: none; transition: color 0.3s;">
+    Daffodil International University
+  </a>. His specialties include AI system design, Machine Learning, Green Computing, and web development.
+</p>
 
-    <p>
-      Junayed’s professional experience extends to scalable system architecture, deployment, and 
-      <strong>Green Computing</strong> integration. His projects emphasize efficiency, reliability, and environmental 
-      responsibility across platforms such as GitHub, Netlify, and Vercel.
-    </p>
+      
 
-    <p>
-      Beyond technology, he advocates for <strong>mental health awareness</strong> and 
-      <strong>personal growth</strong>, believing that emotional intelligence is essential for success in both 
-      technology and life. He regularly supports students in areas like focus, motivation, and resilience — helping 
-      them grow not just as developers, but as balanced individuals.
-    </p>
+      <div id="more-content" class="more-content" aria-hidden="true">
+        
+  <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 19px; color: #333; line-height: 1.7;">
+  He currently works on <strong>Machine Learning (ML)</strong> and <strong>Artificial Intelligence (AI)</strong> projects, focusing on practical solutions and innovative applications. His specialties include AI system design, Green Computing, and web development.
+</p>
 
-    <p>
-      Junayed’s achievements include securing <strong>2nd place</strong> in the Machine Learning Quiz at 
-      <strong>Dhaka University</strong>, recognition for mentorship excellence, and active participation in 
-      national-level AI and technology competitions. Each milestone reflects his mission to integrate 
-      <strong>innovation, empathy, and sustainability</strong> into every project he leads.
-    </p>
+      </div>
 
-    <p>
-      In essence, <strong>Md. Junayed Bin Karim</strong> represents the spirit of a lifelong learner, visionary builder, 
-      and responsible innovator — dedicated to shaping a smarter, greener, and more inclusive digital future.
-    </p>
+      <div>
+        <button
+          id="read-more-btn"
+          class="read-more-btn"
+          aria-controls="more-content"
+          aria-expanded="false"
+          type="button"
+        >
+            </button>
+        </a>
+      </div>
+    </div>
   </div>
-
-  <button id="read-more-btn" class="read-more-btn">Read More</button>
-</section>
-
-
-
-
-              
-                    <div class="buttons">
+                        <div class="buttons">
                         <a href="Assets/cv/CV - JUNAYED BIN KARIM.pdf" download>Download CV</a>
-                        <a href="SRC/pages/contact.html" class="cm-button">Contact Me</a>
+                        <a href="SRC/pages/contact.html" class="cm-button">Let's Connect</a>
                     </div>
                 </div>
             </div>
@@ -1318,21 +1295,7 @@ js file changes needed:==========================
 </section>
  
 
-        <script>
-            document.addEventListener("DOMContentLoaded", () => {
-                const cards = document.querySelectorAll(".stat-card");
-                const observer = new IntersectionObserver(entries => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.style.animation = "reveal 0.6s forwards";
-                            observer.unobserve(entry.target);
-                        }
-                    });
-                }, { threshold: 0.1 });
-        
-                cards.forEach(card => observer.observe(card));
-            });
-        </script>
+     
         
 
 
@@ -1341,32 +1304,65 @@ js file changes needed:==========================
 
 
        <section id="services" class="services">
-  <h2 class="section-title">What I Offer</h2>
+  <div class="services-header">
+    <h2 class="section-title">What I Offer</h2>
+    <p class="section-subtitle">Professional services tailored to support mental well-being and personal growth</p>
+  </div>
 
   <div class="services-container">
-      <div class="service-card" onclick="toggleDescription(this)">
-          <div class="service-title"> Mental Health Consulting</div>
-          <div class="service-description">
-              Providing practical guidance on stress management, emotional well-being, and work-life balance.
-              Confidential, compassionate, and tailored for students and professionals.
-          </div>
+    <!-- Service 1 -->
+    <div class="service-card" onclick="toggleService(this)">
+      <div class="service-icon">
+        <span class="icon-emoji">🧠</span>
       </div>
-      
-      <div class="service-card" onclick="toggleDescription(this)">
-          <div class="service-title"> Mentorship & Coaching</div>
-          <div class="service-description">
-              Helping individuals set goals, grow confidence, and achieve career or academic success through
-              structured mentoring sessions.
-          </div>
+      <h3 class="service-title">Mental Health Consulting</h3>
+      <div class="service-description">
+        <p>Providing practical guidance on stress management, emotional well-being, and work-life balance. Confidential, compassionate, and tailored for students and professionals.</p>
+        <ul class="service-features">
+          <li>Personalized stress management strategies</li>
+          <li>Emotional regulation techniques</li>
+          <li>Work-life balance planning</li>
+          <li>Confidential one-on-one sessions</li>
+        </ul>
       </div>
+      <button class="service-toggle-btn">Learn More</button>
+    </div>
+    
+    <!-- Service 2 -->
+    <div class="service-card" onclick="toggleService(this)">
+      <div class="service-icon">
+        <i class="fas fa-handshake"></i>
+      </div>
+      <h3 class="service-title">Mentorship & Coaching</h3>
+      <div class="service-description">
+        <p>Helping individuals set goals, grow confidence, and achieve career or academic success through structured mentoring sessions.</p>
+        <ul class="service-features">
+          <li>Goal setting and tracking</li>
+          <li>Confidence building exercises</li>
+          <li>Career path guidance</li>
+          <li>Academic success strategies</li>
+        </ul>
+      </div>
+      <button class="service-toggle-btn">Learn More</button>
+    </div>
 
-      <div class="service-card" onclick="toggleDescription(this)">
-          <div class="service-title"> Workshops & Webinars</div>
-          <div class="service-description">
-              Conducting awareness sessions on mental health, mindfulness, and stress resilience for 
-              student groups and organizations.
-          </div>
+    <!-- Service 3 -->
+    <div class="service-card" onclick="toggleService(this)">
+      <div class="service-icon">
+        <i class="fas fa-users"></i>
       </div>
+      <h3 class="service-title">Workshops & Webinars</h3>
+      <div class="service-description">
+        <p>Conducting awareness sessions on mental health, mindfulness, and stress resilience for student groups and organizations.</p>
+        <ul class="service-features">
+          <li>Interactive workshops</li>
+          <li>Live Q&A sessions</li>
+          <li>Practical mindfulness exercises</li>
+          <li>Customizable for groups</li>
+        </ul>
+      </div>
+      <button class="service-toggle-btn">Learn More</button>
+    </div>
   </div>
 </section>
 
