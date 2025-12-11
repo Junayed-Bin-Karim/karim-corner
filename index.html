@@ -1,1442 +1,1349 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Junayed Bin Karim | AI Researcher & Developer</title>
-    
-    <link rel="icon" href="Assets/favicons/favicon.png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home Page</title>
+    <link rel="stylesheet" type="text/css" href="SRC/style/style.css">
+    <link rel="icon" href="Assets/favicons/favicon.png" type="image/png" sizes="32x32">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+   
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    
+    
+        <!-- 🟨 EmailJS -->
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+        <script type="text/javascript">
+            (function () {
+                emailjs.init("GbMzrOTXH4XXan9dR"); // Your Public API Key
+            })();
+        </script>
+    
+    <!-- AOS CSS -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function () {
-            emailjs.init("GbMzrOTXH4XXan9dR");
-        })();
-    </script>
-
-    <style>
-        /* =========================================
-           1. PREMIUM VARIABLES & RESET
-           ========================================= */
-        :root {
-            /* Color Palette - Deep Space Dark Mode */
-            --bg-color: #0f172a;
-            --card-bg: rgba(30, 41, 59, 0.4);
-            --card-border: rgba(255, 255, 255, 0.08);
-            --primary: #3b82f6; /* Electric Blue */
-            --accent: #8b5cf6;  /* Soft Purple */
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --gradient: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
-            --glass: blur(16px);
-            --shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
-            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy smooth */
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            text-decoration: none;
-            list-style: none;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--bg-color);
-            background-image: radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.1) 0%, transparent 20%),
-                              radial-gradient(circle at 90% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 20%);
-            color: var(--text-main);
-            overflow-x: hidden;
-            line-height: 1.7;
-        }
-
-        /* Premium Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: var(--bg-color);
-        }
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(var(--primary), var(--accent));
-            border-radius: 10px;
-        }
-
-        /* =========================================
-           2. HEADER (Glassmorphism)
-           ========================================= */
-        header {
-            position: fixed;
-            top: 0;
-            right: 0;
-            width: 100%;
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 15px 8%;
-            background: rgba(15, 23, 42, 0.7);
-            backdrop-filter: var(--glass);
-            -webkit-backdrop-filter: var(--glass);
-            border-bottom: 1px solid var(--card-border);
-            transition: 0.3s;
-        }
-
-        .logo {
-            font-size: 26px;
-            font-weight: 700;
-            color: var(--text-main);
-            display: flex;
-            align-items: center;
-            letter-spacing: -0.5px;
-        }
-
-        .logo span:last-child {
-            color: var(--primary);
-        }
-
-        .navbar {
-            display: flex;
-        }
-
-        .navbar a {
-            color: var(--text-muted);
-            font-size: 15px;
-            font-weight: 500;
-            margin: 0 20px;
-            transition: 0.3s;
-            position: relative;
-        }
-
-        .navbar a:hover, .navbar a.active {
-            color: var(--primary);
-        }
-
-        .navbar a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            background: var(--gradient);
-            bottom: -5px;
-            left: 0;
-            transition: 0.3s;
-        }
-
-        .navbar a:hover::after {
-            width: 100%;
-        }
-
-        .header-actions {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .contact-btn {
-            padding: 10px 25px;
-            background: var(--gradient);
-            color: white;
-            border-radius: 50px;
-            font-size: 14px;
-            font-weight: 600;
-            transition: var(--transition);
-            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
-            border: none;
-        }
-
-        .contact-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.6);
-        }
-
-        #menu-icon {
-            font-size: 30px;
-            color: var(--text-main);
-            cursor: pointer;
-            display: none;
-        }
-
-        /* =========================================
-           3. GLOBAL COMPONENTS
-           ========================================= */
-        section {
-            padding: 100px 8% 60px;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-title {
-            font-size: 38px;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .section-title span {
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .divider-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .line { width: 60px; height: 3px; background: var(--card-border); border-radius: 5px; }
-        .dot { width: 8px; height: 8px; background: var(--primary); border-radius: 50%; box-shadow: 0 0 10px var(--primary); }
-
-        .hidden { display: none; }
-
-        .action-btn {
-            background: transparent;
-            border: 1px solid var(--primary);
-            color: var(--primary);
-            padding: 12px 35px;
-            border-radius: 50px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            margin-top: 40px;
-            display: inline-block;
-        }
-        
-        .action-btn:hover {
-            background: var(--primary);
-            color: white;
-            box-shadow: 0 5px 20px rgba(59, 130, 246, 0.4);
-        }
-
-        .center-btn { text-align: center; width: 100%; }
-
-        /* =========================================
-           4. HERO SECTION
-           ========================================= */
-        .about {
-            display: grid;
-            grid-template-columns: 0.8fr 1.2fr;
-            gap: 4rem;
-            align-items: center;
-            min-height: 100vh;
-            padding-top: 120px;
-        }
-
-        .about-img-wrapper {
-            position: relative;
-            z-index: 1;
-        }
-
-        .about-img-wrapper img {
-            width: 100%;
-            border-radius: 20px;
-            border: 2px solid var(--card-border);
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            filter: grayscale(20%);
-        }
-
-        .about-img-wrapper:hover img {
-            filter: grayscale(0%);
-            transform: scale(1.02);
-            border-color: var(--primary);
-        }
-
-        .about-text h4 {
-            font-size: 18px;
-            color: var(--primary);
-            font-weight: 600;
-            margin-bottom: 10px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        .about-text h1 {
-            font-size: 50px;
-            line-height: 1.2;
-            margin-bottom: 25px;
-            font-weight: 800;
-        }
-
-        .profile-card {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            padding: 30px;
-            border-radius: 20px;
-            backdrop-filter: blur(5px);
-            margin-bottom: 30px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .profile-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 4px; height: 100%;
-            background: var(--gradient);
-        }
-
-        .profile-role {
-            font-size: 14px;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-
-        .profile-desc {
-            font-size: 16px;
-            color: #cbd5e1;
-            margin-bottom: 15px;
-        }
-
-        .profile-desc a {
-            color: var(--primary);
-            font-weight: 600;
-            text-decoration: underline;
-            text-decoration-color: rgba(59, 130, 246, 0.3);
-        }
-
-        .buttons-container {
-            display: flex;
-            gap: 20px;
-        }
-
-        .btn-outline {
-            padding: 10px 25px;
-            border: 2px solid var(--card-border);
-            color: var(--text-main);
-            border-radius: 50px;
-            font-weight: 600;
-            transition: var(--transition);
-        }
-
-        .btn-outline:hover {
-            border-color: var(--text-main);
-            background: rgba(255,255,255,0.05);
-        }
-
-        /* =========================================
-           5. AWARDS GRID
-           ========================================= */
-        .awards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .award-card {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 20px;
-            overflow: hidden;
-            transition: var(--transition);
-            position: relative;
-            cursor: pointer;
-        }
-
-        .award-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(59, 130, 246, 0.15);
-            border-color: var(--primary);
-        }
-
-        .award-img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            border-bottom: 1px solid var(--card-border);
-            transition: 0.5s;
-        }
-        
-        .award-card:hover .award-img {
-            transform: scale(1.05);
-        }
-
-        .award-info {
-            padding: 25px;
-        }
-
-        .award-info h3 {
-            font-size: 18px;
-            margin-bottom: 8px;
-            color: var(--text-main);
-        }
-
-        .award-info p {
-            font-size: 14px;
-            color: var(--text-muted);
-            margin-bottom: 20px;
-        }
-
-        .award-actions {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .sm-btn {
-            padding: 8px 16px;
-            font-size: 12px;
-            border-radius: 8px;
-            cursor: pointer;
-            border: 1px solid var(--card-border);
-            background: rgba(255,255,255,0.05);
-            color: var(--text-main);
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .sm-btn:hover {
-            background: var(--primary);
-            border-color: var(--primary);
-        }
-
-        /* =========================================
-           6. EXPERIENCE TIMELINE
-           ========================================= */
-        .timeline-container {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-        }
-
-        .job-card {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            padding: 35px;
-            border-radius: 20px;
-            position: relative;
-            transition: var(--transition);
-        }
-
-        .job-card:hover {
-            background: rgba(30, 41, 59, 0.8);
-            border-color: var(--accent);
-            transform: scale(1.01);
-        }
-
-        .job-card.highlight-row {
-            border: 1px solid rgba(59, 130, 246, 0.5);
-            background: linear-gradient(180deg, rgba(30, 41, 59, 0.8) 0%, rgba(15, 23, 42, 0.9) 100%);
-        }
-
-        .job-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 25px;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .job-title {
-            font-size: 24px;
-            color: var(--text-main);
-            margin-bottom: 5px;
-        }
-        
-        .company-info {
-            color: var(--primary);
-            font-size: 15px;
-            font-weight: 500;
-        }
-
-        .job-meta {
-            text-align: right;
-        }
-
-        .duration-badge {
-            background: rgba(59, 130, 246, 0.1);
-            color: var(--primary);
-            padding: 6px 15px;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: 600;
-            display: inline-block;
-            border: 1px solid rgba(59, 130, 246, 0.2);
-        }
-
-        .job-details .responsibility-item {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 15px;
-            font-size: 15px;
-            color: #cbd5e1;
-        }
-
-        .check-mark {
-            color: var(--accent);
-            font-size: 18px;
-            min-width: 20px;
-        }
-
-        .achievements-row {
-            display: flex;
-            gap: 15px;
-            margin-top: 25px;
-            flex-wrap: wrap;
-        }
-
-        .achievement-item {
-            background: rgba(255,255,255,0.03);
-            padding: 10px 20px;
-            border-radius: 12px;
-            text-align: center;
-            border: 1px solid var(--card-border);
-            flex: 1;
-            min-width: 100px;
-        }
-
-        .achievement-number {
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--text-main);
-        }
-
-        .achievement-label {
-            font-size: 12px;
-            color: var(--text-muted);
-        }
-
-        /* =========================================
-           7. PROJECTS GRID (Modern)
-           ========================================= */
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 35px;
-        }
-
-        .project-card {
-            background: var(--card-bg);
-            border-radius: 24px;
-            overflow: hidden;
-            border: 1px solid var(--card-border);
-            transition: var(--transition);
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            border-color: var(--primary);
-        }
-
-        .project-image-container {
-            position: relative;
-            height: 240px;
-            overflow: hidden;
-        }
-
-        .project-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s ease;
-        }
-
-        .project-card:hover .project-image {
-            transform: scale(1.1);
-        }
-
-        .project-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(15, 23, 42, 0.85);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            transition: var(--transition);
-            backdrop-filter: blur(4px);
-        }
-
-        .project-card:hover .project-overlay {
-            opacity: 1;
-        }
-
-        .overlay-btn {
-            padding: 12px 28px;
-            background: white;
-            color: black;
-            border-radius: 30px;
-            font-weight: 600;
-            transform: translateY(20px);
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .project-card:hover .overlay-btn {
-            transform: translateY(0);
-        }
-
-        .project-number {
-            position: absolute;
-            bottom: 15px;
-            right: 15px;
-            background: rgba(0,0,0,0.6);
-            padding: 5px 10px;
-            border-radius: 8px;
-            font-size: 12px;
-            font-weight: 700;
-            color: white;
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-
-        .project-content {
-            padding: 30px;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-        }
-
-        .project-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 15px;
-        }
-
-        .project-category {
-            font-size: 11px;
-            color: var(--accent);
-            text-transform: uppercase;
-            font-weight: 700;
-            letter-spacing: 1px;
-            border: 1px solid var(--accent);
-            padding: 4px 8px;
-            border-radius: 6px;
-        }
-
-        .project-title {
-            font-size: 20px;
-            color: var(--text-main);
-            margin-top: 10px;
-        }
-
-        .project-description {
-            font-size: 14px;
-            color: var(--text-muted);
-            margin-bottom: 20px;
-            line-height: 1.6;
-        }
-
-        .project-tech {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: auto; /* Pushes to bottom */
-            margin-bottom: 20px;
-        }
-
-        .tech-tag {
-            padding: 5px 12px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 6px;
-            font-size: 12px;
-            color: var(--text-muted);
-            border: 1px solid var(--card-border);
-        }
-        
-        .project-links a {
-            color: var(--primary);
-            font-weight: 600;
-            font-size: 14px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: 0.3s;
-        }
-        
-        .project-links a:hover {
-            color: var(--accent);
-            gap: 12px;
-        }
-
-        .featured-badge {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            background: var(--gradient);
-            color: white;
-            padding: 5px 12px;
-            border-radius: 50px;
-            font-size: 11px;
-            font-weight: 700;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            z-index: 2;
-        }
-
-        /* =========================================
-           8. SERVICES & BLOG & MILESTONES
-           ========================================= */
-        .services-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .service-card {
-            background: var(--card-bg);
-            padding: 40px 30px;
-            border-radius: 20px;
-            text-align: center;
-            border: 1px solid var(--card-border);
-            transition: var(--transition);
-            cursor: pointer;
-        }
-
-        .service-card:hover {
-            background: linear-gradient(160deg, rgba(59, 130, 246, 0.1), rgba(30, 41, 59, 0.6));
-            border-color: var(--primary);
-            transform: translateY(-5px);
-        }
-
-        .service-icon {
-            font-size: 40px;
-            margin-bottom: 20px;
-            color: var(--primary);
-            height: 80px;
-            width: 80px;
-            background: rgba(59, 130, 246, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .service-title {
-            font-size: 20px;
-            margin-bottom: 15px;
-        }
-
-        .service-description {
-            color: var(--text-muted);
-            font-size: 14px;
-        }
-        
-        .service-features {
-            text-align: left;
-            margin-top: 15px;
-            border-top: 1px solid var(--card-border);
-            padding-top: 15px;
-            display: none; /* Hidden by default for cleaner look, toggle via JS if needed */
-        }
-
-        .service-toggle-btn {
-            background: transparent;
-            border: none;
-            color: var(--primary);
-            font-weight: 600;
-            margin-top: 15px;
-            cursor: pointer;
-        }
-
-        /* Milestones List */
-        .milestones-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .milestones-list li {
-            background: var(--card-bg);
-            padding: 20px;
-            border-radius: 12px;
-            border: 1px solid var(--card-border);
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .milestones-list i {
-            color: var(--accent);
-            font-size: 20px;
-            background: rgba(139, 92, 246, 0.1);
-            padding: 10px;
-            border-radius: 8px;
-        }
-        
-        /* Blog Preview */
-        .blog-preview {
-            margin-top: 80px;
-        }
-        
-        .article-card {
-            background: var(--card-bg);
-            padding: 25px;
-            border-radius: 16px;
-            margin-bottom: 20px;
-            border-left: 4px solid var(--primary);
-        }
-        
-        .article-card h4 { font-size: 18px; margin-bottom: 10px; }
-        .article-card p { font-size: 14px; color: var(--text-muted); margin-bottom: 15px; }
-        .article-card a { color: var(--accent); font-weight: 600; font-size: 14px; }
-
-        /* =========================================
-           9. FOOTER
-           ========================================= */
-        .footer {
-            background: #020617;
-            padding: 50px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-top: 1px solid var(--card-border);
-            margin-top: 80px;
-        }
-
-        .footer .left {
-            color: var(--text-muted);
-            font-size: 14px;
-        }
-        
-        .footer .left strong { color: var(--text-main); }
-
-        .footer .right {
-            display: flex;
-            gap: 15px;
-        }
-
-        .social a {
-            width: 45px;
-            height: 45px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.05);
-            color: var(--text-main);
-            transition: var(--transition);
-            border: 1px solid var(--card-border);
-            font-size: 18px;
-        }
-
-        .social a:hover {
-            background: var(--primary);
-            border-color: var(--primary);
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
-        }
-
-        /* =========================================
-           10. RESPONSIVE MEDIA QUERIES
-           ========================================= */
-        @media (max-width: 991px) {
-            header { padding: 15px 4%; }
-            section { padding: 80px 4% 40px; }
-            .about { grid-template-columns: 1fr; text-align: center; padding-top: 100px;}
-            .about-img-wrapper { max-width: 350px; margin: 0 auto; }
-            .buttons-container { justify-content: center; }
-            .footer { flex-direction: column; gap: 20px; text-align: center; }
-        }
-
-        @media (max-width: 768px) {
-            #menu-icon { display: block; }
-            .navbar {
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: rgba(15, 23, 42, 0.98);
-                backdrop-filter: blur(20px);
-                flex-direction: column;
-                padding: 2rem 0;
-                display: none; /* Hidden by default */
-                border-bottom: 1px solid var(--card-border);
-            }
-            .navbar.active { display: flex; animation: slideDown 0.3s ease; }
-            .navbar a { display: block; margin: 1.2rem; font-size: 18px; text-align: center; }
-            .header-actions .contact-btn { display: none; } 
-            
-            .about-text h1 { font-size: 32px; }
-            .job-header { flex-direction: column; align-items: flex-start; }
-            .job-meta { text-align: left; margin-top: 10px; width: 100%; }
-            .duration-badge { width: 100%; text-align: center; }
-        }
-        
-        @keyframes slideDown {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-    </style>
 </head>
+
+
 
 <body>
 
-    <header id="header">
-        <a href="index.html" class="logo">
-            <i class='bx bx-code-alt' style="color:var(--primary); margin-right:8px; font-size:30px;"></i>
-            <span>Junayed</span>
-        </a>
+    <header class="header" id="header">
+        <a href="index.html" class="logo"><span class="main-icon"></span><span>Junayed</span></a>
 
-        <ul class="navbar">
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="SRC/pages/skills.html">Skills</a></li>
-            <li><a href="SRC/pages/education.html">Education</a></li>
-            <li><a href="SRC/pages/gallery.html">Gallery</a></li>
-            <li><a href="SRC/pages/career.html">Career</a></li>
-            <li><a href="SRC/pages/hobbies.html">Books</a></li>
-            <li><a href="SRC/pages/testimonials.html">Testimonials</a></li>
-        </ul>
+        <div class="navbar">
+            <a href="index.html" class="active">Home</a>
+            <a href="SRC/pages/skills.html">Skills</a>
+            <a href="SRC/pages/education.html">Education</a>
+            <a href="SRC/pages/gallery.html">Gallery</a>
+            <a href="SRC/pages/career.html">Career</a>
+            <a href="SRC/pages/hobbies.html">Books</a>
+            <a href="SRC/pages/testimonials.html">Testimonials</a>
+        </div>
 
-        <div class="header-actions">
-            <a href="SRC/pages/contact.html" class="contact-btn"><i class="fas fa-envelope" style="margin-right:8px;"></i> Contact Me</a>
-            <div class="bx bx-menu" id="menu-icon"></div>
+        <div class="main">
+            <a href="SRC/pages/contact.html" class="user main-items">
+                <i class="fas fa-envelope cm-icon"></i>Contact Me
+            </a>
+            <div class="main-items menu-icon-container" id="menu-icon-js">
+                <div class="bx bx-menu" id="menu-icon"></div>
+            </div>
         </div>
     </header>
 
-    <main>
+
+                <div class="page">
+                    <section class="about" id="about">
+                        <div class="about-content">
+                            <div class="column right">
+                                <img src="me.JPG" alt="Junayed Image">
+                            </div>
+                            
+            
+                <div class="column left">
+                    <div class="text">
+                        Who Is <span id="typed" class="iAm"></span>
+                    </div>
+  
+
+<section id="who-is-junayed" class="profile-section" aria-labelledby="junayed-heading">
+  
+  <div class="profile-grid">
+    
+
+    <div>
+      <div class="profile-header">
+        <div>
+          <p class="profile-role">Founder Junayed Academy · AI Researcher · Entrepreneur</p>
+        </div>
+      </div>
+
+    <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 19px; color: #333; line-height: 1.7;">
+  <strong>Md. Junayed Bin Karim</strong> is an entrepreneur and AI researcher focused on practical tech learning and creating useful projects. He is the founder of 
+  <a href="https://junayedacademy.netlify.app/" target="_blank"
+     style="color: #0d6efd; text-decoration: underline; font-weight: 600; font-size: 19px; line-height: 1.7; background: none; padding: 0; border: none; transition: color 0.3s;">
+    Junayed Academy
+  </a>, an e-learning platform that helps students learn AI and web development through hands-on projects.
+</p>
+
+<p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 19px; color: #333; line-height: 1.7;">
+  He holds a Bachelor’s degree in Computer Science & Engineering (CSE) from 
+  <a href="https://www.daffodilvarsity.edu.bd/" target="_blank" 
+     style="color: #0d6efd; text-decoration: underline; font-weight: 600; font-size: 19px; line-height: 1.7; background: none; padding: 0; border: none; transition: color 0.3s;">
+    Daffodil International University
+  </a>. His specialties include AI system design, Machine Learning, Green Computing, and web development.
+</p>
+
+      
+
+      <div id="more-content" class="more-content" aria-hidden="true">
         
-        <section class="about" id="about">
-            <div class="about-img-wrapper" data-aos="fade-right">
-                <img src="me.JPG" alt="Junayed Profile">
-            </div>
+  
 
-            <div class="about-text" data-aos="fade-left">
-                <h4>Welcome to my portfolio</h4>
-                <h1>Who Is <br><span id="typed"></span></h1>
-                
-                <div class="profile-card">
-                    <p class="profile-role">Founder Junayed Academy · AI Researcher · Entrepreneur</p>
-                    <div class="profile-desc">
-                        <p><strong>Md. Junayed Bin Karim</strong> is an entrepreneur and AI researcher focused on practical tech learning. He is the founder of <a href="https://junayedacademy.netlify.app/" target="_blank">Junayed Academy</a>, an e-learning platform that helps students learn AI and web development.</p>
-                        <br>
-                        <p>He holds a Bachelor’s degree in CSE from <a href="https://www.daffodilvarsity.edu.bd/" target="_blank">Daffodil International University</a>. His specialties include AI system design, Machine Learning, Green Computing, and web development.</p>
+      </div>
+
+      <div>
+        <button
+          id="read-more-btn"
+          class="read-more-btn"
+          aria-controls="more-content"
+          aria-expanded="false"
+          type="button"
+        >
+
+            Read More
+            </button>
+        </a>
+      </div>
+    </div>
+  </div>
+                        <div class="buttons">
+                        <a href="Assets/cv/CV - JUNAYED BIN KARIM.pdf" download>Download CV</a>
+                        <a href="SRC/pages/contact.html" class="cm-button">Let's Connect</a>
                     </div>
                 </div>
-
-                <div class="buttons-container">
-                    <a href="Assets/cv/CV - JUNAYED BIN KARIM.pdf" class="contact-btn" download><i class="fas fa-download" style="margin-right:5px;"></i> Download CV</a>
-                    <a href="SRC/pages/contact.html" class="btn-outline">Let's Connect</a>
-                </div>
-                
-                <div id="more-content" class="hidden"></div>
-                <button id="read-more-btn" class="hidden"></button>
-            </div>
-        </section>
-
-        <section class="recognition" id="recognition">
-            <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title">Awards <span>& Recognition</span></h2>
-                <div class="divider-container">
-                    <div class="line"></div><div class="dot"></div><div class="line"></div>
-                </div>
-            </div>
-
-            <div class="awards-grid" id="recognitionContent">
-                
-                <div class="award-card" data-aos="zoom-in" data-aos-delay="100" onclick="openModal(this)">
-                    <img src="Assets/recognition/degital Market.png" alt="Digital Marketing" class="award-img">
-                    <div class="award-info">
-                        <h3>Digital Marketing Excellence</h3>
-                        <p>Certified Digital Marketing Specialist</p>
-                        <div class="award-actions">
-                            <button class="sm-btn" onclick="downloadAward('digital-marketing')"><i class="fas fa-download"></i> Download</button>
-                            <button class="sm-btn" onclick="viewDetails('digital-marketing')"><i class="fas fa-info-circle"></i> Details</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="award-card" data-aos="zoom-in" data-aos-delay="200" onclick="openModal(this)">
-                    <img src="Assets/recognition/saifurs.jpg" alt="Saifurs" class="award-img">
-                    <div class="award-info">
-                        <h3>Saifur's English Award</h3>
-                        <p>Outstanding Performance in English</p>
-                        <div class="award-actions">
-                            <button class="sm-btn" onclick="downloadAward('saifurs')"><i class="fas fa-download"></i> Download</button>
-                            <button class="sm-btn" onclick="viewDetails('saifurs')"><i class="fas fa-info-circle"></i> Details</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="award-card" data-aos="zoom-in" data-aos-delay="300" onclick="openModal(this)">
-                    <img src="Assets/recognition/Dewan ICT Mirpur 1.jpg" alt="Dewan ICT" class="award-img">
-                    <div class="award-info">
-                        <h3>Dewan ICT Excellence</h3>
-                        <p>Mirpur Branch - 1st Position</p>
-                        <div class="award-actions">
-                            <button class="sm-btn" onclick="downloadAward('dewan-ict')"><i class="fas fa-download"></i> Download</button>
-                            <button class="sm-btn" onclick="viewDetails('dewan-ict')"><i class="fas fa-info-circle"></i> Details</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="award-card hidden">
-                    <img src="Assets/recognition/DIU.JPG" alt="DIU Award" class="award-img">
-                    <div class="award-info">
-                        <h3>DU Achievement</h3>
-                        <p>Dhaka University</p>
-                        <div class="award-actions">
-                             <button class="sm-btn" onclick="downloadAward('diu')">Download</button>
-                             <button class="sm-btn" onclick="viewDetails('diu')">Details</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="award-card hidden">
-                    <img src="Assets/recognition/HSC 2021.jpg" alt="HSC" class="award-img">
-                    <div class="award-info"><h3>HSC Examination</h3><p>Higher Secondary Certificate - 2021</p></div>
-                </div>
-                <div class="award-card hidden">
-                    <img src="Assets/recognition/SSC 2019.jpg" alt="SSC" class="award-img">
-                    <div class="award-info"><h3>SSC Examination</h3><p>Secondary School Certificate - 2019</p></div>
-                </div>
-                <div class="award-card hidden">
-                    <img src="Assets/recognition/JSC 2016.jpg" alt="JSC" class="award-img">
-                    <div class="award-info"><h3>JSC Examination</h3><p>Junior School Certificate - 2016</p></div>
-                </div>
-                <div class="award-card hidden">
-                    <img src="Assets/recognition/GO edu chatgpt.jpg" alt="ChatGPT" class="award-img">
-                    <div class="award-info"><h3>GO Edu ChatGPT</h3><p>AI Training</p></div>
-                </div>
-                 <div class="award-card hidden">
-                    <img src="Assets/recognition/goedu sobur khgan.jpg" alt="Leader" class="award-img">
-                    <div class="award-info"><h3>Become A Leader</h3><p>Educational Excellence</p></div>
-                </div>
-                 <div class="award-card hidden">
-                    <img src="Assets/recognition/goedu-teacher.png" alt="Teacher" class="award-img">
-                    <div class="award-info"><h3>GO Edu Teacher</h3><p>Teaching Excellence</p></div>
-                </div>
-                 <div class="award-card hidden">
-                    <img src="Assets/recognition/goedu-leadership.png" alt="Leadership" class="award-img">
-                    <div class="award-info"><h3>GO Edu Leadership</h3><p>Leadership Excellence</p></div>
-                </div>
-
-            </div>
-
-            <div class="center-btn">
-                <button class="action-btn" id="seeMoreBtn">See More Awards</button>
             </div>
         </section>
 
-        <section class="experience-rows-section" id="experience">
-            <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title">Professional <span>Experience</span></h2>
-                <div class="divider-container">
-                    <div class="line"></div><div class="dot"></div><div class="line"></div>
-                </div>
+
+
+        
+
+
+
+
+<section class="recognition">
+    <h2 class="section-title">Awards <span>&</span> Recognition</h2>        
+    <div class="recognition-content" id="recognitionContent">
+        
+        <div class="recognition-box">
+            <img src="Assets/recognition/degital Market.png" alt="Digital Marketing Award" onclick="openModal(this)">
+            <div class="recognition-actions">
+                <button class="download-btn" onclick="downloadAward('digital-marketing')">
+                    <i class="fas fa-download"></i> Download
+                </button>
+                <button class="details-btn" onclick="viewDetails('digital-marketing')">
+                    <i class="fas fa-info-circle"></i> Details
+                </button>
             </div>
+            <div class="recognition-info">
+                <h3>Digital Marketing Excellence</h3>
+                <p>Certified Digital Marketing Specialist</p>
+            </div>
+        </div>
 
-            <div class="experience-rows-container timeline-container">
-                
-                <div class="job-card highlight-row" data-aos="fade-up">
-                    <div class="job-header">
-                        <div class="job-role">
-                            <h3 class="job-title">Founder & CEO</h3>
-                            <div class="company-info">Junayed Academy · Dhaka, Bangladesh · Remote</div>
-                        </div>
-                        <div class="job-meta">
-                            <span class="duration-badge">Jan 2024 – Present</span>
+        <div class="recognition-box">
+            <img src="Assets/recognition/saifurs.jpg" alt="Saifur's Award" onclick="openModal(this)">
+            <div class="recognition-actions">
+                <button class="download-btn" onclick="downloadAward('saifurs')">
+                    <i class="fas fa-download"></i> Download
+                </button>
+                <button class="details-btn" onclick="viewDetails('saifurs')">
+                    <i class="fas fa-info-circle"></i> Details
+                </button>
+            </div>
+            <div class="recognition-info">
+               <h3>Saifur's English Speaking Award</h3>
+                <p>Outstanding Performance in English</p>
+            </div>
+        </div>
+
+        <div class="recognition-box">
+            <img src="Assets/recognition/Dewan ICT Mirpur 1.jpg" alt="Dewan ICT Award" onclick="openModal(this)">
+            <div class="recognition-actions">
+                <button class="download-btn" onclick="downloadAward('dewan-ict')">
+                    <i class="fas fa-download"></i> Download
+                </button>
+                <button class="details-btn" onclick="viewDetails('dewan-ict')">
+                    <i class="fas fa-info-circle"></i> Details
+                </button>
+            </div>
+            <div class="recognition-info">
+                <h3>Dewan ICT Excellence</h3>
+                <p>Mirpur Branch - 1st Position</p>
+            </div>
+        </div>
+
+        <!-- Hidden boxes -->
+        <div class="recognition-box hidden">
+            <img src="Assets/recognition/DIU.JPG" alt="DIU Award" onclick="openModal(this)">
+            <div class="recognition-actions">
+                <button class="download-btn" onclick="downloadAward('diu')">
+                    <i class="fas fa-download"></i> Download
+                </button>
+                <button class="details-btn" onclick="viewDetails('diu')">
+                    <i class="fas fa-info-circle"></i> Details
+                </button>
+            </div>
+            <div class="recognition-info">
+                <h3>DU Achievement</h3>
+                <p>Dhaka University</p>
+            </div>
+        </div>
+
+        <div class="recognition-box hidden">
+            <img src="Assets/recognition/HSC 2021.jpg" alt="HSC Certificate" onclick="openModal(this)">
+            <div class="recognition-actions">
+                <button class="download-btn" onclick="downloadAward('hsc')">
+                    <i class="fas fa-download"></i> Download
+                </button>
+                <button class="details-btn" onclick="viewDetails('hsc')">
+                    <i class="fas fa-info-circle"></i> Details
+                </button>
+            </div>
+            <div class="recognition-info">
+                <h3>HSC Examination</h3>
+                <p>Higher Secondary Certificate - 2021</p>
+            </div>
+        </div>
+
+        <div class="recognition-box hidden">
+            <img src="Assets/recognition/SSC 2019.jpg" alt="SSC Certificate" onclick="openModal(this)">
+            <div class="recognition-actions">
+                <button class="download-btn" onclick="downloadAward('ssc')">
+                    <i class="fas fa-download"></i> Download
+                </button>
+                <button class="details-btn" onclick="viewDetails('ssc')">
+                    <i class="fas fa-info-circle"></i> Details
+                </button>
+            </div>
+            <div class="recognition-info">
+                <h3>SSC Examination</h3>
+                <p>Secondary School Certificate - 2019</p>
+            </div>
+        </div>
+
+        <div class="recognition-box hidden">
+            <img src="Assets/recognition/JSC 2016.jpg" alt="JSC Certificate" onclick="openModal(this)">
+            <div class="recognition-actions">
+                <button class="download-btn" onclick="downloadAward('jsc')">
+                    <i class="fas fa-download"></i> Download
+                </button>
+                <button class="details-btn" onclick="viewDetails('jsc')">
+                    <i class="fas fa-info-circle"></i> Details
+                </button>
+            </div>
+            <div class="recognition-info">
+                <h3>JSC Examination</h3>
+                <p>Junior School Certificate - 2016</p>
+            </div>
+        </div>
+
+        <div class="recognition-box hidden">
+            <img src="Assets/recognition/GO edu chatgpt.jpg" alt="GO Edu ChatGPT Award" onclick="openModal(this)">
+            <div class="recognition-actions">
+                <button class="download-btn" onclick="downloadAward('go-edu-chatgpt')">
+                    <i class="fas fa-download"></i> Download
+                </button>
+                <button class="details-btn" onclick="viewDetails('go-edu-chatgpt')">
+                    <i class="fas fa-info-circle"></i> Details
+                </button>
+            </div>
+            <div class="recognition-info">
+                <h3>GO Edu ChatGPT</h3>
+                <p>AI & ChatGPT Training Completion</p>
+            </div>
+        </div>
+
+        <div class="recognition-box hidden">
+            <img src="Assets/recognition/goedu sobur khgan.jpg" alt="GO Edu Sobur Khgan Award" onclick="openModal(this)">
+            <div class="recognition-actions">
+                <button class="download-btn" onclick="downloadAward('go-edu-sobur')">
+                    <i class="fas fa-download"></i> Download
+                </button>
+                <button class="details-btn" onclick="viewDetails('go-edu-sobur')">
+                    <i class="fas fa-info-circle"></i> Details
+                </button>
+            </div>
+            <div class="recognition-info">
+                <h3>Become & Make A Leader</h3>
+                <p>Educational Excellence Award</p>
+            </div>
+        </div>
+
+        <div class="recognition-box hidden">
+            <img src="Assets/recognition/goedu-teacher.png" alt="GO Edu Teacher Award" onclick="openModal(this)">
+            <div class="recognition-actions">
+                <button class="download-btn" onclick="downloadAward('go-edu-leadership')">
+                    <i class="fas fa-download"></i> Download
+                </button>
+                <button class="details-btn" onclick="viewDetails('go-edu-leadership')">
+                    <i class="fas fa-info-circle"></i> Details
+                </button>
+            </div>
+            <div class="recognition-info">
+                <h3>GO Edu Teacher</h3>
+                <p>Teaching Excellence Certificate</p>
+            </div>
+        </div>
+
+
+
+
+ <div class="recognition-box hidden">
+    <img src="Assets/recognition/goedu-leadership.png" alt="GO Edu Leadership Award" onclick="openModal(this)">
+    <div class="recognition-actions">
+        <button class="download-btn" onclick="downloadAward('go-edu-leadership')">
+            <i class="fas fa-download"></i> Download
+        </button>
+        <button class="details-btn" onclick="viewDetails('go-edu-leadership')">
+            <i class="fas fa-info-circle"></i> Details
+        </button>
+    </div>
+    <div class="recognition-info">
+        <h3>GO Edu Leadership</h3>
+        <p>Leadership Excellence Certificate</p>
+    </div>
+</div>
+
+
+<!-- =========================
+
+<div class="recognition-box hidden">
+    <img src="Assets/recognition/DEMO-AWARD.jpg" alt="Demo Award Name" onclick="openModal(this)">
+    <div class="recognition-actions">
+        <button class="download-btn" onclick="downloadAward('demo-award')">
+            <i class="fas fa-download"></i> Download
+        </button>
+        <button class="details-btn" onclick="viewDetails('demo-award')">
+            <i class="fas fa-info-circle"></i> Details
+        </button>
+    </div>
+    <div class="recognition-info">
+        <h3>Demo Award Name</h3>
+        <p>Short description here</p>
+    </div>
+</div>
+
+
+js file changes needed:==========================
+
+// STEP 1: Add to awardFiles object
+'demo-award': 'Assets/recognition/DEMO-AWARD.jpg',
+
+// STEP 2: Add to awardDetails object
+'demo-award': {
+    title: 'Full Demo Award Title',
+    issuer: 'Issuing Organization',
+    date: 'Month Year',
+    description: 'Detailed description of the award, achievements, and recognition criteria.',
+    skills: ['Skill 1', 'Skill 2', 'Skill 3', 'Skill 4']
+},
+
+// STEP 3: No additional code needed - functions will work automatically
+
+========================= -->
+
+
+
+
+
+    </div>
+    
+    <button class="see-more-btn" id="seeMoreBtn">See More</button>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ===== Experience Section ===== -->
+<!-- Row-Wise Experience Section -->
+<section class="experience-rows-section" id="experience">
+    <div class="container">
+        <!-- Section Header -->
+        <div class="section-header">
+            <h2 class="section-title">
+                Professional <span class="highlight-text">Experience</span>
+            </h2>
+            <div class="header-divider">
+                <div class="divider-line"></div>
+                <div class="divider-circle"></div>
+                <div class="divider-line"></div>
+            </div>
+        </div>
+
+        <!-- Experience Rows -->
+        <div class="experience-rows-container">
+            <!-- Row 1 -->
+            <div class="experience-row highlight-row">
+                <div class="row-header">
+                    <div class="row-left">
+                        <h3 class="job-title">Founder & CEO</h3>
+                        <div class="company-info">
+                            <span class="company-name">Junayed Academy</span>
+                            <span class="location">Dhaka, Bangladesh · Remote</span>
                         </div>
                     </div>
-                    <div class="job-content row-content">
-                         <div class="responsibilities job-details">
-                            <div class="responsibility-item">
-                                <div class="check-mark">★</div>
-                                <p><strong>Founded</strong> Junayed Academy, an innovative <strong>e-learning platform</strong> delivering <strong>project-based, skill-focused education</strong> in <strong>Programming, AI,</strong> and <strong>Web Development</strong>.</p>
-                            </div>
-                            <div class="responsibility-item">
-                                <div class="check-mark">★</div>
-                                <p><strong>Launched</strong> the platform serving <strong>100+ active learners</strong> nationwide.</p>
-                            </div>
-                            <div class="responsibility-item">
-                                <div class="check-mark">★</div>
-                                <p><strong>Developed and delivered</strong> <strong>12+ comprehensive courses</strong> in <strong>Python, AI, Web Development</strong>.</p>
-                            </div>
-                         </div>
-                         <div class="achievements-row">
-                             <div class="achievement-item">
-                                 <div class="achievement-number">100+</div>
-                                 <div class="achievement-label">Learners</div>
-                             </div>
-                             <div class="achievement-item">
-                                 <div class="achievement-number">12+</div>
-                                 <div class="achievement-label">Courses</div>
-                             </div>
-                             <div class="achievement-item">
-                                 <div class="achievement-number">10+</div>
-                                 <div class="achievement-label">Instructors</div>
-                             </div>
-                         </div>
+                    <div class="row-right">
+                        <span class="duration highlight-duration">Jan 2024 – Present</span>
+                        <span class="job-type highlight-type">Entrepreneur</span>
                     </div>
                 </div>
-
-                <div class="hidden-rows timeline-container" id="hiddenExperienceRows">
+                
+                <div class="row-content">
+                    <div class="responsibilities">
+                        <div class="responsibility-item highlight-item">
+                            <div class="check-mark">★</div>
+                            <p><strong>Founded</strong> Junayed Academy, an innovative <strong>e-learning platform</strong> delivering <strong>project-based, skill-focused education</strong> in <strong>Programming, AI,</strong> and <strong>Web Development</strong>.</p>
+                        </div>
+                        <div class="responsibility-item highlight-item">
+                            <div class="check-mark">★</div>
+                            <p><strong>Launched</strong> the platform serving <strong>100+ active learners</strong> nationwide.</p>
+                        </div>
+                        <div class="responsibility-item highlight-item">
+                            <div class="check-mark">★</div>
+                            <p><strong>Developed and delivered</strong> <strong>12+ comprehensive courses</strong> in <strong>Python, AI, Web Development,</strong> and <strong>professional development</strong>.</p>
+                        </div>
+                    </div>
                     
-                    <div class="job-card">
-                        <div class="job-header">
-                            <div class="job-role">
-                                <h3 class="job-title">Computer Instructor & Web Developer</h3>
-                                <div class="company-info">Knowledge IT Institute · Uttara, Dhaka</div>
-                            </div>
-                            <div class="job-meta">
-                                <span class="duration-badge">Sep 2025 – Present</span>
-                            </div>
+                    <div class="achievements-row">
+                        <div class="achievement-item">
+                            <div class="achievement-number">100+</div>
+                            <div class="achievement-label">Active Learners</div>
                         </div>
-                        <div class="job-details">
-                            <div class="responsibility-item"><div class="check-mark">✓</div><p>Conduct professional training sessions in Web Development, MS Office, and Freelancing.</p></div>
-                            <div class="responsibility-item"><div class="check-mark">✓</div><p>Develop project-based learning modules on HTML, CSS, JavaScript, React.js.</p></div>
+                        <div class="achievement-item">
+                            <div class="achievement-number">12+</div>
+                            <div class="achievement-label">Courses</div>
                         </div>
-                    </div>
-
-                    <div class="job-card">
-                        <div class="job-header">
-                            <div class="job-role">
-                                <h3 class="job-title">Teacher</h3>
-                                <div class="company-info">Junayed Academy · Remote</div>
-                            </div>
-                            <div class="job-meta">
-                                <span class="duration-badge">Jan 2024 – Present</span>
-                            </div>
-                        </div>
-                        <div class="job-details">
-                            <div class="responsibility-item"><div class="check-mark">✓</div><p>Deliver comprehensive instruction in Web Development, Python, and AI.</p></div>
-                            <div class="responsibility-item"><div class="check-mark">✓</div><p>Mentor students individually enhancing problem-solving abilities.</p></div>
+                        <div class="achievement-item">
+                            <div class="achievement-number">10+</div>
+                            <div class="achievement-label">Instructors</div>
                         </div>
                     </div>
-
-                    <div class="job-card">
-                        <div class="job-header">
-                            <div class="job-role">
-                                <h3 class="job-title">Event Organizer & Mentor</h3>
-                                <div class="company-info">AI Hackathon 2025 · Daffodil International University</div>
-                            </div>
-                            <div class="job-meta">
-                                <span class="duration-badge">Jan 2025 – May 2025</span>
-                            </div>
-                        </div>
-                        <div class="job-details">
-                             <div class="responsibility-item"><div class="check-mark">✓</div><p>Organized inter-university AI competition with 300+ participants.</p></div>
-                             <div class="achievements-row">
-                                 <div class="achievement-item"><div class="achievement-number">300+</div><div class="achievement-label">Participants</div></div>
-                             </div>
-                        </div>
-                    </div>
-
-                    <div class="job-card">
-                         <div class="job-header">
-                             <div class="job-role">
-                                 <h3 class="job-title">Founder & Volunteer</h3>
-                                 <div class="company-info">Your 1 Taka = A Child's Smile · Dinajpur</div>
-                             </div>
-                             <div class="job-meta"><span class="duration-badge">Mar 2022 – Jan 2025</span></div>
-                         </div>
-                         <div class="job-details">
-                             <div class="responsibility-item"><div class="check-mark">✓</div><p>Founded donation initiative supporting 500+ underprivileged children.</p></div>
-                             <div class="achievements-row">
-                                 <div class="achievement-item"><div class="achievement-number">500+</div><div class="achievement-label">Children</div></div>
-                             </div>
-                         </div>
-                    </div>
-
                 </div>
             </div>
-
-            <div class="center-btn">
-                <button id="toggleExperienceRows" class="action-btn">Show Full History</button>
-            </div>
-        </section>
-
-        <section class="projects-section" id="projects">
-            <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title">Featured <span>Projects</span></h2>
-                <div class="divider-container">
-                    <div class="line"></div><div class="dot"></div><div class="line"></div>
+           
+ <!-- Hidden Rows -->
+            <div class="hidden-rows" id="hiddenExperienceRows">
+            
+ <!-- Row 2-->
+            <div class="experience-row">
+                <div class="row-header">
+                    <div class="row-left">
+                        <h3 class="job-title">Computer Instructor & Web Developer</h3>
+                        <div class="company-info">
+                            <span class="company-name">Knowledge IT Institute</span>
+                            <span class="location">Uttara, Dhaka, Bangladesh</span>
+                        </div>
+                    </div>
+                    <div class="row-right">
+                        <span class="duration">Sep 2025 – Present</span>
+                        <span class="job-type">Full Time</span>
+                    </div>
                 </div>
-            </div>
-
-            <div class="projects-grid">
                 
-                <div class="project-card" data-aos="fade-up">
+                <div class="row-content">
+                    <div class="responsibilities">
+                        <div class="responsibility-item">
+                            <div class="check-mark">✓</div>
+                            <p>Conduct professional training sessions in <strong>Web Development, MS Office, Data Entry, Freelancing, Digital Marketing,</strong> and <strong>Graphic Design</strong>.</p>
+                        </div>
+                        <div class="responsibility-item">
+                            <div class="check-mark">✓</div>
+                            <p>Develop and deliver <strong>project-based learning modules</strong> on HTML, CSS, JavaScript, React.js, Node.js, and backend integration.</p>
+                        </div>
+                        <div class="responsibility-item">
+                            <div class="check-mark">✓</div>
+                            <p>Assist students in building real-world web projects and applying digital skills in practical contexts.</p>
+                        </div>
+                        <div class="responsibility-item">
+                            <div class="check-mark">✓</div>
+                            <p>Oversee computer lab operations, ensuring smooth workflow and accessibility for all learners.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="skills-row">
+                        <span class="skill-tag">Web Development</span>
+                        <span class="skill-tag">Technical Training</span>
+                        <span class="skill-tag">Curriculum Design</span>
+                        <span class="skill-tag">Student Mentorship</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Row 3 -->
+            <div class="experience-row">
+                <div class="row-header">
+                    <div class="row-left">
+                        <h3 class="job-title">Teacher</h3>
+                        <div class="company-info">
+                            <span class="company-name">Junayed Academy</span>
+                            <span class="location">Dhaka, Bangladesh · Remote</span>
+                        </div>
+                    </div>
+                    <div class="row-right">
+                        <span class="duration">Jan 2024 – Present</span>
+                        <span class="job-type">Teaching</span>
+                    </div>
+                </div>
+                
+                <div class="row-content">
+                    <div class="responsibilities">
+                        <div class="responsibility-item">
+                            <div class="check-mark">✓</div>
+                            <p><strong>Deliver</strong> comprehensive instruction in <strong>Web Development (HTML, CSS, JavaScript)</strong>, <strong>Python programming</strong>, <strong>Machine Learning</strong>, and <strong>Artificial Intelligence</strong>.</p>
+                        </div>
+                        <div class="responsibility-item">
+                            <div class="check-mark">✓</div>
+                            <p><strong>Design and implement</strong> <strong>hands-on, project-based learning experiences</strong> to develop <strong>practical, industry-ready skills</strong>.</p>
+                        </div>
+                        <div class="responsibility-item">
+                            <div class="check-mark">✓</div>
+                            <p><strong>Mentor</strong> students individually, enhancing <strong>problem-solving abilities</strong>, <strong>critical thinking</strong>, and <strong>technical expertise</strong>.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="skills-row">
+                        <span class="skill-tag highlight-skill">Educational Technology</span>
+                        <span class="skill-tag highlight-skill">Project Management</span>
+                        <span class="skill-tag highlight-skill">Web Development</span>
+                        <span class="skill-tag">Curriculum Design</span>
+                        <span class="skill-tag">Student Mentorship</span>
+                    </div>
+                </div>
+            </div>
+
+           
+                <!-- Row 4 -->
+                <div class="experience-row">
+                    <div class="row-header">
+                        <div class="row-left">
+                            <h3 class="job-title">Event Organizer & Mentor</h3>
+                            <div class="company-info">
+                                <span class="company-name">AI Hackathon 2025</span>
+                                <span class="location">Daffodil International University</span>
+                            </div>
+                        </div>
+                        <div class="row-right">
+                            <span class="duration">Jan 2025 – May 2025</span>
+                            <span class="job-type">Event</span>
+                        </div>
+                    </div>
+                    
+                    <div class="row-content">
+                        <div class="responsibilities">
+                            <div class="responsibility-item">
+                                <div class="check-mark">✓</div>
+                                <p><strong>Organized</strong> an <strong>inter-university AI competition</strong> with <strong>300+ participants</strong>, fostering innovation in <strong>machine learning</strong> and <strong>data-driven solutions</strong>.</p>
+                            </div>
+                            <div class="responsibility-item">
+                                <div class="check-mark">✓</div>
+                                <p><strong>Mentored</strong> <strong>10+ teams</strong> on <strong>machine learning development</strong>, <strong>presentation strategy</strong>, and <strong>project pitching</strong> for real-world impact.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="achievements-row compact">
+                            <div class="achievement-item">
+                                <div class="achievement-number">300+</div>
+                                <div class="achievement-label">Participants</div>
+                            </div>
+                            <div class="achievement-item">
+                                <div class="achievement-number">10+</div>
+                                <div class="achievement-label">Teams Mentored</div>
+                            </div>
+                            <div class="achievement-item">
+                                <div class="achievement-number">3</div>
+                                <div class="achievement-label">Sponsors</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 5 -->
+                <div class="experience-row">
+                    <div class="row-header">
+                        <div class="row-left">
+                            <h3 class="job-title">Founder & Volunteer</h3>
+                            <div class="company-info">
+                                <span class="company-name">Your 1 Taka = A Child's Smile</span>
+                                <span class="location">Dinajpur, Bangladesh</span>
+                            </div>
+                        </div>
+                        <div class="row-right">
+                            <span class="duration">Mar 2022 – Jan 2025</span>
+                            <span class="job-type">Volunteer</span>
+                        </div>
+                    </div>
+                    
+                    <div class="row-content">
+                        <div class="responsibilities">
+                            <div class="responsibility-item">
+                                <div class="check-mark">✓</div>
+                                <p><strong>Founded</strong> a <strong>donation initiative</strong> supporting <strong>500+ underprivileged children</strong> through education, nutrition, and community welfare programs.</p>
+                            </div>
+                            <div class="responsibility-item">
+                                <div class="check-mark">✓</div>
+                                <p><strong>Organized</strong> <strong>15+ large-scale community campaigns</strong> and <strong>fundraising events</strong> to drive awareness and resource mobilization.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="impact-row">
+                            <div class="impact-item">
+                                <div class="impact-details">
+                                    <div class="impact-number">500+</div>
+                                    <div class="impact-label">Children Supported</div>
+                                </div>
+                            </div>
+                            <div class="impact-item">
+                                <div class="impact-details">
+                                    <div class="impact-number">15+</div>
+                                    <div class="impact-label">Campaigns</div>
+                                </div>
+                            </div>
+                            <div class="impact-item">
+                                <div class="impact-details">
+                                    <div class="impact-number">200%</div>
+                                    <div class="impact-label">Engagement Growth</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Action Button -->
+        <div class="action-button-container">
+            <button id="toggleExperienceRows" class="action-button">
+                <span class="button-text">Show More Experiences</span>
+                <svg class="button-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M10 15L5 10L10 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+</section>
+ 
+
+<!-- Projects Section -->
+<section class="projects-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">
+                Featured <span class=>Projects</span>
+            </h2>
+            <div class="header-divider">
+                <div class="divider-line"></div>
+                <div class="divider-circle"></div>
+                <div class="divider-line"></div>
+            </div>
+        </div>
+
+        <div class="projects-grid">
+            <!-- Project 1 -->
+            <div class="project-card">
+                <div class="project-image-container">
+                    <img src="Assets/projects/IoT project.png" alt="IoT Smart Garden System" class="project-image">
+                    <div class="project-overlay">
+                        <a href="https://youtu.be/FceyhRI7mdI?si=VV6Fu4c58KPmX4Rh" target="_blank" class="overlay-btn">
+                            <i class="fas fa-play"></i> Watch Demo
+                        </a>
+                    </div>
+                    <div class="project-number">01</div>
+                </div>
+                <div class="project-content">
+                    <div class="project-header">
+                        <h3 class="project-title">Smart Garden Irrigation System</h3>
+                        <div class="project-category">IoT & Hardware</div>
+                    </div>
+                    <p class="project-description">IoT-based system that automatically waters plants based on real-time soil moisture data with Blynk app monitoring.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">IoT</span>
+                        <span class="tech-tag">ESP8266</span>
+                        <span class="tech-tag">C++</span>
+                        <span class="tech-tag">Blynk</span>
+                        <span class="tech-tag">Hardware</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://youtu.be/FceyhRI7mdI?si=VV6Fu4c58KPmX4Rh" target="_blank" class="project-link">
+                            <i class="fas fa-external-link-alt"></i> Demo Video
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card highlight-project">
+                <div class="project-image-container">
+                    <img src="Assets/projects/junayed-airnotes.jpg" alt="Junayed AirNotes" class="project-image">
+                    <div class="project-overlay">
+                        <a href="https://junayed-airnotes.netlify.app/" target="_blank" class="overlay-btn">
+                            <i class="fas fa-external-link-alt"></i> Visit Live
+                        </a>
+                    </div>
+                    <div class="project-number">02</div>
+                    <div class="featured-badge">
+                        <i class="fas fa-star"></i> Featured
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-header">
+                        <h3 class="project-title">Junayed AirNotes</h3>
+                        <div class="project-category">Web Application & AI</div>
+                    </div>
+                    <p class="project-description">Gesture-controlled web app for touchless interaction with notes using hand movements and webcam tracking.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">MediaPipe</span>
+                        <span class="tech-tag">Computer Vision</span>
+                        <span class="tech-tag">Vite</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://junayed-airnotes.netlify.app/" target="_blank" class="project-link highlight-link">
+                            <i class="fas fa-rocket"></i> Live Demo
+                        </a>
+                    </div>
+                </div>
+            </div>
+<!-- Hidden Projects -->
+            <div class="hidden-projects" id="hiddenProjects">
+            <!-- Project 3 -->
+            <div class="project-card">
+                <div class="project-image-container">
+                    <img src="Assets/projects/spylt-website.png" alt="Spylt Website" class="project-image">
+                    <div class="project-overlay">
+                        <a href="https://www.spylt.com/" target="_blank" class="overlay-btn">
+                            <i class="fas fa-external-link-alt"></i> Visit Site
+                        </a>
+                    </div>
+                    <div class="project-number">03</div>
+                </div>
+                <div class="project-content">
+                    <div class="project-header">
+                        <h3 class="project-title">Spylt Platform</h3>
+                        <div class="project-category">Web Development</div>
+                    </div>
+                    <p class="project-description">Modern responsive website with advanced animations and mobile-first design for optimal user experience.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">React.js</span>
+                        <span class="tech-tag">GSAP</span>
+                        <span class="tech-tag">Tailwind CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">Responsive</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://www.spylt.com/" target="_blank" class="project-link">
+                            <i class="fas fa-globe"></i> Live Site
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            
+                <!-- Project 4 -->
+                <div class="project-card">
                     <div class="project-image-container">
-                        <img src="Assets/projects/IoT project.png" alt="IoT Project" class="project-image">
+                        <img src="Assets/projects/junayed-academy.jpg" alt="Junayed Academy" class="project-image">
                         <div class="project-overlay">
-                            <a href="https://youtu.be/FceyhRI7mdI?si=VV6Fu4c58KPmX4Rh" target="_blank" class="overlay-btn">
-                                <i class="fas fa-play"></i> Watch Demo
+                            <a href="https://junayedacademy.netlify.app/" target="_blank" class="overlay-btn">
+                                <i class="fas fa-external-link-alt"></i> Visit Site
                             </a>
                         </div>
-                        <div class="project-number">01</div>
+                        <div class="project-number">04</div>
                     </div>
                     <div class="project-content">
                         <div class="project-header">
-                            <div>
-                                <span class="project-category">IoT & Hardware</span>
-                                <h3 class="project-title">Smart Garden System</h3>
-                            </div>
+                            <h3 class="project-title">Junayed Academy</h3>
+                            <div class="project-category">E-Learning Platform</div>
                         </div>
-                        <p class="project-description">IoT-based system that automatically waters plants based on real-time soil moisture data with Blynk app monitoring.</p>
+                        <p class="project-description">Online learning platform offering interactive courses and professional certificates in tech skills.</p>
                         <div class="project-tech">
-                            <span class="tech-tag">IoT</span><span class="tech-tag">ESP8266</span><span class="tech-tag">C++</span>
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Bootstrap</span>
+                            <span class="tech-tag">Netlify</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://youtu.be/FceyhRI7mdI?si=VV6Fu4c58KPmX4Rh" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> Demo Video</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card highlight-project" data-aos="fade-up" data-aos-delay="100">
-                    <div class="project-image-container">
-                        <img src="Assets/projects/junayed-airnotes.jpg" alt="AirNotes" class="project-image">
-                        <div class="featured-badge"><i class="fas fa-star"></i> Featured</div>
-                        <div class="project-overlay">
-                            <a href="https://junayed-airnotes.netlify.app/" target="_blank" class="overlay-btn">
-                                <i class="fas fa-external-link-alt"></i> Visit Live
+                            <a href="https://junayedacademy.netlify.app/" target="_blank" class="project-link">
+                                <i class="fas fa-graduation-cap"></i> Visit Platform
                             </a>
                         </div>
-                        <div class="project-number">02</div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card">
+                    <div class="project-image-container">
+                        <img src="Assets/projects/cv.png" alt="Smart Resume Matcher AI" class="project-image">
+                        <div class="project-overlay">
+                            <a href="https://resumind-ai.streamlit.app/" target="_blank" class="overlay-btn">
+                                <i class="fas fa-robot"></i> Try AI
+                            </a>
+                        </div>
+                        <div class="project-number">05</div>
                     </div>
                     <div class="project-content">
-                         <div class="project-header">
-                            <div>
-                                <span class="project-category">Web App & AI</span>
-                                <h3 class="project-title">Junayed AirNotes</h3>
-                            </div>
-                        </div>
-                        <p class="project-description">Gesture-controlled web app for touchless interaction with notes using hand movements and webcam tracking.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">React</span><span class="tech-tag">MediaPipe</span><span class="tech-tag">CV</span>
-                        </div>
-                         <div class="project-links">
-                            <a href="https://junayed-airnotes.netlify.app/" target="_blank" class="project-link"><i class="fas fa-rocket"></i> Live Demo</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="hidden-projects projects-grid" id="hiddenProjects" style="grid-column: 1/-1;">
-                    
-                    <div class="project-card">
-                        <div class="project-image-container">
-                            <img src="Assets/projects/spylt-website.png" alt="Spylt" class="project-image">
-                            <div class="project-overlay"><a href="https://www.spylt.com/" target="_blank" class="overlay-btn">Visit Site</a></div>
-                            <div class="project-number">03</div>
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Spylt Platform</h3>
-                            <p class="project-description">Modern responsive website with advanced animations.</p>
-                            <div class="project-tech"><span class="tech-tag">React</span><span class="tech-tag">GSAP</span></div>
-                        </div>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-image-container">
-                            <img src="Assets/projects/junayed-academy.jpg" alt="JA" class="project-image">
-                            <div class="project-overlay"><a href="https://junayedacademy.netlify.app/" target="_blank" class="overlay-btn">Visit Site</a></div>
-                            <div class="project-number">04</div>
-                        </div>
-                         <div class="project-content">
-                            <h3 class="project-title">Junayed Academy</h3>
-                            <p class="project-description">Online learning platform offering interactive courses.</p>
-                            <div class="project-tech"><span class="tech-tag">HTML</span><span class="tech-tag">JS</span></div>
-                        </div>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-image-container">
-                            <img src="Assets/projects/cv.png" alt="AI Resume" class="project-image">
-                            <div class="project-overlay"><a href="https://resumind-ai.streamlit.app/" target="_blank" class="overlay-btn">Try AI</a></div>
-                            <div class="project-number">05</div>
-                        </div>
-                         <div class="project-content">
+                        <div class="project-header">
                             <h3 class="project-title">Smart Resume Matcher AI</h3>
-                            <p class="project-description">AI tool comparing resumes with job descriptions.</p>
-                            <div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">NLP</span></div>
+                            <div class="project-category">AI & Machine Learning</div>
+                        </div>
+                        <p class="project-description">AI-powered tool that compares resumes with job descriptions and provides match scores.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Streamlit</span>
+                            <span class="tech-tag">NLP</span>
+                            <span class="tech-tag">Machine Learning</span>
+                            <span class="tech-tag">Scikit-learn</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://resumind-ai.streamlit.app/" target="_blank" class="project-link">
+                                <i class="fas fa-brain"></i> Test AI
+                            </a>
                         </div>
                     </div>
-
-                    <div class="project-card"><div class="project-content"><h3>More projects loaded via script...</h3></div></div>
                 </div>
 
-            </div>
-
-            <div class="center-btn">
-                <button id="viewAllBtn" class="action-btn">View All Projects</button>
-            </div>
-        </section>
-
-        <section class="achievements">
-            <div class="section-header">
-                <h2 class="section-title">Recent <span>Milestones</span></h2>
-                <div class="divider-container"><div class="line"></div><div class="dot"></div><div class="line"></div></div>
-            </div>
-            <ul class="milestones-list" data-aos="fade-up">
-                <li><i class="fas fa-trophy"></i><span>Won 2nd prize in ML Seminar at DIU</span></li>
-                <li><i class="fas fa-users"></i><span>Reached 1,000+ students online</span></li>
-                <li><i class="fas fa-heart"></i><span>Helped 500+ children (Your 1 Taka)</span></li>
-                <li><i class="fas fa-code"></i><span>Launched 6 full-stack projects</span></li>
-                <li><i class="fas fa-robot"></i><span>Completed ML certifications</span></li>
-                <li><i class="fas fa-chalkboard-teacher"></i><span>Conducted 20+ workshops</span></li>
-            </ul>
-        </section>
-
-        <section id="services">
-            <div class="section-header">
-                <h2 class="section-title">What I <span>Offer</span></h2>
-                <div class="divider-container"><div class="line"></div><div class="dot"></div><div class="line"></div></div>
-            </div>
-
-            <div class="services-container">
-                <div class="service-card" onclick="toggleService(this)">
-                    <div class="service-icon"><i class="fas fa-brain"></i></div>
-                    <h3 class="service-title">Mental Health Consulting</h3>
-                    <p class="service-description">Guidance on stress management and emotional well-being.</p>
-                    <button class="service-toggle-btn">Learn More</button>
+                <!-- Project 6 -->
+                <div class="project-card">
+                    <div class="project-image-container">
+                        <img src="Assets/projects/mon rong.png" alt="মনরং" class="project-image">
+                        <div class="project-overlay">
+                            <a href="https://chatbot-ai-v3.streamlit.app/" target="_blank" class="overlay-btn">
+                                <i class="fas fa-comments"></i> Chat Now
+                            </a>
+                        </div>
+                        <div class="project-number">06</div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">মনরং - Smart Bengali Chatbot</h3>
+                            <div class="project-category">AI & NLP</div>
+                        </div>
+                        <p class="project-description">Context-aware Bengali chatbot that understands emotions and provides relevant suggestions.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Streamlit</span>
+                            <span class="tech-tag">NLP</span>
+                            <span class="tech-tag">AI</span>
+                            <span class="tech-tag">Bengali</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://chatbot-ai-v3.streamlit.app/" target="_blank" class="project-link">
+                                <i class="fas fa-language"></i> বাংলা চ্যাট
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="service-card" onclick="toggleService(this)">
-                    <div class="service-icon"><i class="fas fa-handshake"></i></div>
-                    <h3 class="service-title">Mentorship & Coaching</h3>
-                    <p class="service-description">Helping individuals set goals and grow confidence.</p>
-                     <button class="service-toggle-btn">Learn More</button>
+
+                <!-- Project 7 -->
+                <div class="project-card">
+                    <div class="project-image-container">
+                        <img src="Assets/projects/e-commerce shop.png" alt="E-commerce Shop" class="project-image">
+                        <div class="project-overlay">
+                            <a href="https://junayed-ecommerce-shop.netlify.app/" target="_blank" class="overlay-btn">
+                                <i class="fas fa-shopping-cart"></i> Shop Now
+                            </a>
+                        </div>
+                        <div class="project-number">07</div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">E-commerce Store</h3>
+                            <div class="project-category">Web Development</div>
+                        </div>
+                        <p class="project-description">Fully responsive online store with product listings, cart functionality, and checkout process.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Bootstrap</span>
+                            <span class="tech-tag">E-commerce</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://junayed-ecommerce-shop.netlify.app/" target="_blank" class="project-link">
+                                <i class="fas fa-store"></i> Visit Store
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="service-card" onclick="toggleService(this)">
-                    <div class="service-icon"><i class="fas fa-users"></i></div>
-                    <h3 class="service-title">Workshops & Webinars</h3>
-                    <p class="service-description">Awareness sessions on mental health and resilience.</p>
-                     <button class="service-toggle-btn">Learn More</button>
+
+                <!-- Project 8 -->
+                <div class="project-card">
+                    <div class="project-image-container">
+                        <img src="Assets/projects/heart-disease-predictor.png" alt="Heart Disease Risk Predictor" class="project-image">
+                        <div class="project-overlay">
+                            <a href="https://heart-disease-risk-prediction-ai.streamlit.app/" target="_blank" class="overlay-btn">
+                                <i class="fas fa-heartbeat"></i> Check Health
+                            </a>
+                        </div>
+                        <div class="project-number">08</div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">Heart Disease Risk Predictor</h3>
+                            <div class="project-category">Healthcare AI</div>
+                        </div>
+                        <p class="project-description">AI-powered tool predicting cardiovascular health risks using 70,000+ medical data points.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Streamlit</span>
+                            <span class="tech-tag">ML</span>
+                            <span class="tech-tag">Healthcare</span>
+                            <span class="tech-tag">Data Science</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://heart-disease-risk-prediction-ai.streamlit.app/" target="_blank" class="project-link">
+                                <i class="fas fa-stethoscope"></i> Health Check
+                            </a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </section>
 
-        <section class="blog-preview">
-            <h3 class="section-title" style="font-size: 28px; text-align: left; margin-bottom: 30px;">Recent <span>Thoughts</span></h3>
-            
-            <div class="article-card">
-                <h4>Future of IoT in Bangladesh</h4>
-                <p>Exploring how smart technology can transform agriculture...</p>
-                <a href="future-of-iot-in-bangladesh.html">Read More <i class="fas fa-arrow-right"></i></a>
-            </div>
-            <div class="article-card">
-                <h4>Green Computing</h4>
-                <p>Discover how eco-friendly technology practices can reduce carbon footprints...</p>
-                <a href="green-computing-sustainable-future.html">Read More <i class="fas fa-arrow-right"></i></a>
-            </div>
-            
-            <div class="article-card hidden">
-                <h4>Quantum Cryptography</h4>
-                <p>Secure communication future...</p>
-            </div>
+                <!-- Project 9 -->
+                <div class="project-card">
+                    <div class="project-image-container">
+                        <img src="Assets/projects/text.png" alt="Text Analyzer AI" class="project-image">
+                        <div class="project-overlay">
+                            <a href="https://text-analyzer-ai.streamlit.app/" target="_blank" class="overlay-btn">
+                                <i class="fas fa-chart-bar"></i> Analyze Text
+                            </a>
+                        </div>
+                        <div class="project-number">09</div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">Text Analyzer AI</h3>
+                            <div class="project-category">NLP Tool</div>
+                        </div>
+                        <p class="project-description">AI-powered tool for text analysis including word count, character count, and linguistic insights.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Streamlit</span>
+                            <span class="tech-tag">NLP</span>
+                            <span class="tech-tag">Text Analysis</span>
+                            <span class="tech-tag">Data Visualization</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://text-analyzer-ai.streamlit.app/" target="_blank" class="project-link">
+                                <i class="fas fa-file-alt"></i> Analyze Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
 
-            <button id="seeMoreBlogBtn" class="action-btn" style="margin-top: 20px;">Read More Articles</button>
-        </section>
+                <!-- Project 10 -->
+                <div class="project-card">
+                    <div class="project-image-container">
+                        <img src="Assets/projects/khudhas-preview.png" alt="Khudhas Restaurant" class="project-image">
+                        <div class="project-overlay">
+                            <a href="https://khudhas-restaurant.vercel.app" target="_blank" class="overlay-btn">
+                                <i class="fas fa-utensils"></i> Order Food
+                            </a>
+                        </div>
+                        <div class="project-number">10</div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">Khudhas Restaurant</h3>
+                            <div class="project-category">Food Delivery</div>
+                        </div>
+                        <p class="project-description">Online street food ordering system with mobile-friendly UI and easy order management.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Responsive</span>
+                            <span class="tech-tag">UI/UX</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://khudhas-restaurant.vercel.app" target="_blank" class="project-link">
+                                <i class="fas fa-hamburger"></i> View Menu
+                            </a>
+                        </div>
+                    </div>
+                </div>
 
-    </main>
 
-    <footer class="footer">
-        <div class="left">
-            &copy; 2025 • <strong>Junayed Bin Karim</strong> • All Rights Reserved
+
+
+                <!-- Project 10 -->
+<div class="project-card">
+    <div class="project-image-container">
+        <img src="Assets/projects/one-two-girls-shop.png" alt="One Two Girls Shop" class="project-image">
+        <div class="project-overlay">
+            <a href="https://one-two-girls-shop.netlify.app/" target="_blank" class="overlay-btn">
+                <i class="fas fa-shopping-bag"></i> Shop Now
+            </a>
         </div>
-        <div class="right social">
-            <a href="https://wa.me/8801893255503" target="_blank"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://t.me/@Junayed_Bin_Karim" target="_blank"><i class="fab fa-telegram"></i></a>
-            <a href="https://www.linkedin.com/in/junayed-bin-karim/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://www.youtube.com/@junayedbinkarim" target="_blank"><i class="fab fa-youtube"></i></a>
+        <div class="project-number">10</div>
+    </div>
+    <div class="project-content">
+        <div class="project-header">
+            <h3 class="project-title">One Two Girls Shop</h3>
+            <div class="project-category">E-commerce & Retail</div>
         </div>
-    </footer>
+        <p class="project-description">Complete online boutique with product catalog, shopping cart, and secure checkout system for fashion retail.</p>
+        <div class="project-tech">
+            <span class="tech-tag">HTML</span>
+            <span class="tech-tag">CSS</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">E-commerce</span>
+            <span class="tech-tag">Responsive</span>
+        </div>
+        <div class="project-links">
+            <a href="https://one-two-girls-shop.netlify.app/" target="_blank" class="project-link">
+                <i class="fas fa-store-alt"></i> Visit Shop
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Project 11 -->
+<div class="project-card">
+    <div class="project-image-container">
+        <img src="Assets/projects/quickeats-preview.jpg" alt="QuickEats App Preview" class="project-image">
+        <div class="project-overlay">
+            <a href="https://quickeats-splash.netlify.app/" target="_blank" class="overlay-btn">
+                <i class="fas fa-mobile-alt"></i> View App
+            </a>
+        </div>
+        <div class="project-number">11</div>
+    </div>
+    <div class="project-content">
+        <div class="project-header">
+            <h3 class="project-title">QuickEats - Food Delivery App</h3>
+            <div class="project-category">Mobile UI & Design</div>
+        </div>
+        <p class="project-description">Modern food delivery app splash screen with React and TailwindCSS, featuring responsive design and smooth animations.</p>
+        <div class="project-tech">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">TailwindCSS</span>
+            <span class="tech-tag">Figma</span>
+            <span class="tech-tag">Mobile UI</span>
+            <span class="tech-tag">Responsive</span>
+        </div>
+        <div class="project-links">
+            <a href="https://quickeats-splash.netlify.app/" target="_blank" class="project-link">
+                <i class="fas fa-bolt"></i> View Demo
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Project 12 -->
+<div class="project-card">
+    <div class="project-image-container">
+        <img src="Assets/projects/e-commerce web.png" alt="E-commerce Website" class="project-image">
+        <div class="project-overlay">
+            <a href="https://junayed-ecommerce-website.netlify.app/" target="_blank" class="overlay-btn">
+                <i class="fas fa-shopping-cart"></i> Browse Store
+            </a>
+        </div>
+        <div class="project-number">12</div>
+    </div>
+    <div class="project-content">
+        <div class="project-header">
+            <h3 class="project-title">Advanced E-commerce Platform</h3>
+            <div class="project-category">Full Stack Web</div>
+        </div>
+        <p class="project-description">Complete e-commerce solution with user authentication, product management, payment integration, and admin dashboard.</p>
+        <div class="project-tech">
+            <span class="tech-tag">HTML</span>
+            <span class="tech-tag">CSS</span>
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Backend</span>
+            <span class="tech-tag">Payment</span>
+        </div>
+        <div class="project-links">
+            <a href="https://junayed-ecommerce-website.netlify.app/" target="_blank" class="project-link">
+                <i class="fas fa-laptop-code"></i> Live Demo
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Project 13 -->
+<div class="project-card">
+    <div class="project-image-container">
+        <img src="Assets/projects/junayed academy course.png" alt="Junayed Academy Preview" class="project-image">
+        <div class="project-overlay">
+            <a href="https://junayed-academy.vercel.app/" target="_blank" class="overlay-btn">
+                <i class="fas fa-book-open"></i> Explore Courses
+            </a>
+        </div>
+        <div class="project-number">13</div>
+    </div>
+    <div class="project-content">
+        <div class="project-header">
+            <h3 class="project-title">Junayed Academy Platform</h3>
+            <div class="project-category">Educational Technology</div>
+        </div>
+        <p class="project-description">Virtual learning platform offering practical tech skills with guidance and support for career development.</p>
+        <div class="project-tech">
+            <span class="tech-tag">HTML</span>
+            <span class="tech-tag">CSS</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">EdTech</span>
+            <span class="tech-tag">Learning</span>
+        </div>
+        <div class="project-links">
+            <a href="https://junayed-academy.vercel.app/" target="_blank" class="project-link">
+                <i class="fas fa-user-graduate"></i> Visit Platform
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Project 14 -->
+<div class="project-card">
+    <div class="project-image-container">
+        <img src="Assets/projects/travel-tour.jpg" alt="Travel Tour Website" class="project-image">
+        <div class="project-overlay">
+            <a href="https://cholojai.netlify.app/" target="_blank" class="overlay-btn">
+                <i class="fas fa-plane"></i> Explore Tours
+            </a>
+        </div>
+        <div class="project-number">14</div>
+    </div>
+    <div class="project-content">
+        <div class="project-header">
+            <h3 class="project-title">Travel Tour Website</h3>
+            <div class="project-category">Travel & Tourism</div>
+        </div>
+        <p class="project-description">Interactive travel website featuring destinations gallery, booking system, and modern UI/UX design for tourism.</p>
+        <div class="project-tech">
+            <span class="tech-tag">HTML</span>
+            <span class="tech-tag">CSS</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">Tourism</span>
+            <span class="tech-tag">Booking</span>
+        </div>
+        <div class="project-links">
+            <a href="https://cholojai.netlify.app/" target="_blank" class="project-link">
+                <i class="fas fa-globe-asia"></i> Explore Site
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Project 15 -->
+<div class="project-card">
+    <div class="project-image-container">
+        <img src="Assets/projects/junayed academy course.png" alt="Junayed Academy Extended" class="project-image">
+        <div class="project-overlay">
+            <a href="https://junayed-academy.vercel.app/courses" target="_blank" class="overlay-btn">
+                <i class="fas fa-chalkboard-teacher"></i> View Courses
+            </a>
+        </div>
+        <div class="project-number">15</div>
+    </div>
+    <div class="project-content">
+        <div class="project-header">
+            <h3 class="project-title">Course Management System</h3>
+            <div class="project-category">Learning Management</div>
+        </div>
+        <p class="project-description">Comprehensive course management with progress tracking, certificate generation, and interactive learning modules.</p>
+        <div class="project-tech">
+            <span class="tech-tag">LMS</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">Interactive</span>
+            <span class="tech-tag">Certificates</span>
+            <span class="tech-tag">Progress</span>
+        </div>
+        <div class="project-links">
+            <a href="https://junayed-academy.vercel.app/courses" target="_blank" class="project-link">
+                <i class="fas fa-certificate"></i> Course Catalog
+            </a>
+        </div>
+    </div>
+</div>
+            </div>
+        </div>
+
+        <div class="projects-action">
+            <button id="viewAllBtn" class="view-all-btn">
+                <span class="btn-text">View All Projects</span>
+                <i class="fas fa-arrow-down btn-icon"></i>
+            </button>
+        </div>
+    </div>
+</section>
+
+<!--Achievements-->
+
+<section class="achievements">
+    <h3 class="section-title">Recent Milestones</h3>
+    <ul class="milestones-list">
+        <li>
+            <i class="fas fa-trophy"></i>
+            <span>Won 2nd prize in ML Seminar at DIU</span>
+        </li>
+        <li>
+            <i class="fas fa-users"></i>
+            <span>Reached 1,000+ students through online courses</span>
+        </li>
+        <li>
+            <i class="fas fa-heart"></i>
+            <span>Your 1 Taka initiative helped 500+ children</span>
+        </li>
+        <!-- Added five more milestones -->
+        <li>
+            <i class="fas fa-code"></i>
+            <span>Developed and launched 6 full-stack web projects</span>
+        </li>
+        <li>
+            <i class="fas fa-robot"></i>
+            <span>Completed multiple AI and ML certification courses</span>
+        </li>
+        <li>
+            <i class="fas fa-chalkboard-teacher"></i>
+            <span>Conducted 20+ workshops on programming and AI</span>
+        </li>
+        <li>
+            <i class="fas fa-globe"></i>
+            <span>Collaborated with international tech communities</span>
+        </li>
+        <li>
+            <i class="fas fa-award"></i>
+            <span>Received recognition for contributions to social impact projects</span>
+        </li>
+    </ul>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+       <section class="blog-preview">
+    <h3>Recent Thoughts</h3>
+
+    <!-- Blog -->
+
+    <!-- Visible Articles -->
+    <div class="article-card">
+        <h4>Future of IoT in Bangladesh</h4>
+        <p>Exploring how smart technology can transform agriculture...</p>
+        <a href="future-of-iot-in-bangladesh.html">Read More</a>
+    </div>
+
+    <div class="article-card">
+        <h4>Green Computing: Building a Sustainable Future</h4>
+        <p>Discover how eco-friendly technology practices can reduce carbon footprints and e-waste...</p>
+        <a href="green-computing-sustainable-future.html">Read More</a>
+    </div>
+
+    <div class="article-card">
+        <h4>Quantum Cryptography: The Future of Secure Communication</h4>
+        <p>Understand how quantum mechanics can revolutionize digital security and encryption...</p>
+        <a href="quantum-cryptography-secure-communication.html">Read More</a>
+    </div>
+
+    <!-- Hidden Articles -->
+    <div class="article-card hidden">
+        <h4>AI in Education: Transforming Learning</h4>
+        <p>Explore the impact of AI tools on personalized education and learning analytics...</p>
+        <a href="ai-in-education.html">Read More</a>
+    </div>
+
+    <div class="article-card hidden">
+        <h4>Blockchain Beyond Crypto</h4>
+        <p>How blockchain technology is reshaping supply chains, healthcare, and finance...</p>
+        <a href="blockchain-beyond-crypto.html">Read More</a>
+    </div>
+
+    <!-- See More Button -->
+    <button id="seeMoreBlogBtn" class="see-more">See More</button>
+</section>
+ 
+
+     
+        
+
+
+
+
+
+               
+        <!--footer-->
+
+
+        <footer class="footer">
+            <div class="left">
+                &copy; 2025 • Junayed_Bin_Karim • All Rights Reserved
+            </div>
+            <div class="right">
+
+                <div class="social"><a href="https://wa.me/8801893255503" target="_blank"><i class="fa-brands fa-whatsapp"></i></a></div>
+                <div class="social"><a href="https://t.me/@Junayed_Bin_Karim" target="_blank"><i class="fa-brands fa-telegram"></i></a></div>
+                <div class="social"><a href="https://www.linkedin.com/in/junayed-bin-karim/" target="_blank"><i class="fa-brands fa-linkedin"></i></a></div>
+                <div class="social"><a href="https://www.youtube.com/@junayedbinkarim" target="_blank"><i class="fa-brands fa-youtube"></i></a></div>
+
+      </div>
+        </footer>
+    </div>
+
+    <div class="nav-touch-close" id="nav-tc-js"></div>
 
     <script type="text/javascript" src="SRC/script/script.js"></script>
-    
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
     <script>
-        // 1. Initialize Animations
-        AOS.init({
-            duration: 800,
-            offset: 100,
-            once: true,
-            easing: 'ease-out-cubic'
-        });
-
-        // 2. Typed JS Configuration
         var typed = new Typed('#typed', {
-            strings: ["Junayed Bin Karim?", "an AI Researcher?", "a Developer?", "an Entrepreneur?"],
-            typeSpeed: 60,
-            backSpeed: 40,
-            loop: true
+            strings: ["Junayed Bin Karim ?"
+            ],
+            typeSpeed: 55,
+
         });
-
-        // 3. Mobile Menu Toggle
-        const menuIcon = document.getElementById('menu-icon');
-        const navbar = document.querySelector('.navbar');
-        const navClose = document.getElementById('nav-tc-js');
-
-        if(menuIcon) {
-            menuIcon.onclick = () => {
-                menuIcon.classList.toggle('bx-x');
-                navbar.classList.toggle('active');
-            };
-        }
-
-        // 4. "See More" Logic for Experience (Inline fallback if script.js fails)
-        const expBtn = document.getElementById('toggleExperienceRows');
-        const hiddenExp = document.getElementById('hiddenExperienceRows');
-        if(expBtn && hiddenExp) {
-            expBtn.addEventListener('click', () => {
-                const isHidden = hiddenExp.style.display === "none" || hiddenExp.classList.contains('hidden-rows');
-                if(isHidden) {
-                    hiddenExp.style.display = 'flex';
-                    hiddenExp.classList.remove('hidden-rows');
-                    expBtn.innerHTML = 'Show Less';
-                } else {
-                    hiddenExp.style.display = 'none';
-                    hiddenExp.classList.add('hidden-rows');
-                    expBtn.innerHTML = 'Show More Experiences';
-                }
-            });
-        }
-
-        // 5. "See More" for Projects
-        const projBtn = document.getElementById('viewAllBtn');
-        const hiddenProj = document.getElementById('hiddenProjects');
-        if(projBtn && hiddenProj) {
-            projBtn.addEventListener('click', () => {
-                hiddenProj.style.display = 'grid'; // Force grid layout
-                hiddenProj.classList.remove('hidden-projects');
-                projBtn.style.display = 'none';
-            });
-        }
-        
-        // 6. Awards View More
-        const awardBtn = document.getElementById('seeMoreBtn');
-        const hiddenAwards = document.querySelectorAll('.award-card.hidden');
-        if(awardBtn) {
-            awardBtn.addEventListener('click', () => {
-                hiddenAwards.forEach(card => {
-                    card.classList.remove('hidden');
-                    card.style.display = 'block'; // Ensure visibility
-                });
-                awardBtn.style.display = 'none';
-            });
-        }
     </script>
+    
+
+<!-- AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+
+
+</script>
+
 
 </body>
+
 </html>
