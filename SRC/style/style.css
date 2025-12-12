@@ -5677,6 +5677,21 @@ body, .text-row, #professional-summary p {
 
 
 
+/* Center the entire services section */
+.services {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertical centering */
+  align-items: center;     /* horizontal centering */
+  min-height: 100vh;       /* make the section fill the viewport height */
+  padding: 80px 20px;      /* adjust spacing as needed */
+  box-sizing: border-box;
+}
+
+
+
+
+
 
 
 
